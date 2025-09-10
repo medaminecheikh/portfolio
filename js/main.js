@@ -179,7 +179,9 @@
     });
 
 })(jQuery);
-
+    /*------------------
+        ai chat
+    --------------------*/
 const chatContainer = document.getElementById('chat-container-unique');
 const chatInput = chatContainer.querySelector('#chatInput');
 const chatMessages = chatContainer.querySelector('#chatMessages');
@@ -215,4 +217,17 @@ function addMessage(text, sender) {
     
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
-
+  /*------------------
+        scroll
+    --------------------*/
+document.querySelectorAll('.scroll-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const position = parseInt(btn.dataset.pos, 10);
+      window.scrollTo({
+        top: position,
+        behavior: "smooth"
+      });
+    });
+  });
+  
