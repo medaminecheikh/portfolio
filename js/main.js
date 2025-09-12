@@ -179,44 +179,7 @@
     });
 
 })(jQuery);
-    /*------------------
-        ai chat
-    --------------------*/
-const chatContainer = document.getElementById('chat-container-unique');
-const chatInput = chatContainer.querySelector('#chatInput');
-const chatMessages = chatContainer.querySelector('#chatMessages');
-const inputContainer = chatContainer.querySelector('#inputContainer');
 
-chatInput.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        sendMessage();
-    }
-});
-
-function sendMessage() {
-    const messageText = chatInput.value.trim();
-    if (messageText === '') return;
-
-    addMessage(messageText, 'user');
-    chatInput.value = '';
-
-    setTimeout(() => {
-        const botResponse = "Thank you for the information. I have forwarded your request to our team.";
-        addMessage(botResponse, 'bot');
-    }, 1500);
-}
-
-function addMessage(text, sender) {
-    const messageDiv = document.createElement('div');
-    messageDiv.classList.add('message', sender);
-    
-    const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-    messageDiv.innerHTML = `${text}<span class="message-timestamp">${timestamp}</span>`;
-    chatMessages.appendChild(messageDiv);
-    
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
   /*------------------
         scroll
     --------------------*/
