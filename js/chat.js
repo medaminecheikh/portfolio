@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyD9HIfa54PQS59lDl04opg-ZrrNzVoJeQM"; // ⚠️ For testing only, don’t expose on production
+const API_KEY = ""; // ⚠️ For testing only, don’t expose on production
 
 const chatContainer = document.getElementById('chat-container-unique');
 const chatInput = chatContainer.querySelector('#chatInput');
