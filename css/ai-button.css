@@ -1,0 +1,368 @@
+/* Background geometric shapes overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Main chatbot container - positioned fixed in bottom right */
+.chatbot-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    /* Reduced z-index so popups can appear above it */
+    z-index: 1000; 
+    filter: drop-shadow(0 20px 40px rgba(138, 68, 173, 0.5));
+    animation: levitate 6s ease-in-out infinite;
+}
+
+/* Optional: Hide button when certain popups/modals are active */
+.popup-active .chatbot-container,
+.modal-active .chatbot-container {
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Floating animation for the container */
+@keyframes levitate {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-6px) rotate(0.5deg); }
+    75% { transform: translateY(-6px) rotate(-0.5deg); }
+}
+
+/* Main clickable trigger button - reduced from 80px to 60px */
+.main-trigger {
+    position: relative;
+    width: 60px; /* Reduced from 80px */
+    height: 60px; /* Reduced from 80px */
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Orb background with gradient and glow effects */
+.trigger-orb {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Multi-layer gradient for depth */
+    background: 
+        linear-gradient(45deg, #8e44ad 0%, #9b59b6 25%, #c39bd3 50%, #8e44ad 75%, #6a3093 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 4s ease infinite;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    /* Layered box shadows for glow effect */
+    box-shadow: 
+        0 0 30px rgba(138, 68, 173, 0.7), /* Reduced from 40px */
+        0 0 60px rgba(106, 48, 147, 0.5),  /* Reduced from 80px */
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+/* Gradient animation for the orb background */
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Sweep light effect across the orb */
+.trigger-orb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent);
+    animation: sweep 3s ease-in-out infinite;
+}
+
+/* Sweep animation timing */
+@keyframes sweep {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+/* AI robot icon in center - reduced from 36px to 28px */
+.ai-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px; /* Reduced from 36px */
+    height: 28px; /* Reduced from 36px */
+    color: white;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5)); /* Reduced from 8px */
+    z-index: 10;
+}
+
+/* Container for neural pulse rings */
+.neural-rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Individual neural pulse rings - scaled down proportionally */
+.ring {
+    position: absolute;
+    border: 1.5px solid;
+    border-radius: 50%;
+    opacity: 0;
+    animation: neuralPulse 2s ease-out infinite;
+}
+
+/* First ring - reduced from 90px to 70px */
+.ring:nth-child(1) {
+    width: 70px; /* Reduced from 90px */
+    height: 70px;
+    margin: -35px 0 0 -35px; /* Adjusted margin */
+    border-color: rgba(138, 68, 173, 0.7);
+    animation-delay: 0s;
+}
+
+/* Second ring - reduced from 120px to 95px */
+.ring:nth-child(2) {
+    width: 95px; /* Reduced from 120px */
+    height: 95px;
+    margin: -47.5px 0 0 -47.5px; /* Adjusted margin */
+    border-color: rgba(155, 89, 182, 0.5);
+    animation-delay: 0.4s;
+}
+
+/* Third ring - reduced from 150px to 120px */
+.ring:nth-child(3) {
+    width: 120px; /* Reduced from 150px */
+    height: 120px;
+    margin: -60px 0 0 -60px; /* Adjusted margin */
+    border-color: rgba(195, 155, 211, 0.3);
+    animation-delay: 0.8s;
+}
+
+/* Neural pulse animation */
+@keyframes neuralPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Rotating energy field background */
+.energy-field {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* Conic gradient for energy field effect */
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        transparent 0deg,
+        rgba(138, 68, 173, 0.15) 60deg,
+        rgba(155, 89, 182, 0.1) 120deg,
+        rgba(195, 155, 211, 0.1) 180deg,
+        rgba(138, 68, 173, 0.15) 240deg,
+        rgba(155, 89, 182, 0.1) 300deg,
+        transparent 360deg
+    );
+    border-radius: 50%;
+    animation: energyRotate 8s linear infinite;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Energy field rotation animation */
+@keyframes energyRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Container for floating quantum particles */
+.quantum-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Individual quantum particles */
+.particle {
+    position: absolute;
+    width: 2.5px; /* Slightly reduced from 3px */
+    height: 2.5px;
+    background: radial-gradient(circle, #c39bd3 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: quantumFloat 4s ease-in-out infinite;
+}
+
+/* Quantum particle floating animation */
+@keyframes quantumFloat {
+    0%, 100% { 
+        opacity: 0;
+        transform: translateY(0px) scale(0.5);
+    }
+    50% { 
+        opacity: 1;
+        transform: translateY(-25px) scale(1); /* Reduced from -30px */
+    }
+}
+
+/* Holographic text above button */
+.holographic-text {
+    position: absolute;
+    top: -35px; /* Adjusted from -45px for smaller button */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px; /* Reduced from 10px */
+    font-weight: 600;
+    letter-spacing: 1.5px; /* Reduced from 2px */
+    color: #8e44ad;
+    text-shadow: 0 0 8px rgba(138, 68, 173, 0.7); /* Reduced from 10px */
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+/* Thinking dots animation container */
+.thinking-dots {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    gap: 3px; /* Reduced from 4px */
+}
+
+/* Individual thinking dots */
+.thinking-dot {
+    width: 5px; /* Reduced from 6px */
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+    animation: thinkingBounce 1.4s ease-in-out infinite;
+}
+
+/* Staggered animation delays for thinking dots */
+.thinking-dot:nth-child(2) { animation-delay: 0.2s; }
+.thinking-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Thinking dots bounce animation */
+@keyframes thinkingBounce {
+    0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+    40% { transform: scale(1.2); opacity: 1; }
+}
+
+/* HOVER EFFECTS */
+.main-trigger:hover .trigger-orb {
+    transform: scale(1.15);
+    box-shadow: 
+        0 0 45px rgba(138, 68, 173, 0.9), /* Adjusted for smaller size */
+        0 0 90px rgba(155, 89, 182, 0.7),
+        0 0 135px rgba(195, 155, 211, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.main-trigger:hover .ai-core {
+    transform: translate(-50%, -50%) scale(1.2);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8)); /* Adjusted from 15px */
+}
+
+.main-trigger:hover .energy-field {
+    opacity: 1;
+    animation-duration: 2s;
+}
+
+.main-trigger:hover .holographic-text {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px); /* Adjusted from -5px */
+}
+
+/* CLICK/ACTIVE EFFECTS */
+.main-trigger:active {
+    transform: scale(0.9);
+}
+
+.main-trigger:active .trigger-orb {
+    background: 
+        radial-gradient(circle at center, #e74c3c 0%, #8e44ad 50%, #c39bd3 100%);
+}
+
+/* ANIMATION KEYFRAMES FOR SPECIAL EFFECTS */
+
+/* Energy burst effect for activation */
+@keyframes energyBurst {
+    0% { 
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0px) scale(1);
+    }
+    100% { 
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-60px) scale(0.5); /* Reduced from -80px */
+    }
+}
+
+/* Neural activation effect */
+@keyframes neuralActivation {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(4deg); } /* Reduced rotation from 5deg */
+    50% { transform: scale(1.15) rotate(-4deg); } /* Reduced scale and rotation */
+    75% { transform: scale(1.1) rotate(4deg); }
+}
+
+/* POPUP/MODAL OVERLAY STYLES */
+
+/* When popup is active, reduce button prominence */
+.popup-overlay.active ~ .chatbot-container,
+.modal-overlay.active ~ .chatbot-container {
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 10;
+    transform: scale(0.8);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .chatbot-container {
+        right: 15px;
+        bottom: 15px;
+    }
+    
+    .main-trigger {
+        width: 50px; /* Even smaller on mobile */
+        height: 50px;
+    }
+    
+    .ai-core {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .holographic-text {
+        font-size: 8px;
+        top: -30px;
+    }
+}

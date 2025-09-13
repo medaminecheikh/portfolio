@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/text-animation.css" type="text/css">
+    <link rel="stylesheet" href="css/ai-button.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
@@ -88,12 +88,64 @@
         <div class="col-lg-8">
             <div class="hero-text">
               <span class="text-white" style="font-size: 18px; ">Hello, I'm Mohamed Amine Cheikh</span>
-              <h1 class="text-white"style="margin-top:30px; margin-bottom:5px;" >Full Stack Developer</h1>
+              
+              <h1 class="text-white" style="margin-top:30px; margin-bottom:5px;">
+                
+                <div>Full Stack Developer</div>
+                 
+                
+              </h1>
+        
+              
               
               
               <a href="cv/CV_MedAmineCheikh.pdf" class="primary-btn mt-5">Download CV</a>
             </div>
-            
+            <div class="chatbot-container">
+                <div class="main-trigger" onclick="activateAI()">
+                    <div class="energy-field"></div>
+                    
+                    <div class="trigger-orb">
+                        <div class="quantum-particles" id="particles"></div>
+                    </div>
+                    
+                    <div class="neural-rings">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                    
+                    <!-- New Robot Head Icon with Antennas -->
+                    <svg class="ai-core" id="aiIcon" viewBox="0 0 24 24" fill="currentColor">
+                        <!-- Robot Head -->
+                        <rect x="6" y="8" width="12" height="10" rx="2" ry="2" fill="currentColor"/>
+                        <!-- Eyes -->
+                        <circle cx="9" cy="11" r="1.5" fill="rgba(0,0,0,0.6)"/>
+                        <circle cx="15" cy="11" r="1.5" fill="rgba(0,0,0,0.6)"/>
+                        <!-- Eye pupils -->
+                        <circle cx="9" cy="11" r="0.5" fill="white"/>
+                        <circle cx="15" cy="11" r="0.5" fill="white"/>
+                        <!-- Mouth -->
+                        <rect x="10" y="14" width="4" height="1" rx="0.5" fill="rgba(0,0,0,0.6)"/>
+                        <!-- Left Antenna -->
+                        <line x1="8" y1="8" x2="7" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="7" cy="4" r="1" fill="currentColor"/>
+                        <!-- Right Antenna -->
+                        <line x1="16" y1="8" x2="17" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="17" cy="4" r="1" fill="currentColor"/>
+                        <!-- Body connector -->
+                        <rect x="11" y="18" width="2" height="2" fill="currentColor"/>
+                    </svg>
+                    
+                    <div class="thinking-dots" id="thinkingDots">
+                        <div class="thinking-dot"></div>
+                        <div class="thinking-dot"></div>
+                        <div class="thinking-dot"></div>
+                    </div>
+                    
+                    <div class="holographic-text">Let's Travel</div>
+                </div>
+        </div>
           </div>
       </div>
     </div>
@@ -572,7 +624,7 @@
                     <div id="chat-container-unique"  >
                         <div class="chat-messages" id="chatMessages" >
                             <div class="message bot">
-                                Hello. How may I assist you today?
+                                👋 Welcome! I’m Mohamed Amine’s assistant, happy to help you today.
                                 <span class="message-timestamp">10:00 AM</span>
                             </div>
                             
@@ -826,6 +878,7 @@
     </footer>
     <!-- Footer Section End -->
     <script src="js/contact.js"></script>
+    <script src="js/ai-button.js"></script>
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="Source/fontawesome-free-7.0.1-web/js/all.min.js"></script>
