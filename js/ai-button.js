@@ -16,16 +16,16 @@ function createParticles() {
 // Simple scroll to position 6275
 function scrollToPosition() {
     window.scrollTo({
-        top: 6275,
+        top: 6198,
         behavior: 'smooth'
     });
 }
 
-// Check if at position 6275 (within 200px range)
+// Check if at position 6208 (within 10px range)
 function checkPosition() {
     const currentPos = window.scrollY || window.pageYOffset;
-    const targetPos = 6275;
-    const range = 200;
+    const targetPos = 6208;
+    const range = 0;
     
     return Math.abs(currentPos - targetPos) <= range;
 }

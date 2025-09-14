@@ -193,4 +193,42 @@ document.querySelectorAll('.scroll-btn').forEach(btn => {
       });
     });
   });
+  // Copy-to-clipboard + tooltip
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("copyEmail");
+    const tooltip = btn.querySelector(".tooltip");
+    const email = btn.getAttribute("data-email");
   
+    function showTooltip(text) {
+      tooltip.textContent = text;
+      btn.classList.add("show");
+  
+      clearTimeout(btn._timer);
+      btn._timer = setTimeout(() => {
+        btn.classList.remove("show");
+        tooltip.textContent = "Copy email"; // reset
+      }, 1500);
+    }
+  
+    async function copyEmail(e) {
+      e.preventDefault();
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const ta = document.createElement("textarea");
+          ta.value = email;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+        }
+        showTooltip("Copied!");
+      } catch (err) {
+        showTooltip("Failed");
+      }
+    }
+  
+    btn.addEventListener("click", copyEmail);
+  });
+ 
