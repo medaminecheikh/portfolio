@@ -1,4 +1,4 @@
-const API_KEY = ""; // ⚠️ For testing only, don’t expose on production
+
 
 const chatContainer = document.getElementById('chat-container-unique');
 const chatInput = chatContainer.querySelector('#chatInput');
@@ -21,17 +21,15 @@ async function sendMessage() {
   addMessage("...", 'bot', tempMessageId);
 
   try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            contents: [
-              {
-                role: "user",
-                parts: [{
-                  text: `
+    const response = await fetch("/.netlify/functions/gemini-proxy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [
+          {
+            role: "user",
+            parts: [{
+              text: `
 You are Mohamed Amine's female assistant in a client chat. 
 - Answer the client's question directly, warmly and professionally. 
 - Only mention Mohamed Amine's skills and experience briefly if the client asks about him:
@@ -41,15 +39,13 @@ You are Mohamed Amine's female assistant in a client chat.
 - Keep every response ≤200 characters.
 - Avoid starting with "Hi" or greetings; focus on value.
 
-          
-          The client says: "${messageText}"
-                  `}]
-              }
-            ]
-          }),
-          
-      }
-    );
+The client says: "${messageText}"
+              `
+            }]
+          }
+        ]
+      })
+    });
 
     const data = await response.json();
     document.getElementById(tempMessageId).remove();
@@ -60,11 +56,12 @@ You are Mohamed Amine's female assistant in a client chat.
 
     addMessage(botResponse, 'bot');
   } catch (error) {
-    console.error("Error communicating with Gemini:", error);
+    console.error("Error communicating ", error);
     document.getElementById(tempMessageId).remove();
     addMessage("Many requests right now, please try later.", 'bot');
   }
 }
+
 
 function addMessage(text, sender, id = null) {
   const messageDiv = document.createElement('div');
