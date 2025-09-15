@@ -1,3 +1,14 @@
+// Warm up Netlify function silently
+document.addEventListener('DOMContentLoaded', () => {
+  fetch("/.netlify/functions/gemini-proxy", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: "Hello" })
+  }).catch(() => {}); // ignore errors silently
+});
+
+
+
 
 
 const chatContainer = document.getElementById('chat-container-unique');
@@ -55,9 +66,9 @@ The client says: "${messageText}"
 
     addMessage(botResponse, 'bot');
   } catch (error) {
-    console.error("Error communicating ", error);
+    
     document.getElementById(tempMessageId).remove();
-    addMessage("Many requests right now, please try later.", 'bot');
+    addMessage("Many requests right now, please try again.", 'bot');
   }
 }
 
