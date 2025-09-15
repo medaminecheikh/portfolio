@@ -16,7 +16,7 @@ function createParticles() {
 // Scroll smoothly to target position (desktop or mobile)
 function scrollToPosition() {
     const isMobile = window.innerWidth <= 768; // adjust breakpoint if needed
-    const targetPos = isMobile ? 7751 : 6275;  // mobile vs. desktop value
+    const targetPos = isMobile ? 7751 : 6209;  // mobile vs. desktop value
   
     window.scrollTo({
       top: targetPos,
@@ -27,7 +27,7 @@ function scrollToPosition() {
   // Check if user is at target position
   function checkPosition() {
     const isMobile = window.innerWidth <= 768;
-    const targetPos = isMobile ? 7751 : 6275; // use mobile vs. desktop
+    const targetPos = isMobile ? 7751 : 6209; // use mobile vs. desktop
     const range = 10; // give some tolerance
   
     const currentPos = window.scrollY || window.pageYOffset;
