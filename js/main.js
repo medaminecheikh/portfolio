@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     if (pos > maxScroll) pos = maxScroll;
   
-    console.log(`[scroll-btn] ${btn.textContent.trim()} → scroll to: ${pos}`);
+    
     window.scrollTo({ top: pos, behavior: 'smooth' });
   });
   

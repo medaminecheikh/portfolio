@@ -1,10 +1,17 @@
-// Warm up Netlify function silently
+// Warm up Netlify function and log a welcome message in console
 document.addEventListener('DOMContentLoaded', () => {
   fetch("/.netlify/functions/gemini-proxy", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message: "Hello" })
-  }).catch(() => {}); // ignore errors silently
+  })
+  .then(() => {
+    // Warm-up succeeded — show welcome in console
+    console.log("🤖 Welcome! I’m Mohamed Amine’s assistant. Ready to chat!");
+  })
+  .catch(() => {
+  
+  });
 });
 
 
