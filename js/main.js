@@ -180,19 +180,8 @@
 
 })(jQuery);
 
-  /*------------------
-        scroll
-    --------------------*/
-document.querySelectorAll('.scroll-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const position = parseInt(btn.dataset.pos, 10);
-      window.scrollTo({
-        top: position,
-        behavior: "smooth"
-      });
-    });
-  });
+
+
   // Copy-to-clipboard + tooltip
 document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("copyEmail");
@@ -231,4 +220,28 @@ document.addEventListener("DOMContentLoaded", () => {
   
     btn.addEventListener("click", copyEmail);
   });
- 
+  // scroll adjust
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('a.scroll-btn');
+    if (!btn) return;
+  
+    e.preventDefault();
+  
+    const isMobile = window.innerWidth <= 768;
+    const ds = btn.dataset;
+  
+    // Decide which attribute to use
+    let pos = isMobile ? Number(ds.mobile ?? ds.pos) : Number(ds.desktop ?? ds.pos);
+  
+    // If NaN or missing → default to 0
+    if (!Number.isFinite(pos)) pos = 0;
+  
+    // Clamp to valid range
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    if (pos > maxScroll) pos = maxScroll;
+  
+    console.log(`[scroll-btn] ${btn.textContent.trim()} → scroll to: ${pos}`);
+    window.scrollTo({ top: pos, behavior: 'smooth' });
+  });
+  
+  
