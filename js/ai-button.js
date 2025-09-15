@@ -13,22 +13,27 @@ function createParticles() {
     }
 }
 
-// Simple scroll to position 6275
+// Scroll smoothly to target position (desktop or mobile)
 function scrollToPosition() {
+    const isMobile = window.innerWidth <= 768; // adjust breakpoint if needed
+    const targetPos = isMobile ? 7751 : 6275;  // mobile vs. desktop value
+  
     window.scrollTo({
-        top: 6198,
-        behavior: 'smooth'
+      top: targetPos,
+      behavior: 'smooth'
     });
-}
-
-// Check if at position 6208 (within 10px range)
-function checkPosition() {
+  }
+  
+  // Check if user is at target position
+  function checkPosition() {
+    const isMobile = window.innerWidth <= 768;
+    const targetPos = isMobile ? 7751 : 6275; // use mobile vs. desktop
+    const range = 10; // give some tolerance
+  
     const currentPos = window.scrollY || window.pageYOffset;
-    const targetPos = 6208;
-    const range = 0;
-    
     return Math.abs(currentPos - targetPos) <= range;
-}
+  }
+  
 
 // Update button state based on position
 function updateButton() {
