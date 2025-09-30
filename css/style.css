@@ -2423,3 +2423,23 @@ ol {
   white-space: nowrap;
   padding: 0 4px;
 }
+
+.cursorblink {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background: #f4f6f7;
+  margin-left: 4px;
+  transform: translateY(25%);
+  box-shadow: 
+      0 0 10px #f4f6f7,
+      0 0 20px #f4f6f7,
+      0 0 30px #f4f6f7,
+      0 0 40px #f4f6f7;
+  animation: blink 0.7s infinite, glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
