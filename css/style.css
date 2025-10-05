@@ -233,7 +233,9 @@ ol {
   top: 0;
   left: 0;
   z-index: 999999;
-  background: #000;
+  background: rgba(255, 255, 255, 0);   /* fully transparent */
+  backdrop-filter: blur(4px);           /* subtle blur */
+  -webkit-backdrop-filter: blur(4px);   /* Safari support */
 }
 
 .loader {
@@ -2444,5 +2446,29 @@ ol {
   50%, 100% { opacity: 0; }
 }
 
+
+.bounce-text-container {
+  padding: 20px;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  
+  
+}
+
+.bounce-text-container p {
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.3px; /* Subtle, not too wide */
+  word-spacing: 0.5px;
+}
+
+.bounce-word {
+  font-weight: 600;
+  color: #0056b3; /* Professional accent blue */
+}
+
+.bounce-word[data-delay] {
+  display: inline-block;
+}
 
 

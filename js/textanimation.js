@@ -81,10 +81,7 @@ gsap.registerPlugin(TextPlugin);
         
                 containers.forEach((animatedText) => {
                     const rotatingWord = animatedText.querySelector(".rotating-word");
-                    if (!rotatingWord) {
-                        console.warn("No word found with the 'rotating-word' class in", animatedText);
-                        return;
-                    }
+                  
         
                     gsap.fromTo(rotatingWord,
                         { rotation: -75, y: -80, opacity: 0 },
@@ -107,4 +104,43 @@ gsap.registerPlugin(TextPlugin);
             // Call it for all elements with .animated-text
             animateRotatingWord();
         });
-        
+  
+        // Wait until DOM is ready AND GSAP/ScrollTrigger are loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    // register plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    const bounceWords = gsap.utils.toArray(".bounce-word");
+
+    if (bounceWords.length === 0) {
+      console.warn("No .bounce-word elements found");
+      return;
+    }
+
+    bounceWords.forEach((word) => {
+      const delay = parseFloat(word.dataset.delay) || 0;
+
+      gsap.fromTo(
+        word,
+        { rotation: -75, y: -80, opacity: 0 },
+        {
+          rotation: 0,
+          y: 0,
+          opacity: 1,
+          ease: "bounce.out",
+          duration: 1.2,
+          delay: delay,
+          scrollTrigger: {
+            trigger: word,
+            start: "top 90%",              // adjust if you want earlier/later
+            toggleActions: "play none none none",
+             once: false,                 // uncomment if you want it to play only once
+            // markers: true,              // uncomment to visualize trigger start/end (debug)
+          }
+        }
+      );
+    });
+
+    // optional: refresh ScrollTrigger after setup
+    ScrollTrigger.refresh();
+  });
