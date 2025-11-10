@@ -233,7 +233,7 @@ ol {
   top: 0;
   left: 0;
   z-index: 999999;
-  background: rgba(0, 0, 0, 0.8);  /* fully transparent */
+  background: rgba(0, 0, 0, 1);  /* fully transparent */
   backdrop-filter: blur(4px);           /* subtle blur */
   -webkit-backdrop-filter: blur(4px);   /* Safari support */
 }
