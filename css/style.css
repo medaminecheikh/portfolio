@@ -2471,4 +2471,26 @@ ol {
   display: inline-block;
 }
 
+/* horizontal scroll panels */
 
+/* Container handles the layout */
+.horizontal-container {
+  width: 300%; /* 100% * Number of panels (3 panels = 300%) */
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Individual Panel Styling */
+.panel {
+  width: 100vw; /* Full Viewport Width */
+  height: 100vh; /* Full Viewport Height */
+}
+
+/* Optional: Smooth transition for images on hover */
+.project-img {
+  transition: transform 0.5s ease;
+}
+.panel:hover .project-img {
+  transform: scale(1.05);
+}
