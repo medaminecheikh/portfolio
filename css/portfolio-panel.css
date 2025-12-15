@@ -1,175 +1,88 @@
-/* --- 1. The Starry Night Background --- */
-.space-bg {
-    background-color: #100028; /* The specific dark purple/blue you asked for */
-    position: relative;
-    overflow: hidden;
-}
-
-/* Animated Stars */
-.star-field {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0));
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    opacity: 0.5;
-    animation: twinkle 5s infinite linear;
-}
-
-@keyframes twinkle {
-    0% { transform: translateY(0); opacity: 0.5; }
-    50% { opacity: 0.8; }
-    100% { transform: translateY(-200px); opacity: 0.5; }
-}
-
-/* --- 2. Horizontal Scroll Setup --- */
-.horizontal-wrapper {
-    width: 300%; /* 3 Panels = 300% width */
-    height: 100vh;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.project-panel {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 0 10%; /* Breathing room */
-    box-sizing: border-box;
-}
-
-/* --- 3. The "Hand of Cards" Visuals --- */
-.card-hand-container {
-    position: relative;
-    width: 400px; /* Adjust based on your image size */
-    height: 500px;
-    perspective: 1000px;
-    z-index: 2;
-    margin-left: 50px; /* Overlap/spacing */
-}
-
-.card-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transform-origin: bottom center;
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* The "Back" cards (Decorative to create the stack effect) */
-.card-item.back-1 {
-    background-color: #1a1a40;
-    transform: rotate(-5deg) translate(-10px, 0);
-    z-index: 1;
-    opacity: 0.7;
-}
-.card-item.back-2 {
-    background-color: #2a2a55;
-    transform: rotate(5deg) translate(10px, 0);
-    z-index: 1;
-    opacity: 0.7;
-}
-/* The Main Card */
-.card-item.main {
-    z-index: 3;
-    transform: rotate(0deg);
-}
-
-/* Hover/Active Effect: Fan them out */
-.project-panel:hover .card-item.back-1 {
-    transform: rotate(-15deg) translate(-40px, -20px);
-}
-.project-panel:hover .card-item.back-2 {
-    transform: rotate(15deg) translate(40px, -20px);
-}
-.project-panel:hover .card-item.main {
-    transform: translateY(-30px) scale(1.05);
-    box-shadow: 0 0 30px rgba(0, 210, 255, 0.4); /* Neon Glow */
-}
-
-/* --- 4. Text Styling (Minimal & Professional) --- */
-.project-info {
-    flex: 1;
-    max-width: 600px;
-    z-index: 3;
-    text-align: left;
-    color: #fff;
-    padding-right: 50px;
-}
-
-.project-category {
-    font-family: 'Courier New', monospace; /* Tech feel */
-    color: #00d2ff;
-    font-size: 14px;
-    letter-spacing: 4px;
+/* PANEL BACKGROUND */
+.case-panel {
+    background: linear-gradient(135deg, #0c0022, #14003a);
+  }
+  
+  /* LEFT CONTENT */
+  .case-content {
+    max-width: 620px;
+  }
+  
+  .eyebrow {
     text-transform: uppercase;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.project-title {
-    font-family: 'Outfit', sans-serif; /* Use your main font */
-    font-size: 4rem;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    color: #6f6cff;
+    margin-bottom: 12px;
+  }
+  
+  .case-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 700;
-    margin-bottom: 30px;
     line-height: 1.1;
-    background: linear-gradient(to right, #ffffff, #aba8b2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.project-desc {
+    margin-bottom: 24px;
+  }
+  
+  .case-desc {
     font-size: 1.1rem;
-    color: #b0b0d0;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    border-left: 3px solid #00d2ff;
-    padding-left: 20px;
-}
-
-/* Replacing "Pills" with minimal text */
-.tech-stack {
-    font-size: 0.9rem;
-    color: #7d7da0;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-.tech-stack span {
-    color: #fff;
-    margin-right: 15px;
-}
-.tech-stack i {
-    color: #00d2ff; /* Separator icon color */
-    font-style: normal;
-    margin: 0 10px;
-    font-size: 12px;
-}
-
-/* Mobile Fix */
-@media (max-width: 992px) {
-    .project-panel { flex-direction: column; text-align: center; padding-top: 50px;}
-    .horizontal-wrapper { width: 100%; flex-wrap: wrap; height: auto; }
-    .project-info { padding: 0; margin-bottom: 50px; text-align: center; border: none;}
-    .project-desc { border-left: none; }
-    .card-hand-container { width: 300px; height: 400px; margin: 0;}
-}
+    opacity: 0.85;
+    margin-bottom: 32px;
+  }
+  
+  /* TECH PILLS */
+  .tool-pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    backdrop-filter: blur(6px);
+  }
+  
+  /* BUTTON */
+  .case-btn {
+    border-width: 2px;
+  }
+  
+ /* CAROUSEL Start here */
+ .product-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    height: 420px;
+  }
+  
+  /* SLIDE */
+  .product-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  
+  /* ACTIVE */
+  .product-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* IMAGE */
+  .product-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter:
+      drop-shadow(0 22px 35px rgba(0,0,0,0.35))
+      drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .product-carousel {
+      height: 280px;
+    }
+  }
+  

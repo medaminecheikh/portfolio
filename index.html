@@ -14,16 +14,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-        <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-    (function(){
-       emailjs.init({
-         publicKey: "0eqj-XpSmsEvWb0mr",
-       });
-    })();
- </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "0eqj-XpSmsEvWb0mr",
+            });
+        })();
+    </script>
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -34,6 +33,8 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/ai-button.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/portfolio-panel.css" type="text/css">
+
 </head>
 
 <body>
@@ -48,7 +49,8 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a class="text-white text-uppercase" style="font-family: Play, sans-serif; font-size: 18px;" href="./index.html">Welcome </a>
+                        <a class="text-white text-uppercase" style="font-family: Play, sans-serif; font-size: 18px;"
+                            href="./index.html">Welcome </a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -56,23 +58,30 @@
                         <nav class="header__nav__menu mobile-menu">
                             <ul class="revealtext">
                                 <li class="active "><a href="./index.html">Home</a></li>
-                                <li><a class="scroll-btn " href="#" data-desktop="677" data-mobile="657">Services</a></li>
-                                <li><a class="scroll-btn " href="#" data-desktop="1410" data-mobile="1883">Experience</a></li>
-                                <li><a class="scroll-btn " href="#" data-desktop="3379" data-mobile="4371">Portfolio</a></li>
-                                <li><a class="scroll-btn " href="#" data-desktop="6432" data-mobile="8096">Assistant</a></li>                                
-                                <li><a class="scroll-btn " href="#" data-desktop="7799" data-mobile="9650">Contact</a></li>
+                                <li><a class="scroll-btn " href="#" data-desktop="677" data-mobile="657">Services</a>
+                                </li>
+                                <li><a class="scroll-btn " href="#" data-desktop="1410"
+                                        data-mobile="1883">Experience</a></li>
+                                <li><a class="scroll-btn " href="#" data-desktop="3379" data-mobile="4371">Portfolio</a>
+                                </li>
+                                <li><a class="scroll-btn " href="#" data-desktop="6432" data-mobile="8096">Assistant</a>
+                                </li>
+                                <li><a class="scroll-btn " href="#" data-desktop="7799" data-mobile="9650">Contact</a>
+                                </li>
                             </ul>
                         </nav>
                         <div class="header__nav__social">
-                            <a href="https://www.linkedin.com/in/mohamed-amine-cheikh/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://github.com/medaminecheikh" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/mohamed-amine-cheikh/" target="_blank"><i
+                                    class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/medaminecheikh" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                             <!-- Email Copy Button -->
-<a href="#" id="copyEmail" class="copy-btn" data-email="medaminecheikhjob@gmail.com">
-    <i class="fa fa-envelope"></i>
-    <span class="tooltip">Copy email</span>
-  </a>
-  
-                            
+                            <a href="#" id="copyEmail" class="copy-btn" data-email="medaminecheikhjob@gmail.com">
+                                <i class="fa fa-envelope"></i>
+                                <span class="tooltip">Copy email</span>
+                            </a>
+
+
                         </div>
                     </div>
                 </div>
@@ -83,94 +92,96 @@
     <!-- Header End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero set-bg d-flex align-items-center" 
-    data-setbg="img/bgG1.png" 
-    style="height: 100vh; background-size: cover; background-position: center; position: relative;">
-    
-    <div class="overlay"></div> <!-- overlay for readability -->
-  
-    <div class="container h-100">
-      <div class="row h-100 justify-content-center align-items-center text-center">
-        <div class="col-lg-8">
-            <div class="hero-text">
-              <span class="text-white " style="font-size: 18px;">Hello, I'm Mohamed Amine Cheikh</span>
-              
-              <h1 class="text-white" style="margin-top:35px; margin-bottom:15px;">
-                
-                <span id="dynamicText">Full Stack Developer</span>
-            <span class="cursorblink"> </span>                 
-                
-              </h1>
-        
-              
-              
-              
-              <a href="cv/CV_CheikhMedAmine.pdf" class="primary-btn mt-5">Download CV</a>
-            </div>
-            <div class="chatbot-container">
-                <div class="main-trigger" onclick="activateAI()">
-                    <div class="energy-field"></div>
-                    
-                    <div class="trigger-orb">
-                        <div class="quantum-particles" id="particles"></div>
+    <section class="hero set-bg d-flex align-items-center" data-setbg="img/bgG1.png"
+        style="height: 100vh; background-size: cover; background-position: center; position: relative;">
+
+        <div class="overlay"></div> <!-- overlay for readability -->
+
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center text-center">
+                <div class="col-lg-8">
+                    <div class="hero-text">
+                        <span class="text-white " style="font-size: 18px;">Hello, I'm Mohamed Amine Cheikh</span>
+
+                        <h1 class="text-white" style="margin-top:35px; margin-bottom:15px;">
+
+                            <span id="dynamicText">Full Stack Developer</span>
+                            <span class="cursorblink"> </span>
+
+                        </h1>
+
+
+
+
+                        <a href="cv/CV_CheikhMedAmine.pdf" class="primary-btn mt-5">Download CV</a>
                     </div>
-                    
-                    <div class="neural-rings">
-                        <div class="ring"></div>
-                        <div class="ring"></div>
-                        <div class="ring"></div>
+                    <div class="chatbot-container">
+                        <div class="main-trigger" onclick="activateAI()">
+                            <div class="energy-field"></div>
+
+                            <div class="trigger-orb">
+                                <div class="quantum-particles" id="particles"></div>
+                            </div>
+
+                            <div class="neural-rings">
+                                <div class="ring"></div>
+                                <div class="ring"></div>
+                                <div class="ring"></div>
+                            </div>
+
+                            <!-- New Robot Head Icon with Antennas -->
+                            <svg class="ai-core" id="aiIcon" viewBox="0 0 24 24" fill="currentColor">
+                                <!-- Robot Head -->
+                                <rect x="6" y="8" width="12" height="10" rx="2" ry="2" fill="currentColor" />
+                                <!-- Eyes -->
+                                <circle cx="9" cy="11" r="1.5" fill="rgba(0,0,0,0.6)" />
+                                <circle cx="15" cy="11" r="1.5" fill="rgba(0,0,0,0.6)" />
+                                <!-- Eye pupils -->
+                                <circle cx="9" cy="11" r="0.5" fill="white" />
+                                <circle cx="15" cy="11" r="0.5" fill="white" />
+                                <!-- Mouth -->
+                                <rect x="10" y="14" width="4" height="1" rx="0.5" fill="rgba(0,0,0,0.6)" />
+                                <!-- Left Antenna -->
+                                <line x1="8" y1="8" x2="7" y2="4" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <circle cx="7" cy="4" r="1" fill="currentColor" />
+                                <!-- Right Antenna -->
+                                <line x1="16" y1="8" x2="17" y2="4" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <circle cx="17" cy="4" r="1" fill="currentColor" />
+                                <!-- Body connector -->
+                                <rect x="11" y="18" width="2" height="2" fill="currentColor" />
+                            </svg>
+
+                            <div class="thinking-dots" id="thinkingDots">
+                                <div class="thinking-dot"></div>
+                                <div class="thinking-dot"></div>
+                                <div class="thinking-dot"></div>
+                            </div>
+
+                            <div class="holographic-text">Let's Travel</div>
+                        </div>
                     </div>
-                    
-                    <!-- New Robot Head Icon with Antennas -->
-                    <svg class="ai-core" id="aiIcon" viewBox="0 0 24 24" fill="currentColor">
-                        <!-- Robot Head -->
-                        <rect x="6" y="8" width="12" height="10" rx="2" ry="2" fill="currentColor"/>
-                        <!-- Eyes -->
-                        <circle cx="9" cy="11" r="1.5" fill="rgba(0,0,0,0.6)"/>
-                        <circle cx="15" cy="11" r="1.5" fill="rgba(0,0,0,0.6)"/>
-                        <!-- Eye pupils -->
-                        <circle cx="9" cy="11" r="0.5" fill="white"/>
-                        <circle cx="15" cy="11" r="0.5" fill="white"/>
-                        <!-- Mouth -->
-                        <rect x="10" y="14" width="4" height="1" rx="0.5" fill="rgba(0,0,0,0.6)"/>
-                        <!-- Left Antenna -->
-                        <line x1="8" y1="8" x2="7" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        <circle cx="7" cy="4" r="1" fill="currentColor"/>
-                        <!-- Right Antenna -->
-                        <line x1="16" y1="8" x2="17" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        <circle cx="17" cy="4" r="1" fill="currentColor"/>
-                        <!-- Body connector -->
-                        <rect x="11" y="18" width="2" height="2" fill="currentColor"/>
-                    </svg>
-                    
-                    <div class="thinking-dots" id="thinkingDots">
-                        <div class="thinking-dot"></div>
-                        <div class="thinking-dot"></div>
-                        <div class="thinking-dot"></div>
-                    </div>
-                    
-                    <div class="holographic-text">Let's Travel</div>
                 </div>
+            </div>
         </div>
-          </div>
-      </div>
-    </div>
-  </section>
-  <!-- Hero Section End -->
-  
+    </section>
+    <!-- Hero Section End -->
+
     <!-- Hero Section End -->
 
     <!-- Services Section Begin -->
-    <section class="services spad" >
-        <div class="container"  id="services">
-            <div class="row" >
+    <section class="services spad">
+        <div class="container" id="services">
+            <div class="row">
                 <div class="col-lg-4">
                     <div class="services__title">
-                        <div class="section-title animated-text" >
+                        <div class="section-title animated-text">
                             <span>My services</span>
                             <h2 class="rotating-word">What I do?</h2>
                         </div>
-                        <p class="">I collaborate with teams or work independently, on-site or remotely, to build new applications, 
+                        <p class="">I collaborate with teams or work independently, on-site or remotely, to build new
+                            applications,
                             maintain and update existing ones.</p>
                         <a href="#" data-desktop="7093" data-mobile="8855" class="primary-btn scroll-btn">My Skills</a>
                     </div>
@@ -180,48 +191,48 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="services__item">
                                 <div class="services__item__icon">
-                                    <img  src="img/icons/icons8-pencil-and-ruler-48.png" alt="">
+                                    <img src="img/icons/icons8-pencil-and-ruler-48.png" alt="">
                                 </div>
                                 <h4>Solution Architect</h4>
-                                <p>Whether you need a scalable application from scratch, or want to enhance your 
-                                    existing system, I design API communication and database 
+                                <p>Whether you need a scalable application from scratch, or want to enhance your
+                                    existing system, I design API communication and database
                                     structures with clear documentation.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="services__item">
                                 <div class="services__item__icon">
-                                    <img  src="img/icons/icons8-google-code-64.png" alt="">
-                                   
+                                    <img src="img/icons/icons8-google-code-64.png" alt="">
+
                                 </div>
                                 <h4>Developer</h4>
-                                <p>I work on both backend and frontend development, building web 
-                                    applications with real-time features and the latest technologies to deliver 
+                                <p>I work on both backend and frontend development, building web
+                                    applications with real-time features and the latest technologies to deliver
                                     fast and reliable solutions.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="services__item">
                                 <div class="services__item__icon">
-                                    
-                                        <img  src="img/icons/icons8-security-shield-64.png" alt="">
-                                    
+
+                                    <img src="img/icons/icons8-security-shield-64.png" alt="">
+
                                 </div>
                                 <h4>Application Security</h4>
-                                <p>I implement strong security practices across applications, from backend 
-                                    services to frontend interfaces, protecting data with authentication, 
+                                <p>I implement strong security practices across applications, from backend
+                                    services to frontend interfaces, protecting data with authentication,
                                     encryption, and secure coding standards.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="services__item">
                                 <div class="services__item__icon">
-                                    <img  src="img/icons/icons8-ai-chatting-50.png" alt="">
+                                    <img src="img/icons/icons8-ai-chatting-50.png" alt="">
                                 </div>
                                 <h4>AI integration</h4>
                                 <p>
-                                    I integrate AI features into applications, from intelligent chatbots to data 
-                                    analysis and automation, using modern machine learning tools to create smarter 
+                                    I integrate AI features into applications, from intelligent chatbots to data
+                                    analysis and automation, using modern machine learning tools to create smarter
                                     and more adaptive solutions.
                                 </p>
                             </div>
@@ -233,260 +244,369 @@
     </section>
     <!-- Services Section End -->
 
-<!-- Experience Begin -->
-<div class="breadcrumb-option spad set-bg" style="max-height: 300px;" data-setbg="img/breadcrumb-bg.jpg" id="exp">
-    <div class="container">
-        <div class="row" style="margin-top: -90px;" >
-            <div class="col-lg-12 d-flex justify-content-center">
-                <div class="section-title team__title">
-                    <span>My Journey</span>
-                    <h2>Professional Experience</h2>
+    <!-- Experience Begin -->
+    <div class="breadcrumb-option spad set-bg" style="max-height: 300px;" data-setbg="img/breadcrumb-bg.jpg" id="exp">
+        <div class="container">
+            <div class="row" style="margin-top: -90px;">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <div class="section-title team__title">
+                        <span>My Journey</span>
+                        <h2>Professional Experience</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Breadcrumb End -->
+    <!-- Breadcrumb End -->
 
- <!-- About Section Begin -->
- <section class="about spad">
-    <div class="container">
-        <div class="row">
-           
-            <div class="col-lg-11 ">
-                <div class="about__text ">
-                    <div class="section-title">
-                        <h2 class="">Full Stack Developer & AI Engineer</h2>
-                        <div class="d-flex justify-content-between " style=" margin-top: 21px;">
-                            <span>Groupe RIF. </span> <span >february - git add . 2025</span>
+    <!-- About Section Begin -->
+    <section class="about spad">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-11 ">
+                    <div class="about__text ">
+                        <div class="section-title">
+                            <h2 class="">Full Stack Developer & AI Engineer</h2>
+                            <div class="d-flex justify-content-between " style=" margin-top: 21px;">
+                                <span>Groupe RIF. </span> <span>february - git add . 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="bounce-text-container" style="margin-top: -30px;" data-effect="rotate-bounce">
+                            <p style=" color: rgba(255, 255, 255, 0.75); line-height: 2;">
+                                I work as a <span class="bounce-word" data-delay="0">Full-Stack Developer</span>,
+                                where I led the development of a complete <span class="bounce-word" data-delay="0.2">HR
+                                    application</span> in a fully remote environment.
+                                My role involved designing user-friendly web app interfaces with <span
+                                    class="bounce-word" data-delay="0.4">Figma</span>,
+                                integrating <span class="bounce-word" data-delay="0.6">AI features</span> such as
+                                chatbot assistance and content recommendation,
+                                and architecting scalable solutions tailored to client needs.
+                            </p>
+
+                            <p style=" color: rgba(255, 255, 255, 0.75); ">
+                                I analyzed <span class="bounce-word" data-delay="0.8">large datasets</span> to extract
+                                meaningful insights and visualized the results on
+                                <span class="bounce-word" data-delay="1.0">interactive dashboards</span>.
+                            </p>
+                        </div>
+
+                        <div class=" align-items-baseline  align-items-center d-flex">
+                            <span class="text-white  btn-sm"
+                                style="font-size: 14px; letter-spacing: 1px; text-transform: uppercase; ">Technologies
+                                :</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> Spring
+                                Boot</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px;text-transform: uppercase; "> Java</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> ReactJS</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> AI</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> Big Data</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> UI / UX</span>
                         </div>
                     </div>
-                   
-                    <div class="bounce-text-container" style="margin-top: -30px;" data-effect="rotate-bounce">
-                        <p style=" color: rgba(255, 255, 255, 0.75); line-height: 2;">
-                          I work as a <span class="bounce-word" data-delay="0">Full-Stack Developer</span>,
-                          where I led the development of a complete <span class="bounce-word" data-delay="0.2">HR application</span> in a fully remote environment.
-                          My role involved designing user-friendly web app interfaces with <span class="bounce-word" data-delay="0.4">Figma</span>,
-                          integrating <span class="bounce-word" data-delay="0.6">AI features</span> such as chatbot assistance and content recommendation,
-                          and architecting scalable solutions tailored to client needs.
-                        </p>
-                      
-                        <p style=" color: rgba(255, 255, 255, 0.75); ">
-                          I analyzed <span class="bounce-word" data-delay="0.8">large datasets</span> to extract meaningful insights and visualized the results on
-                          <span class="bounce-word" data-delay="1.0">interactive dashboards</span>.
-                        </p>
-                      </div>
-                   
-                    <div class=" align-items-baseline  align-items-center d-flex" >
-                        <span class="text-white  btn-sm" style="font-size: 14px; letter-spacing: 1px; text-transform: uppercase; ">Technologies :</span>
-                        <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> Spring Boot</span>
-                         <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px;text-transform: uppercase; "> Java</span>
-                         <span class="text-white btn-sm" style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> ReactJS</span>
-                         <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> AI</span>
-                         <span class="text-white btn-sm" style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> Big Data</span>
-                         <span class="text-white btn-sm" style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> UI / UX</span>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 100px;">
+
+                <div class="col-lg-11 ">
+                    <div class="about__text">
+                        <div class="section-title">
+                            <h2 class="">Full Stack Developer</h2>
+                            <div class="d-flex justify-content-between " style=" margin-top: 21px;">
+                                <span>ESPRIT. </span> <span>february - November 2024</span>
+                            </div>
                         </div>
+                        <div class="bounce-text-container" style="margin-top: -30px;" data-effect="rotate-bounce">
+                            <p style="color: rgba(255, 255, 255, 0.75); line-height: 2; ">
+                                I worked as a <span class="bounce-word" data-delay="0">Full-Stack Developer</span>,
+                                where I created a <span class="bounce-word" data-delay="0.2">complaint management
+                                    application</span>
+                                for the university to help students easily submit and track their complaints.
+                                The platform simplified processes by offering clear spaces for students and staff,
+                                along with features like account management, complaint tracking, detailed logs,
+                                and <span class="bounce-word" data-delay="0.4">dashboards</span>
+                                with integrating <span class="bounce-word" data-delay="0.6">external APIs</span>
+                                and <span class="bounce-word" data-delay="0.8">Jira cloud services</span>.
+                            </p>
+
+                            <p style="color: rgba(255, 255, 255, 0.75); line-height: 2;">
+                                I also contributed to <span class="bounce-word" data-delay="1.0">redesigning</span>
+                                and modernizing the application’s architecture,
+                                making it more <span class="bounce-word" data-delay="1.2">scalable</span>,
+                                <span class="bounce-word" data-delay="1.4">resilient to failure</span>,
+                                and <span class="bounce-word" data-delay="1.6">optimized</span> for performance.
+                            </p>
+                        </div>
+
+                        <div class=" align-items-baseline  align-items-center d-flex">
+                            <span class="text-white  btn-sm"
+                                style="font-size: 14px; letter-spacing: 1px; text-transform: uppercase; ">Technologies
+                                :</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> Spring
+                                Boot</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> ReactJS</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> Spring Security
+                            </span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> SQL</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> Jira
+                                Cloud</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">Kafka </span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">Microservice
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 100px;">
+
+                <div class="col-lg-11 ">
+                    <div class="about__text">
+                        <div class="section-title">
+                            <h2 class="">Full Stack Developer</h2>
+                            <div class="d-flex justify-content-between " style=" margin-top: 21px;">
+                                <span>Tunisie Telecom. </span> <span>february - November 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="bounce-text-container" style="margin-top: -30px;">
+                            <p style="color: rgba(255, 255, 255, 0.75); line-height: 2;">
+                                I successfully <span class="bounce-word" data-delay="0">designed</span> and <span
+                                    class="bounce-word" data-delay="0">developed</span> a web application for customer
+                                invoice and payment management.
+                                By implementing a scalable <span class="bounce-word"
+                                    data-delay="0.2">microservices</span> architecture,
+                                I delivered a platform for handling invoices, payments, user accounts, and
+                                notifications.
+                            </p>
+                            <p style=" color: rgba(255, 255, 255, 0.75); line-height: 2;">
+                                I enhanced security by integrating
+                                <span class="bounce-word" data-delay="0.4">Spring Security</span> with
+                                <span class="bounce-word" data-delay="0.6">JWT</span>, ensuring reliable authentication
+                                and authorization.
+                                To support <span class="bounce-word" data-delay="0.8">scalability</span> and
+                                consistency,
+                                I orchestrated the microservices with
+                                <span class="bounce-word" data-delay="1.0">Docker</span>, achieving smooth and efficient
+                                deployments across environments.
+                            </p>
+                        </div>
+
+
+                        <div class=" align-items-baseline  align-items-center d-flex">
+                            <span class="text-white  btn-sm"
+                                style="font-size: 14px; letter-spacing: 1px; text-transform: uppercase; ">Technologies
+                                :</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> Spring
+                                Boot</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px;text-transform: uppercase; "> Angular</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> SQL</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">
+                                Microservice</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> Spring
+                                Security</span>
+                            <span class="text-white btn-sm"
+                                style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> DevOps</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="row" style="margin-top: 100px;">
-           
-            <div class="col-lg-11 ">
-                <div class="about__text">
-                    <div class="section-title">
-                        <h2 class="">Full Stack Developer</h2>
-                        <div class="d-flex justify-content-between " style=" margin-top: 21px;">
-                            <span>ESPRIT. </span> <span >february - November 2024</span>
-                        </div>
+
+    </section>
+    <div class="breadcrumb-option spad set-bg" style="max-height: 300px;" data-setbg="img/breadcrumb-bg.jpg">
+        <div class="container">
+            <div class="row" style="margin-top: -90px;" id="portfolio">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <div class="section-title team__title">
+                        <span>My Gallery</span>
+                        <h2>Professional Portfolio</h2>
                     </div>
-                    <div class="bounce-text-container" style="margin-top: -30px;" data-effect="rotate-bounce">
-                        <p style="color: rgba(255, 255, 255, 0.75); line-height: 2; ">
-                          I worked as a <span class="bounce-word" data-delay="0">Full-Stack Developer</span>, 
-                          where I created a <span class="bounce-word" data-delay="0.2">complaint management application</span> 
-                          for the university to help students easily submit and track their complaints. 
-                          The platform simplified processes by offering clear spaces for students and staff, 
-                          along with features like account management, complaint tracking, detailed logs, 
-                          and <span class="bounce-word" data-delay="0.4">dashboards</span> 
-                          with integrating <span class="bounce-word" data-delay="0.6">external APIs</span> 
-                          and <span class="bounce-word" data-delay="0.8">Jira cloud services</span>.
-                        </p>
-                      
-                        <p style="color: rgba(255, 255, 255, 0.75); line-height: 2;">
-                          I also contributed to <span class="bounce-word" data-delay="1.0">redesigning</span> 
-                          and modernizing the application’s architecture, 
-                          making it more <span class="bounce-word" data-delay="1.2">scalable</span>, 
-                          <span class="bounce-word" data-delay="1.4">resilient to failure</span>, 
-                          and <span class="bounce-word" data-delay="1.6">optimized</span> for performance.
-                        </p>
-                      </div>
-                      
-                    <div class=" align-items-baseline  align-items-center d-flex" >
-                        <span class="text-white  btn-sm" style="font-size: 14px; letter-spacing: 1px; text-transform: uppercase; ">Technologies :</span>
-                        <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> Spring Boot</span>
-                         <span class="text-white btn-sm" style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> ReactJS</span>
-                         <span class="text-white btn-sm" style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> Spring Security </span>
-                         <span class="text-white btn-sm" style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> SQL</span>
-                         <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> Jira Cloud</span>
-                         <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">Kafka </span>
-                         <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">Microservice </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 100px;">
-           
-            <div class="col-lg-11 ">
-                <div class="about__text">
-                    <div class="section-title">
-                        <h2 class="">Full Stack Developer</h2>
-                        <div class="d-flex justify-content-between " style=" margin-top: 21px;">
-                            <span>Tunisie Telecom. </span> <span >february - November 2024</span>
-                        </div>
-                    </div>
-                   
-                    <div class="bounce-text-container" style="margin-top: -30px;">
-                        <p style="color: rgba(255, 255, 255, 0.75); line-height: 2;">
-                          I successfully <span class="bounce-word" data-delay="0">designed</span> and <span class="bounce-word" data-delay="0">developed</span> a web application for customer invoice and payment management. 
-                          By implementing a scalable <span class="bounce-word" data-delay="0.2">microservices</span> architecture, 
-                          I delivered a platform for handling invoices, payments, user accounts, and notifications. 
-                        </p> 
-                        <p style=" color: rgba(255, 255, 255, 0.75); line-height: 2;">
-                          I enhanced security by integrating 
-                          <span class="bounce-word" data-delay="0.4">Spring Security</span> with 
-                          <span class="bounce-word" data-delay="0.6">JWT</span>, ensuring reliable authentication and authorization. 
-                          To support <span class="bounce-word" data-delay="0.8">scalability</span> and consistency, 
-                          I orchestrated the microservices with 
-                          <span class="bounce-word" data-delay="1.0">Docker</span>, achieving smooth and efficient deployments across environments.
-                        </p>
-                      </div>
-                      
-                      
-                    <div class=" align-items-baseline  align-items-center d-flex" >
-                        <span class="text-white  btn-sm" style="font-size: 14px; letter-spacing: 1px; text-transform: uppercase; ">Technologies :</span>
-                        <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> Spring Boot</span>
-                         <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px;text-transform: uppercase; "> Angular</span>
-                         <span class="text-white btn-sm" style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> SQL</span>
-                         <span class="text-white btn-sm" style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;"> Microservice</span>
-                         <span class="text-white btn-sm" style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> Spring Security</span>
-                         <span class="text-white btn-sm" style="font-size: 12px;letter-spacing: 1px; text-transform: uppercase;"> DevOps</span>
-                        </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="portfolio-wrapper" style="overflow: hidden;">
 
+        <div class="horizontal-container d-flex">
 
-</section>   
-<div class="breadcrumb-option spad set-bg" style="max-height: 300px;" data-setbg="img/breadcrumb-bg.jpg">
-    <div class="container">
-        <div class="row" style="margin-top: -90px;" id="portfolio">
-            <div class="col-lg-12 d-flex justify-content-center">
-                <div class="section-title team__title">
-                    <span>My Gallery</span>
-                    <h2>Professional Portfolio</h2>
+            <section class="panel d-flex align-items-center case-panel">
+                <div class="container-fluid h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- LEFT CONTENT -->
+                        <div class="col-md-6 d-flex flex-column justify-content-center p-5 text-white case-content">
+                            <span class="eyebrow">Financial
+                                Tech</span>
+
+                            <h2 class="case-title">
+                                Billing & Invoice
+                            </h2>
+
+                            <p class="case-desc">
+                                A comprehensive solution for managing complex financial transactions, automated
+                                invoicing, and  payment tracking.
+                            </p>
+
+                            <div class="tools mb-4">
+                                <span class="tool-pill">React</span>
+                                <span class="tool-pill">Node.js</span>
+                                <span class="tool-pill">MongoDB</span>
+                            </div>
+
+                            <a href="#" class="btn btn-outline-light rounded-pill px-4 case-btn">
+                                View Case Study →
+                            </a>
+                        </div>
+
+                        <!-- RIGHT VISUAL -->
+                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                            <div class="product-carousel">
+                              <div class="product-slide active">
+                                <img src="img/tt/dashadmin.png" alt="">
+                              </div>
+                              <div class="product-slide">
+                                <img src="img/tt/creeFacture.png" alt="">
+                              </div>
+                              <div class="product-slide">
+                                <img src="img/tt/fairePaiement.png" alt="">
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <section class="panel d-flex align-items-center case-panel">
+                <div class="container-fluid h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- LEFT CONTENT -->
+                        <div class="col-md-6 d-flex flex-column justify-content-center p-5 text-white case-content">
+                            <span class="eyebrow">Customer Service</span>
+
+                            <h2 class="case-title">
+                                Complaint Management
+                            </h2>
+
+                            <p class="case-desc">
+                                Intelligent ticketing system that centralizes customer feedback
+                                and reduced resolution time by <strong>40%</strong>.
+                            </p>
+
+                            <div class="tools mb-4">
+                                <span class="tool-pill">React</span>
+                                <span class="tool-pill">Node.js</span>
+                                <span class="tool-pill">MongoDB</span>
+                            </div>
+
+                            <a href="#" class="btn btn-outline-light rounded-pill px-4 case-btn">
+                                View Case Study →
+                            </a>
+                        </div>
+
+                        <!-- RIGHT VISUAL -->
+                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                            <div class="product-carousel">
+                              <div class="product-slide active">
+                                <img src="img/EspritRec/Dash.png" alt="">
+                              </div>
+                              <div class="product-slide">
+                                <img src="img/EspritRec/recl.png" alt="">
+                              </div>
+                              <div class="product-slide">
+                                <img src="img/EspritRec/detail.png" alt="">
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel d-flex align-items-center case-panel">
+                <div class="container-fluid h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- LEFT CONTENT -->
+                        <div class="col-md-6 d-flex flex-column justify-content-center p-5 text-white case-content">
+                            <span class="eyebrow">Customer Service</span>
+
+                            <h2 class="case-title">
+                                Complaint Management
+                            </h2>
+
+                            <p class="case-desc">
+                                Intelligent ticketing system that centralizes customer feedback
+                                and reduced resolution time by <strong>40%</strong>.
+                            </p>
+
+                            <div class="tools mb-4">
+                                <span class="tool-pill">React</span>
+                                <span class="tool-pill">Node.js</span>
+                                <span class="tool-pill">MongoDB</span>
+                            </div>
+
+                            <a href="#" class="btn btn-outline-light rounded-pill px-4 case-btn">
+                                View Case Study →
+                            </a>
+                        </div>
+
+                        <!-- RIGHT VISUAL -->
+                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                            <div class="product-carousel">
+                              <div class="product-slide active">
+                                <img src="img/EspritRec/Dash.png" alt="">
+                              </div>
+                              <div class="product-slide">
+                                <img src="img/EspritRec/recl.png" alt="">
+                              </div>
+                              <div class="product-slide">
+                                <img src="img/EspritRec/detail.png" alt="">
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div>
-</div>
-<div class="portfolio-wrapper" style="overflow: hidden;">
-    
-    <div class="horizontal-container d-flex">
-
-        <section class="panel d-flex align-items-center">
-            <div class="container-fluid h-100">
-                <div class="row h-100">
-                    <div class="col-md-6 d-flex flex-column justify-content-center p-5 text-white bg-dark">
-                        <span class="text-uppercase text-primary mb-2" style="letter-spacing: 2px;">Financial Tech</span>
-                        <h2 class="display-4 font-weight-bold mb-4">Billing & Invoice App</h2>
-                        <p class="lead mb-4" style="opacity: 0.8;">
-                            A comprehensive solution for managing complex financial transactions, automated invoicing, and real-time payment tracking.
-                        </p>
-                        
-                        <div class="tools mb-5">
-                            <span class="badge badge-pill badge-light p-2 px-3 mr-2">Angular</span>
-                            <span class="badge badge-pill badge-light p-2 px-3 mr-2">Spring Boot</span>
-                            <span class="badge badge-pill badge-light p-2 px-3 mr-2">MySQL</span>
+    <!-- About Section End -->
+    <section class="latest spad" style="margin-bottom: -120px; margin-top: -30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title center-title">
+                        <span>Explore</span>
+                        <h2>My Achievements</h2>
+                    </div>
+                </div>
             </div>
-
-                        <a href="#" class="btn btn-outline-light rounded-pill px-4" style="width: fit-content;">View Case Study</a>
         </div>
-
-                    <div class="col-md-6 p-0 h-100">
-                        <div class="project-img h-100" style="background: url('img/tt/creeFacture.png') center/cover no-repeat;"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="panel d-flex align-items-center">
-            <div class="container-fluid h-100">
-                <div class="row h-100">
-                    <div class="col-md-6 d-flex flex-column justify-content-center p-5 bg-white text-dark">
-                        <span class="text-uppercase text-primary mb-2" style="letter-spacing: 2px;">Customer Service</span>
-                        <h2 class="display-4 font-weight-bold mb-4">Complaint Management</h2>
-                        <p class="lead mb-4" style="opacity: 0.8;">
-                            Streamlining customer feedback with an intelligent ticketing system that reduces resolution time by 40%.
-                        </p>
-                        
-                        <div class="tools mb-5">
-                            <span class="badge badge-pill badge-dark p-2 px-3 mr-2">React</span>
-                            <span class="badge badge-pill badge-dark p-2 px-3 mr-2">Node.js</span>
-                            <span class="badge badge-pill badge-dark p-2 px-3 mr-2">MongoDB</span>
-                    </div>
-
-                        <a href="#" class="btn btn-outline-dark rounded-pill px-4" style="width: fit-content;">View Case Study</a>
-                    </div>
-
-                    <div class="col-md-6 p-0 h-100">
-                        <div class="project-img h-100" style="background: url('img/EspritRec/recl.png') center/cover no-repeat;"></div>
-                </div>
-            </div>
-                    </div>
-        </section>
-
-        <section class="panel d-flex align-items-center">
-            <div class="container-fluid h-100">
-                <div class="row h-100">
-                    <div class="col-md-6 d-flex flex-column justify-content-center p-5 text-white" style="background-color: #1a1a2e;">
-                        <span class="text-uppercase text-primary mb-2" style="letter-spacing: 2px;">Analytics</span>
-                        <h2 class="display-4 font-weight-bold mb-4">Admin Dashboard</h2>
-                        <p class="lead mb-4" style="opacity: 0.8;">
-                            Visualizing critical data points for administrators to oversee system health and user engagement in real-time.
-                        </p>
-                        
-                        <div class="tools mb-5">
-                            <span class="badge badge-pill badge-primary p-2 px-3 mr-2">Vue.js</span>
-                            <span class="badge badge-pill badge-primary p-2 px-3 mr-2">Firebase</span>
-                            <span class="badge badge-pill badge-primary p-2 px-3 mr-2">ChartJS</span>
-                    </div>
-
-                        <a href="#" class="btn btn-primary rounded-pill px-4" style="width: fit-content;">View Case Study</a>
-                    </div>
-
-                    <div class="col-md-6 p-0 h-100">
-                        <div class="project-img h-100" style="background: url('img/EspritRec/Dash.png') center/cover no-repeat;"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-                    </div>
-                </div>
-<!-- About Section End -->
-<section class="latest spad" style="margin-bottom: -120px; margin-top: -30px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title center-title">
-                    <span>Explore</span>
-                    <h2>My Achievements</h2>
-                </div>
-            </div>
-        </div> 
-   </div>
-</section>
+    </section>
     <!-- Counter Section Begin -->
     <section class="counter">
         <div class="container">
@@ -505,7 +625,7 @@
                         <div class="counter__item second__item">
                             <div class="counter__item__text">
                                 <img src="img/icons/ci-2.png" alt="">
-                                <h2 >A+</h2>
+                                <h2>A+</h2>
                                 <p>SonarQube Rating</p>
                             </div>
                         </div>
@@ -516,9 +636,10 @@
                                 <img src="img/icons/ci-3.png" alt="">
                                 <div style="display: flex; align-items: center;">
                                     <h2 style="margin: 0; max-width: 40px;">+</h2>
-                                    <h3 class="counter_num text-white" style="margin: 0; font-weight: 600; font-size: 48px;">13000</h3>
-                                  </div>
-                                  
+                                    <h3 class="counter_num text-white"
+                                        style="margin: 0; font-weight: 600; font-size: 48px;">13000</h3>
+                                </div>
+
                                 <p>Bug Free Code</p>
                             </div>
                         </div>
@@ -540,9 +661,9 @@
 
     <!-- Team Section Begin -->
     <section class="team spad set-bg" id="ai" data-setbg="img/team-bg.jpg">
-        <div class="container" >
+        <div class="container">
             <div class="row">
-                <div class="col-lg-12" >
+                <div class="col-lg-12">
                     <div class="section-title team__title">
                         <span>Meet my AI</span>
                         <h2> assistant</h2>
@@ -551,13 +672,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-10 col-md-8 justify-content-center d-flex align-items-md-start p-0  ">
-                    <div id="chat-container-unique"  >
-                        <div class="chat-messages" id="chatMessages" >
+                    <div id="chat-container-unique">
+                        <div class="chat-messages" id="chatMessages">
                             <div class="message bot">
                                 👋 Welcome! I’m Mohamed Amine’s assistant, happy to help you today.
                                 <span class="message-timestamp">10:00 AM</span>
                             </div>
-                            
+
                         </div>
                         <div class="input-area-container" id="inputContainer">
                             <div class="input-box">
@@ -566,10 +687,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-12 p-0">
                     <div class="team__btn">
-                        <a class="scroll-btn primary-btn" href="" data-desktop="7573"  data-mobile="9302">Let's get in touch</a>
+                        <a class="scroll-btn primary-btn" href="" data-desktop="7573" data-mobile="9302">Let's get in
+                            touch</a>
                     </div>
                 </div>
             </div>
@@ -595,7 +717,7 @@
                             <h4>Back-End</h4>
                             <ul>
                                 <li>+ 1 Year</li>
-                            
+
                             </ul>
                             <div class="tech-tags mt-4">
                                 <div class="tech-tag"><span class="tech-tag__label">Spring Boot</span></div>
@@ -605,8 +727,8 @@
                                 <div class="tech-tag"><span class="tech-tag__label">Microservice</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">Kafka</span></div>
 
-                              </div>
-                              
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -614,17 +736,17 @@
                             <h4>Front-End</h4>
                             <ul>
                                 <li>+ 1 Year</li>
-                            
+
                             </ul>
-                          
-                              <div class="tech-tags mt-4">
+
+                            <div class="tech-tags mt-4">
                                 <div class="tech-tag"><span class="tech-tag__label">HTML</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">CSS</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">React</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">JavaScript</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">Angular</span></div>
-                              </div>
-                             
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -632,7 +754,7 @@
                             <h4>Databases</h4>
                             <ul>
                                 <li>+ 1 Year</li>
-                            
+
                             </ul>
                             <div class="tech-tags mt-4">
                                 <div class="tech-tag"><span class="tech-tag__label">SQL</span></div>
@@ -640,9 +762,9 @@
                                 <div class="tech-tag"><span class="tech-tag__label">PostgreSQL</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">MongoDb</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">SQLserver</span></div>
-                              </div>
-                              
-                           
+                            </div>
+
+
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -650,7 +772,7 @@
                             <h4>DevOps</h4>
                             <ul>
                                 <li>+ 1 Year</li>
-                            
+
                             </ul>
                             <div class="tech-tags mt-4">
                                 <div class="tech-tag"><span class="tech-tag__label">Docker</span></div>
@@ -659,8 +781,8 @@
                                 <div class="tech-tag"><span class="tech-tag__label">Unit Test</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">SonarQube</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">Security</span></div>
-                              </div>
-                              
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -668,7 +790,7 @@
                             <h4>Artificial intelligence</h4>
                             <ul>
                                 <li>+ 1 Year</li>
-                            
+
                             </ul>
                             <div class="tech-tags mt-4">
                                 <div class="tech-tag"><span class="tech-tag__label">Machine Learning</span></div>
@@ -676,135 +798,124 @@
                                 <div class="tech-tag"><span class="tech-tag__label">LLM</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">Feature Engineering</span></div>
                                 <div class="tech-tag"><span class="tech-tag__label">Data Analysis</span></div>
-                        
-                              </div>
-                              
+
+                            </div>
+
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </section>
     <!-- Latest Blog Section End -->
 
-<!-- Contact Section Begin -->
-<section class="team spad set-bg" data-setbg="img/contactbg.png">
-    <div class="container">
-        <div class="row" id="contact">
-            <div class="col-lg-12">
-                <div class="section-title team__title">
-                    <span>Send Me</span>
-                    <h2> Your Ideas</h2>
+    <!-- Contact Section Begin -->
+    <section class="team spad set-bg" data-setbg="img/contactbg.png">
+        <div class="container">
+            <div class="row" id="contact">
+                <div class="col-lg-12">
+                    <div class="section-title team__title">
+                        <span>Send Me</span>
+                        <h2> Your Ideas</h2>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row" style="margin-top: -50px;">
-            <div class="container ">
-                <div class="row justify-content-center">
-                  <!-- Contact Section Title -->
-                  <div class="col-12 text-center mb-4 ">
-                    <h2 class="text-white text-uppercase " style="font-size: 50px; font-weight: 700; font-family: play;
+            <div class="row" style="margin-top: -50px;">
+                <div class="container ">
+                    <div class="row justify-content-center">
+                        <!-- Contact Section Title -->
+                        <div class="col-12 text-center mb-4 ">
+                            <h2 class="text-white text-uppercase " style="font-size: 50px; font-weight: 700; font-family: play;
                     margin-bottom: 30px; margin-top: -30px;"></h2>
-                    
-                  </div>
-              
-                  <!-- Contact Form (Left) -->
-                  <div class="col-lg-6 col-md-12 mb-4 ml-3">
-                    <form id="contact-form" class="p-4 bg-transparent border border-dark shadow-lg">
-                      
-                      <!-- Subject -->
-                      <div class="form-group mb-3">
-                        <label for="subject" style="font-family: play;" class="text-white">Subject</label>
-                        <input 
-                          type="text" 
-                          class="form-control" 
-                          id="subject" 
-                          name="subject"              
-                          placeholder="Subject" 
-                          required
-                        >
-                      </div>
-                  
-                      <!-- Email -->
-                      <div class="form-group mb-3">
-                        <label for="email" style="font-family: play;" class="text-white">Email</label>
-                        <input 
-                          type="email" 
-                          class="form-control" 
-                          id="email" 
-                          name="email"            
-                          placeholder="Enter your email" 
-                          required
-                        >
-                      </div>
-                  
-                      <!-- Message -->
-                      <div class="form-group mb-3">
-                        <label for="message" style="font-family: play;" class="text-white">Message</label>
-                        <textarea 
-                          class="form-control" 
-                          id="message" 
-                          name="message"             
-                          rows="4" 
-                          placeholder="Your message"
-                          required
-                        ></textarea>
-                      </div>
-                  
-                      <!-- Status text -->
-                      <div id="status" class="mt-2 text-white"></div>
-                  
-                      <!-- Submit button -->
-                      <div class="d-flex justify-content-end" style="margin-top: 30px;">
-                        <button type="submit" id="send-btn" class="btn text-white primary-btn w-35">
-                          Send Message <i class="fa fa-paper-plane pl-3"></i>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                  
-              
-                  <!-- Contact Info (Right) -->
-                  <div class="col-lg-4  m-auto col-md-10">
-                    <div class="p-4 bg-dark rounded shadow text-white " >
-                      <h4 class="py-3 mb-3">Contact Info</h4>
-                      <p style="font-family: play; width: 350px;"><i class="fa fa-envelope pr-2"></i><strong>Email:</strong> medaminecheikhjob@gmail.com
-                      </p>
-                      <p style="font-family: play;"><i class="fa fa-phone pr-2"></i><strong>Phone:</strong> +216 93 566 035</p>
-                      <p style="font-family: play;"><i class="fa fa-location-dot pr-2"></i><strong>Address:</strong> Tunis, Tunisia</p>
-                      
-                      <div class="mt-5">
-                        <div class="d-flex border-top border" style="margin-bottom: 15px;"></div>
-                        <div class="footer__top__social px-3 ">
-                            <a href="https://www.linkedin.com/in/mohamed-amine-cheikh/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                            <a ><i class="fa fa-envelope "></i></a>
-                            <a href="https://github.com/medaminecheikh" target="_blank"><i class="fa-brands fa-github"></i></a>
+
                         </div>
-                      </div>
+
+                        <!-- Contact Form (Left) -->
+                        <div class="col-lg-6 col-md-12 mb-4 ml-3">
+                            <form id="contact-form" class="p-4 bg-transparent border border-dark shadow-lg">
+
+                                <!-- Subject -->
+                                <div class="form-group mb-3">
+                                    <label for="subject" style="font-family: play;" class="text-white">Subject</label>
+                                    <input type="text" class="form-control" id="subject" name="subject"
+                                        placeholder="Subject" required>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="form-group mb-3">
+                                    <label for="email" style="font-family: play;" class="text-white">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Enter your email" required>
+                                </div>
+
+                                <!-- Message -->
+                                <div class="form-group mb-3">
+                                    <label for="message" style="font-family: play;" class="text-white">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4"
+                                        placeholder="Your message" required></textarea>
+                                </div>
+
+                                <!-- Status text -->
+                                <div id="status" class="mt-2 text-white"></div>
+
+                                <!-- Submit button -->
+                                <div class="d-flex justify-content-end" style="margin-top: 30px;">
+                                    <button type="submit" id="send-btn" class="btn text-white primary-btn w-35">
+                                        Send Message <i class="fa fa-paper-plane pl-3"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <!-- Contact Info (Right) -->
+                        <div class="col-lg-4  m-auto col-md-10">
+                            <div class="p-4 bg-dark rounded shadow text-white ">
+                                <h4 class="py-3 mb-3">Contact Info</h4>
+                                <p style="font-family: play; width: 350px;"><i
+                                        class="fa fa-envelope pr-2"></i><strong>Email:</strong>
+                                    medaminecheikhjob@gmail.com
+                                </p>
+                                <p style="font-family: play;"><i class="fa fa-phone pr-2"></i><strong>Phone:</strong>
+                                    +216 93 566 035</p>
+                                <p style="font-family: play;"><i
+                                        class="fa fa-location-dot pr-2"></i><strong>Address:</strong> Tunis, Tunisia</p>
+
+                                <div class="mt-5">
+                                    <div class="d-flex border-top border" style="margin-bottom: 15px;"></div>
+                                    <div class="footer__top__social px-3 ">
+                                        <a href="https://www.linkedin.com/in/mohamed-amine-cheikh/" target="_blank"><i
+                                                class="fa-brands fa-linkedin"></i></a>
+                                        <a><i class="fa fa-envelope "></i></a>
+                                        <a href="https://github.com/medaminecheikh" target="_blank"><i
+                                                class="fa-brands fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              
+
+            </div>
         </div>
-    </div>
-</section>
-<!-- Contact Section End -->
+    </section>
+    <!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer">
         <div class="container">
-            
+
             <div class="footer__option">
                 <div class="row ">
                     <div class="col-lg-5 col-md-12">
                         <div class="footer__option__item">
                             <h5>About me</h5>
-                            <p>I graduated from ESPRIT University in Tunisia with a degree in Software Engineering. 
-                              
-                          I have over a year of experience as a Full-Stack Developer, specializing in designing and developing web applications.  </p>
-                           
+                            <p>I graduated from ESPRIT University in Tunisia with a degree in Software Engineering.
+
+                                I have over a year of experience as a Full-Stack Developer, specializing in designing
+                                and developing web applications. </p>
+
                         </div>
                     </div>
                     <div class=" col-lg-2 col-md-3 col-sm-3" style="margin-left: 150px;">
@@ -812,7 +923,8 @@
                             <h5>Who am I</h5>
                             <ul>
                                 <li><a class="scroll-btn" href="" data-desktop="1410" data-mobile="1883">Carrer</a></li>
-                                <li><a class="scroll-btn" href="" data-desktop="7799" data-mobile="9650">Contact Me</a></li>
+                                <li><a class="scroll-btn" href="" data-desktop="7799" data-mobile="9650">Contact Me</a>
+                                </li>
                                 <li><a class="scroll-btn" href="" data-desktop="0" data-mobile="0">Resume</a></li>
                             </ul>
                         </div>
@@ -822,17 +934,18 @@
                             <h5>My work</h5>
                             <ul>
                                 <li><a class="scroll-btn" href="" data-desktop="677" data-mobile="657">Services</a></li>
-                                <li><a class="scroll-btn" href="" data-desktop="3379" data-mobile="4371">Portfolio</a></li>
-                             
+                                <li><a class="scroll-btn" href="" data-desktop="3379" data-mobile="4371">Portfolio</a>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="footer__copyright">
                 <div class="row">
-                    
+
                 </div>
             </div>
         </div>
@@ -857,6 +970,19 @@
     <script src="js/owl.carousel.min.js"></script>
     <script type="module" src="js/chat.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        const slides = document.querySelectorAll(".product-slide");
+        let current = 0;
+      
+        setInterval(() => {
+          slides[current].classList.remove("active");
+          current = (current + 1) % slides.length;
+          slides[current].classList.add("active");
+        }, 4500);
+      </script>
+      
+      
+
 </body>
 
 </html>
