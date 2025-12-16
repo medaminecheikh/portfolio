@@ -1,97 +1,132 @@
 /* PANEL BACKGROUND */
 .case-panel {
-    background: linear-gradient(135deg, #0c0022, #14003a);
-  }
-  
-  /* LEFT CONTENT */
-  .case-content {
-    max-width: 620px;
-  }
-  
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.75rem;
-    color: #6f6cff;
-    margin-bottom: 12px;
-  }
-  
-  .case-title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 24px;
-  }
-  
-  .case-desc {
-    font-size: 1.1rem;
-    opacity: 0.85;
-    margin-bottom: 32px;
-  }
-  
-  /* TECH PILLS */
-  .tool-pill {
-    display: inline-block;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    margin-right: 8px;
-    backdrop-filter: blur(6px);
-  }
-  
-  /* BUTTON */
-  .case-btn {
-    border-width: 2px;
-  }
-  
- /* CAROUSEL Start here */
- .product-carousel {
-    position: relative;
-    width: 100%;
-    max-width: 720px;
-    height: 420px;
-  }
-  
-  /* SLIDE */
-  .product-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.55s ease, transform 0.55s ease;
-  }
-  .product-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
+  background: linear-gradient(135deg, #0c0022, #14003a);
+}
 
-  }
-  
-  /* ACTIVE */
-  .product-slide.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+/* LEFT CONTENT */
+.case-content {
+  max-width: 620px;
+}
 
-  }
-  
-  /* IMAGE */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  color: #6f6cff;
+  margin-bottom: 12px;
+}
+
+.case-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.case-desc {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 32px;
+}
+
+/* TECH PILLS */
+.tool-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+
+  color: #eaeaff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+
+  backdrop-filter: blur(6px);
+}
+
+
+/* BUTTON */
+.case-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 26px;
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+
+  transition: all 0.25s ease;
+}
+
+.case-btn.primary {
+  background: linear-gradient(135deg, #6d5cff, #8f7bff);
+  box-shadow: 0 10px 30px rgba(109, 92, 255, 0.35);
+}
+
+.case-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(109, 92, 255, 0.45);
+}
+
+
+/* CAROUSEL Start here */
+.product-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  height: 420px;
+}
+
+/* SLIDE */
+.product-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.product-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+}
+
+/* ACTIVE */
+.product-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+
+}
+
+/* IMAGE */
+.product-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
   .product-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    .product-slide img {
-      box-shadow:
-        0 18px 30px rgba(0,0,0,0.35),
-        0 6px 12px rgba(0,0,0,0.25);
-      will-change: transform, opacity;
-    }
-    
+    box-shadow:
+      0 18px 30px rgba(0, 0, 0, 0.35),
+      0 6px 12px rgba(0, 0, 0, 0.25);
+    will-change: transform, opacity;
   }
-  /* BASE IMAGE STYLE */
+
+}
+
+/* BASE IMAGE STYLE */
 .ui-shot {
   width: 100%;
   height: 100%;
@@ -101,21 +136,24 @@
 
 /* PORTRAIT / LONG UI — give more visual width */
 .ui-shot--wide {
-  max-width: 125%;          /* 🔑 allows it to breathe horizontally */
-  margin-left: -12.5%;     /* re-center visually */
+  max-width: 125%;
+  /* 🔑 allows it to breathe horizontally */
+  margin-left: -12.5%;
+  /* re-center visually */
 }
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .product-carousel {
-      height: 280px;
-    }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .product-carousel {
+    height: 280px;
   }
-  .product-carousel:hover .product-slide.active img {
-    transform: scale(1.01);
-  }
-    
-  /* DOTS */
+}
+
+.product-carousel:hover .product-slide.active img {
+  transform: scale(1.01);
+}
+
+/* DOTS */
 .carousel-dots {
   position: absolute;
   bottom: -28px;
@@ -130,12 +168,12 @@
   height: 8px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   cursor: pointer;
 }
 
 .carousel-dots button.active {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 
@@ -154,7 +192,7 @@
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,7 +212,7 @@
   max-width: 92vw;
   max-height: 92vh;
   object-fit: contain;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
   transform: scale(0.96);
   transition: transform 0.25s ease;
 }
