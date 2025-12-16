@@ -464,7 +464,7 @@
 
                             <p class="case-desc">
                                 A comprehensive solution for managing complex financial transactions, automated
-                                invoicing, and  payment tracking.
+                                invoicing, and payment tracking.
                             </p>
 
                             <div class="tools mb-4">
@@ -480,20 +480,22 @@
 
                         <!-- RIGHT VISUAL -->
                         <div class="col-md-6 d-flex align-items-center justify-content-center">
-                            <div class="product-carousel">
-                              <div class="product-slide active">
-                                <img src="img/tt/dashadmin.png" alt="">
-                              </div>
-                              <div class="product-slide">
-                                <img src="img/tt/creeFacture.png" alt="">
-                              </div>
-                              <div class="product-slide">
-                                <img src="img/tt/fairePaiement.png" alt="">
-                              </div>
+                            <div class="product-carousel" data-carousel>
+                                <div class="product-slide active">                              
+                                    <img src="img/tt/dashadmin.png" alt="">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="img/tt/creeFacture.png" alt="">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="img/tt/fairePaiement.png" alt="">
+                                </div>
+                                <!-- INDICATORS -->
+                                <div class="carousel-dots"></div>
                             </div>
-                          </div>
-                          
-                          
+                        </div>
+
+
                     </div>
                 </div>
             </section>
@@ -527,20 +529,24 @@
 
                         <!-- RIGHT VISUAL -->
                         <div class="col-md-6 d-flex align-items-center justify-content-center">
-                            <div class="product-carousel">
-                              <div class="product-slide active">
-                                <img src="img/EspritRec/Dash.png" alt="">
-                              </div>
-                              <div class="product-slide">
-                                <img src="img/EspritRec/recl.png" alt="">
-                              </div>
-                              <div class="product-slide">
-                                <img src="img/EspritRec/detail.png" alt="">
-                              </div>
+                            <div class="product-carousel" data-carousel>
+                                <div class="product-slide active">
+                              
+                                    <img src="img/EspritRec/Dash.png" alt="">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="img/EspritRec/recl.png" alt="">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="img/EspritRec/detail.png" alt="">
+                                </div>
+                                <!-- INDICATORS -->
+                                <div class="carousel-dots"></div>
+
                             </div>
-                          </div>
-                          
-                          
+                        </div>
+
+
                     </div>
                 </div>
             </section>
@@ -574,20 +580,23 @@
 
                         <!-- RIGHT VISUAL -->
                         <div class="col-md-6 d-flex align-items-center justify-content-center">
-                            <div class="product-carousel">
-                              <div class="product-slide active">
-                                <img src="img/EspritRec/Dash.png" alt="">
-                              </div>
-                              <div class="product-slide">
-                                <img src="img/EspritRec/recl.png" alt="">
-                              </div>
-                              <div class="product-slide">
-                                <img src="img/EspritRec/detail.png" alt="">
-                              </div>
+                            <div class="product-carousel" data-carousel>
+                                <div class="product-slide active">
+                              
+                                    <img src="img/EspritRec/Dash.png" alt="">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="img/EspritRec/recl.png" alt="">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="img/EspritRec/detail.png" alt="">
+                                </div>
+                                <!-- INDICATORS -->
+                                <div class="carousel-dots"></div>
                             </div>
-                          </div>
-                          
-                          
+                        </div>
+
+
                     </div>
                 </div>
             </section>
@@ -971,17 +980,77 @@
     <script type="module" src="js/chat.js"></script>
     <script src="js/main.js"></script>
     <script>
-        const slides = document.querySelectorAll(".product-slide");
-        let current = 0;
+        const carousels = document.querySelectorAll("[data-carousel]");
       
-        setInterval(() => {
-          slides[current].classList.remove("active");
-          current = (current + 1) % slides.length;
-          slides[current].classList.add("active");
-        }, 4500);
+        carousels.forEach(carousel => {
+          const slides = carousel.querySelectorAll(".product-slide");
+          const dotsContainer = carousel.querySelector(".carousel-dots");
+      
+          let index = 0;
+          let interval = null;
+      
+          /* CREATE DOTS */
+          slides.forEach((_, i) => {
+            const dot = document.createElement("button");
+            if (i === 0) dot.classList.add("active");
+      
+            dot.addEventListener("click", () => {
+              goTo(i);
+              restart();
+            });
+      
+            dotsContainer.appendChild(dot);
+          });
+      
+          const dots = dotsContainer.querySelectorAll("button");
+      
+          function goTo(i) {
+            slides[index].classList.remove("active");
+            dots[index].classList.remove("active");
+      
+            index = (i + slides.length) % slides.length;
+      
+            slides[index].classList.add("active");
+            dots[index].classList.add("active");
+          }
+      
+          function next() {
+            goTo(index + 1);
+          }
+      
+          function start() {
+            if (!interval) interval = setInterval(next, 4500);
+          }
+      
+          function stop() {
+            clearInterval(interval);
+            interval = null;
+          }
+      
+          function restart() {
+            stop();
+            start();
+          }
+      
+          /* VISIBILITY CONTROL (CRITICAL FOR PERFORMANCE) */
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                start();
+              } else {
+                stop();
+              }
+            },
+            { threshold: 0.6 }
+          );
+      
+          observer.observe(carousel);
+        });
       </script>
       
-      
+
+
+
 
 </body>
 
