@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Portfolio Template">
-    <meta name="keywords" content="Portfolio, unica, creative, html">
+    <meta name="description" content="Portfolio">
+    <meta name="keywords" content="Portfolio, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Med.Amine portfolio</title>
@@ -26,7 +26,7 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="Source/fontawesome-free-7.0.1-web/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="css/ai-button.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/portfolio-panel.css" type="text/css">
+    <link rel="stylesheet" href="css/hero.css" type="text/css">
+
 
 </head>
 
@@ -44,136 +46,258 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <div class="header__logo">
-                        <a class="text-white text-uppercase" style="font-family: Play, sans-serif; font-size: 18px;"
-                            href="./index.html">Welcome </a>
-                    </div>
+    <div class="cyber-nav-container">
+        <header class="cyber-nav-header" id="cyberNavHeader">
+          <div class="cyber-nav-wrap">
+            <div class="cyber-nav-header-inner">
+    
+              <!-- ── LOGO ── -->
+              <a href="#home" class="cyber-nav-logo" aria-label="Home">
+                <div class="cyber-nav-logo-frame">
+                  <span class="cyber-nav-logo-mark" aria-hidden="true">M</span>
+                  <span class="cyber-nav-logo-text">
+                    <strong>Explore</strong>
+                    <span>Portfolio</span>
+                  </span>
                 </div>
-                <div class="col-lg-10">
-                    <div class="header__nav__option">
-                        <nav class="header__nav__menu mobile-menu">
-                            <ul class="revealtext">
-                                <li class="active "><a href="./index.html">Home</a></li>
-                                <li><a class="scroll-btn " href="#" data-desktop="677" data-mobile="657">Services</a>
-                                </li>
-                                <li><a class="scroll-btn " href="#" data-desktop="1410"
-                                        data-mobile="1883">Experience</a></li>
-                                <li><a class="scroll-btn " href="#" data-desktop="3868" data-mobile="5026">Portfolio</a>
-                                </li>
-                                <li><a class="scroll-btn " href="#" data-desktop="8802" data-mobile="9828">Assistant</a>
-                                </li>
-                                <li><a class="scroll-btn " href="#" data-desktop="10173" data-mobile="11294">Contact</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="header__nav__social">
-                            <a href="https://www.linkedin.com/in/mohamed-amine-cheikh/" target="_blank"><i
-                                    class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://github.com/medaminecheikh" target="_blank"><i
-                                    class="fa-brands fa-github"></i></a>
-                            <!-- Email Copy Button -->
-                            <a href="#" id="copyEmail" class="copy-btn" data-email="medaminecheikhjob@gmail.com">
-                                <i class="fa fa-envelope"></i>
-                                <span class="tooltip">Copy email</span>
-                            </a>
-
-
-                        </div>
-                    </div>
+              </a>
+    
+              <!-- ── CENTERED NAV ── -->
+              <nav class="cyber-nav-shell" aria-label="Main navigation">
+                <ul id="cyberDesktopNav">
+                  <li class="cyber-nav-active">
+                    <a href="#home">
+                      
+                      <span class="cyber-nav-lbl">Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                 
+                      <span class="cyber-nav-lbl">Services</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#experience">
+                  
+                      <span class="cyber-nav-lbl">Experience</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#portfolio">
+                     
+                      <span class="cyber-nav-lbl">Portfolio</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#assistant">
+                    
+                      <span class="cyber-nav-lbl">Assistant</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+    
+              <!-- ── RIGHT TOOLS ── -->
+              <div class="cyber-nav-tools">
+                <div class="cyber-nav-social">
+                  <a class="cyber-nav-s-li" href="https://www.linkedin.com/in/mohamed-amine-cheikh/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a class="cyber-nav-s-gh" href="https://github.com/medaminecheikh" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a class="cyber-nav-s-mail" id="cyberCopyEmail" href="#" data-email="medaminecheikhjob@gmail.com" aria-label="Copy email">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span class="cyber-nav-tip">copy email</span>
+                  </a>
                 </div>
+    
+                <div class="cyber-nav-sep" aria-hidden="true"></div>
+    
+                <a href="#contact" class="cyber-nav-cta">
+                  Let's talk
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+    
+                <button class="cyber-nav-burger" id="cyberBurger" type="button"
+                        aria-label="Toggle menu" aria-expanded="false"
+                        aria-controls="cyberMobile">
+                  <span></span><span></span><span></span>
+                </button>
+              </div>
+    
             </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
+          </div>
+    
+          <!-- ── MOBILE DRAWER ── -->
+          <div class="cyber-nav-mobile" id="cyberMobile">
+            <div class="cyber-nav-mobile-glow" aria-hidden="true"></div>
+            <div class="cyber-nav-mobile-body">
+              <ul class="cyber-nav-mobile-nav" id="cyberMobileNav">
+                <li class="cyber-nav-active"><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#assistant">Assistant</a></li>
+              </ul>
+              <div class="cyber-nav-mobile-footer">
+                <div class="cyber-nav-mobile-social">
+                  <a href="https://www.linkedin.com/in/mohamed-amine-cheikh/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="https://github.com/medaminecheikh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                  <a href="#" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+                <a href="#contact" class="cyber-nav-cta" style="height:34px;font-size:10px;padding:0 16px;">
+                  Let's talk <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+    
     <!-- Header End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero set-bg d-flex align-items-center" data-setbg="img/bgG1.png"
-        style="height: 100vh; background-size: cover; background-position: center; position: relative;">
+   <!-- =======================================================================
+         START HERO AI SECTION
+         ======================================================================= -->
+         <section class="ph-hero set-bg d-flex align-items-center" id="home" data-setbg="img/bgG1.png"
+         style="height: 100vh; background-size: cover; background-position: center; position: relative;">
 
-        <div class="overlay"></div> <!-- overlay for readability -->
-
-        <div class="container h-100">
-            <div class="row h-100 justify-content-center align-items-center text-center">
-                <div class="col-lg-8">
-                    <div class="hero-text">
-                        <span class="text-white " style="font-size: 18px;">Hello, I'm Mohamed Amine Cheikh</span>
-
-                        <h1 class="text-white" style="margin-top:35px; margin-bottom:15px;">
-
-                            <span id="dynamicText">Full Stack Developer</span>
-                            <span class="cursorblink"> </span>
-
-                        </h1>
-
-
-
-
-                        <a href="cv/CV_CheikhMedAmine.pdf" class="primary-btn mt-5">Download CV</a>
-                    </div>
-                    <div class="chatbot-container">
-                        <div class="main-trigger" onclick="activateAI()">
-                            <div class="energy-field"></div>
-
-                            <div class="trigger-orb">
-                                <div class="quantum-particles" id="particles"></div>
+            <div class="container ph-hero-container">
+                <div class="row align-items-center ph-hero-row">
+    
+                    <!-- ==========================================================
+                         MODULE 03 — HERO INTRO COPY
+                         Unique classes: ph-intro-*
+                         Safe to copy / remove independently.
+                         ========================================================== -->
+                    <div class="col-lg-7 col-md-12">
+                        <div class="ph-intro">
+    
+                            <div class="ph-intro-eyebrow">Full Stack Engineer</div>
+    
+                            <h1 class="ph-intro-title">
+                                I specialize in<br>
+                                <span class="ph-intro-gradient" id="phIntroDynamic">Full Stack Development</span><span class="ph-intro-cursor" aria-hidden="true">|</span>
+                            </h1>
+    
+                            <p class="ph-intro-desc">
+                                Let's build products people actually want to use.
+                                 Modern websites, intelligent applications, and seamless experiences that help you reach more customers
+                                 and grow your business.
+                            </p>
+    
+                            <!-- Optional action buttons slot download cv here -->
+                            <div class="ph-intro-actions">
+                                
+                                <a href="cv/CV_CheikhMedAmine.pdf" download class="ph-dl-btn">
+                                
+                                    <div class="ph-dl-btn-inner">
+                                        <span class="ph-dl-lbl">Download CV</span>
+                                    </div>
+                                
+                                </a>
                             </div>
-
-                            <div class="neural-rings">
-                                <div class="ring"></div>
-                                <div class="ring"></div>
-                                <div class="ring"></div>
-                            </div>
-
-                            <!-- New Robot Head Icon with Antennas -->
-                            <svg class="ai-core" id="aiIcon" viewBox="0 0 24 24" fill="currentColor">
-                                <!-- Robot Head -->
-                                <rect x="6" y="8" width="12" height="10" rx="2" ry="2" fill="currentColor" />
-                                <!-- Eyes -->
-                                <circle cx="9" cy="11" r="1.5" fill="rgba(0,0,0,0.6)" />
-                                <circle cx="15" cy="11" r="1.5" fill="rgba(0,0,0,0.6)" />
-                                <!-- Eye pupils -->
-                                <circle cx="9" cy="11" r="0.5" fill="white" />
-                                <circle cx="15" cy="11" r="0.5" fill="white" />
-                                <!-- Mouth -->
-                                <rect x="10" y="14" width="4" height="1" rx="0.5" fill="rgba(0,0,0,0.6)" />
-                                <!-- Left Antenna -->
-                                <line x1="8" y1="8" x2="7" y2="4" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" />
-                                <circle cx="7" cy="4" r="1" fill="currentColor" />
-                                <!-- Right Antenna -->
-                                <line x1="16" y1="8" x2="17" y2="4" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" />
-                                <circle cx="17" cy="4" r="1" fill="currentColor" />
-                                <!-- Body connector -->
-                                <rect x="11" y="18" width="2" height="2" fill="currentColor" />
-                            </svg>
-
-                            <div class="thinking-dots" id="thinkingDots">
-                                <div class="thinking-dot"></div>
-                                <div class="thinking-dot"></div>
-                                <div class="thinking-dot"></div>
-                            </div>
-
-                            <div class="holographic-text">Let's Travel</div>
+    
                         </div>
                     </div>
+                    <!-- / MODULE 03 — HERO INTRO COPY -->
+    
+    
+                    <!-- ==========================================================
+                         MODULE 04 — Achiv
+                         Safe to copy / remove independently.
+                         Download CV link preserved on core node.
+                         ========================================================== -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="ph-achievements">
+                        
+                            <!-- Achievements Grid -->
+                            <div class="ph-achievements-grid">
+                                
+                                <div class="ph-achievement-cell">
+                                    <div class="ph-achievement-label">2+</div>
+                                    <div class="ph-achievement-desc">Years<br>Experience</div>
+                                </div>
+                                <div class="ph-achievement-cell">
+                                    <div class="ph-achievement-label">60+</div>
+                                    <div class="ph-achievement-desc">UI/UX<br>Designs</div>
+                                </div>
+                                <div class="ph-achievement-cell">
+                                    <div class="ph-achievement-label">15+</div>
+                                    <div class="ph-achievement-desc">Projects<br>Completed</div>
+                                </div>
+                            </div>
+    
+                          
+    
+                        </div>
+                    </div>
+                    <!-- / MODULE 04 — ECOSYSTEM MAP -->
+    
                 </div>
             </div>
-        </div>
-    </section>
+            </section>
+        <!-- =======================================================================
+             END HERO AI SECTION
+             ======================================================================= -->    
     <!-- Hero Section End -->
+   <!-- chatbot scroll Begin -->
+   <div class="chatbot-container">
+    <div class="main-trigger" onclick="activateAI()">
+        <div class="energy-field"></div>
 
+        <div class="trigger-orb">
+            <div class="quantum-particles" id="particles"></div>
+        </div>
+
+        <div class="neural-rings">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+
+        <!-- New Robot Head Icon with Antennas -->
+        <svg class="ai-core" id="aiIcon" viewBox="0 0 24 24" fill="currentColor">
+            <!-- Robot Head -->
+            <rect x="6" y="8" width="12" height="10" rx="2" ry="2" fill="currentColor" />
+            <!-- Eyes -->
+            <circle cx="9" cy="11" r="1.5" fill="rgba(0,0,0,0.6)" />
+            <circle cx="15" cy="11" r="1.5" fill="rgba(0,0,0,0.6)" />
+            <!-- Eye pupils -->
+            <circle cx="9" cy="11" r="0.5" fill="white" />
+            <circle cx="15" cy="11" r="0.5" fill="white" />
+            <!-- Mouth -->
+            <rect x="10" y="14" width="4" height="1" rx="0.5" fill="rgba(0,0,0,0.6)" />
+            <!-- Left Antenna -->
+            <line x1="8" y1="8" x2="7" y2="4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+            <circle cx="7" cy="4" r="1" fill="currentColor" />
+            <!-- Right Antenna -->
+            <line x1="16" y1="8" x2="17" y2="4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+            <circle cx="17" cy="4" r="1" fill="currentColor" />
+            <!-- Body connector -->
+            <rect x="11" y="18" width="2" height="2" fill="currentColor" />
+        </svg>
+
+        <div class="thinking-dots" id="thinkingDots">
+            <div class="thinking-dot"></div>
+            <div class="thinking-dot"></div>
+            <div class="thinking-dot"></div>
+        </div>
+
+        <div class="holographic-text">Let's Travel</div>
+    </div>
+</div>
     <!-- Hero Section End -->
 
     <!-- Services Section Begin -->
     <section class="services spad">
-        <div class="container" id="services">
-            <div class="row">
+        <div class="container" >
+            <div class="row"  id="services">
                 <div class="col-lg-4">
                     <div class="services__title">
                         <div class="section-title animated-text">
@@ -183,7 +307,7 @@
                         <p class="">I collaborate with teams or work independently, on-site or remotely, to build new
                             applications,
                             maintain and update existing ones.</p>
-                        <a href="#" data-desktop="9483" data-mobile="10617" class="primary-btn scroll-btn">My Skills</a>
+                        <a href="#skills"  class="primary-btn scroll-btn">My Skills</a>
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -245,7 +369,7 @@
     <!-- Services Section End -->
 
     <!-- Experience Begin -->
-    <div class="breadcrumb-option spad set-bg" style="max-height: 300px;" data-setbg="img/breadcrumb-bg.jpg" id="exp">
+    <section class="breadcrumb-option spad set-bg" style="max-height: 300px;" data-setbg="img/breadcrumb-bg.jpg" id="experience">
         <div class="container">
             <div class="row" style="margin-top: -90px;">
                 <div class="col-lg-12 d-flex justify-content-center">
@@ -256,7 +380,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Breadcrumb End -->
 
     <!-- About Section Begin -->
@@ -489,9 +613,9 @@
 
 
     </section>
-    <div class="breadcrumb-option spad set-bg" style="max-height: 300px;" data-setbg="img/breadcrumb-bg.jpg">
+    <section class="breadcrumb-option spad set-bg" id="portfolio" style="max-height: 300px;" data-setbg="img/breadcrumb-bg.jpg">
         <div class="container">
-            <div class="row" style="margin-top: -90px;" id="portfolio">
+            <div class="row" style="margin-top: -90px;">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <div class="section-title team__title">
                         <span>My Gallery</span>
@@ -500,191 +624,190 @@
                 </div>
             </div>
         </div>
+    </section>
+<!-- ═══════════════════════════════════════════════
+     PROJECT SHOWCASE — horizontal scroll section
+════════════════════════════════════════════════ -->
+<section aria-label="Project showcase">
+
+    <div id="sp-portfolio-wrapper">
+        <section class="portfolio-pin-container" id="sp-portfolio-container">
+            <div class="horizontal-scroll-wrapper" id="sp-horizontal-wrapper">
+
+                <!-- ────────────────────────────────────
+                     PANEL 1 · E-Commerce Platform (BLUE)
+                ──────────────────────────────────── -->
+                <article class="panel theme-blue" role="listitem">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            
+                            <!-- Left: text -->
+                            <div class="col-md-6 d-flex flex-column justify-content-center case-content text-white">
+                                <span class="eyebrow">E-Commerce Platform</span>
+                                <h2 class="case-title">Shopping Experience</h2>
+                                <p class="case-desc">
+                                    Highly customizable e-commerce platform designed for performance and usability.
+                                    Includes product catalog management, dynamic product pages,
+                                    and customer support workflows.
+                                </p>
+                                <div class="tools">
+                                    <span class="tool-pill">React</span>
+                                    <span class="tool-pill">Node.js</span>
+                                    <span class="tool-pill">REST API</span>
+                                    <span class="tool-pill">UI/UX</span>
+                                </div>
+                            </div>
+                
+                            <!-- Right: carousel -->
+                            <div class="col-md-6 d-flex align-items-center justify-content-center visual-col">
+                                <div class="product-carousel" data-carousel>
+                                    <div class="product-slide active">
+                                        <img src="img/screenshots/products.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Products page" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/screenshots/ProductDetail.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Product detail" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/screenshots/home.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Home page" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/screenshots/support.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Support page" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/screenshots/signin.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Sign in" />
+                                    </div>
+                                    <div class="carousel-dots"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+        
+                <!-- ────────────────────────────────────
+                     PANEL 2 · Customer Service System (PURPLE)
+                ──────────────────────────────────── -->
+                <article class="panel theme-purple" role="listitem">
+                    <div class="container h-100">
+                        <!-- Adding flex-md-row-reverse for an alternating look on desktop -->
+                        <div class="row h-100 align-items-center flex-md-row-reverse">
+                
+                            <!-- Left: text (Right visually) -->
+                            <div class="col-md-6 d-flex flex-column justify-content-center case-content text-white">
+                                <span class="eyebrow">Customer Service System</span>
+                                <h2 class="case-title">Complaint &amp; Ticket Management</h2>
+                                <p class="case-desc">
+                                    Internal customer service platform built to centralize complaints, track resolution
+                                    status, and improve response time. Designed for teams handling high request volume
+                                    with clear workflows and accountability.
+                                </p>
+                                <div class="tools">
+                                    <span class="tool-pill">React</span>
+                                    <span class="tool-pill">Spring Boot</span>
+                                    <span class="tool-pill">Jira Cloud</span>
+                                    <span class="tool-pill">Role-Based Access</span>
+                                </div>
+                            </div>
+                
+                            <!-- Right: carousel (Left visually) -->
+                            <div class="col-md-6 d-flex align-items-center justify-content-center visual-col">
+                                <div class="product-carousel" data-carousel>
+                                    <div class="product-slide active">
+                                        <img src="img/EspritRec/Dash.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Dashboard" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/EspritRec/recl.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Reclamations" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/EspritRec/detail.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Detail view" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/EspritRec/login.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Login page" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/EspritRec/passed.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Passed state" />
+                                    </div>
+                                    <div class="carousel-dots"></div>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                </article>
+        
+                <!-- ────────────────────────────────────
+                     PANEL 3 · Financial Tech (PINK)
+                ──────────────────────────────────── -->
+                <article class="panel theme-pink" role="listitem">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                
+                            <!-- Left: text -->
+                            <div class="col-md-6 d-flex flex-column justify-content-center case-content text-white">
+                                <span class="eyebrow">Financial Tech</span>
+                                <h2 class="case-title">Billing &amp; Invoicing System</h2>
+                                <p class="case-desc">
+                                    Financial management system for generating invoices, tracking payments,
+                                    and handling transaction history. Built with accuracy and auditability.
+                                </p>
+                                <div class="tools">
+                                    <span class="tool-pill">Angular</span>
+                                    <span class="tool-pill">Spring Boot</span>
+                                    <span class="tool-pill">Security</span>
+                                    <span class="tool-pill">REST API</span>
+                                </div>
+                            </div>
+                
+                            <!-- Right: carousel -->
+                            <div class="col-md-6 d-flex align-items-center justify-content-center visual-col">
+                                <div class="product-carousel" data-carousel>
+                                    <div class="product-slide active">
+                                        <img src="img/tt/fairePaiement.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Make payment" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/tt/creeFacture.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Create invoice" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/tt/infoRechecheEnc.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Search info" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/tt/dashemp.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Employee dashboard" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/tt/loginError.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Login error" />
+                                    </div>
+                                    <div class="product-slide">
+                                        <img src="img/tt/pass.png" class="panel-media" loading="lazy" decoding="async" data-lightbox alt="Password page" />
+                                    </div>
+                                    <div class="carousel-dots"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-wrap">
+                <div class="progress-bg">
+                    <div class="progress-fg" id="sp-progress-bar"></div>
+                </div>
+            </div>
+            
+        </section>
     </div>
-    <div class="portfolio-wrapper" style="overflow: hidden;">
+  
+  </section>
+  
 
-        <div class="horizontal-container d-flex">
+  
 
-            <section class="panel d-flex align-items-center case-panel">
-                <div class="container-fluid h-100">
-                    <div class="row h-100 align-items-center">
-                        <!-- LEFT CONTENT -->
-                        <div class="col-md-6 d-flex flex-column justify-content-center p-5 text-white case-content">
-                            <span class="eyebrow">E-Commerce Platform</span>
-
-                            <h2 class="case-title">
-                                Shopping Experience
-                            </h2>
-
-                            <p class="case-desc">
-                                Higly customizable e-commerce platform designed for performance and usability.
-                                Includes product catalog management, dynamic product pages,
-                                and customer support workflows.
-                            </p>
-
-                            <div class="tools mb-4">
-                                <span class="tool-pill">React</span>
-                                <span class="tool-pill">Node.js</span>
-                                <span class="tool-pill">REST API</span>
-                                <span class="tool-pill">UI/UX</span>
-                            </div>
-
-
-                        </div>
-
-                        <!-- RIGHT VISUAL -->
-                        <div class="col-md-6 d-flex align-items-center justify-content-center">
-                            <div class="product-carousel" data-carousel>
-                                <div class="product-slide active">
-
-                                    <img src="img/screenshots/products.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/screenshots/ProductDetail.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/screenshots/home.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/screenshots/support.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/screenshots/signin.png" data-lightbox alt="">
-                                </div>
-                                <!-- INDICATORS -->
-                                <div class="carousel-dots"></div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="panel d-flex align-items-center case-panel">
-                <div class="container-fluid h-100">
-                    <div class="row h-100 align-items-center">
-                        <!-- LEFT CONTENT -->
-                        <div class="col-md-6 d-flex flex-column justify-content-center p-5 text-white case-content">
-                            <span class="eyebrow">Customer Service System</span>
-
-                            <h2 class="case-title">
-                                Complaint & Ticket Management
-                            </h2>
-
-                            <p class="case-desc">
-                                Internal customer service platform built to centralize complaints, track resolution
-                                status, and improve response time. Designed for teams handling high request volume
-                                with clear workflows and accountability.
-                            </p>
-
-                            <div class="tools mb-4">
-                                <span class="tool-pill">React</span>
-                                <span class="tool-pill">Spring Boot</span>
-                                <span class="tool-pill">Jira Cloud</span>
-                                <span class="tool-pill">Role-Based Access</span>
-                            </div>
-
-
-
-                        </div>
-
-                        <!-- RIGHT VISUAL -->
-                        <div class="col-md-6 d-flex align-items-center justify-content-center">
-                            <div class="product-carousel" data-carousel>
-                                <div class="product-slide active">
-
-                                    <img src="img/EspritRec/Dash.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/EspritRec/recl.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/EspritRec/detail.png" data-lightbox alt="">
-                                </div>
-
-                                <div class="product-slide">
-                                    <img src="img/EspritRec/login.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/EspritRec/passed.png" data-lightbox alt="">
-                                </div>
-                                <!-- INDICATORS -->
-                                <div class="carousel-dots"></div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="panel d-flex align-items-center case-panel">
-                <div class="container-fluid h-100">
-                    <div class="row h-100 align-items-center">
-                        <!-- LEFT CONTENT -->
-                        <div class="col-md-6 d-flex flex-column justify-content-center p-5 text-white case-content">
-                            <span class="eyebrow">Financial
-                                Tech</span>
-
-                            <h2 class="case-title">
-                                Billing & Invoicing System
-                            </h2>
-
-                            <p class="case-desc">
-                                Financial management system for generating invoices, tracking payments,
-                                and handling transaction history. Built with accuracy and auditability.
-                            </p>
-
-                            <div class="tools mb-4">
-                                <span class="tool-pill">Angular</span>
-                                <span class="tool-pill">Spring Boot</span>
-                                <span class="tool-pill">Security</span>
-                                <span class="tool-pill">Rest API</span>
-                            </div>
-
-
-                        </div>
-
-                        <!-- RIGHT VISUAL -->
-                        <div class="col-md-6 d-flex align-items-center justify-content-center">
-                            <div class="product-carousel" data-carousel>
-                                <div class="product-slide active">
-                                    <img src="img/tt/fairePaiement.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/tt/creeFacture.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/tt/infoRechecheEnc.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/tt/dashemp.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/tt/loginError.png" data-lightbox alt="">
-                                </div>
-                                <div class="product-slide">
-                                    <img src="img/tt/pass.png" data-lightbox alt="">
-                                </div>
-                                <!-- INDICATORS -->
-                                <div class="carousel-dots"></div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </div>
     <!-- About Section End -->
     <section class="latest spad" style="margin-bottom: -120px; margin-top: -30px;">
         <div class="container">
-            <div class="row">
+            <div class="row" id="skills">
                 <div class="col-lg-12">
                     <div class="section-title center-title">
                         <span>Explore</span>
@@ -703,7 +826,7 @@
                         <div class="counter__item">
                             <div class="counter__item__text">
                                 <img src="img/icons/ci-1.png" alt="">
-                                <h2 class="counter_num">50</h2>
+                                <h2 class="counter_num">60</h2>
                                 <p>Awesome Design</p>
                             </div>
                         </div>
@@ -724,7 +847,7 @@
                                 <div style="display: flex; align-items: center;">
                                     <h2 style="margin: 0; max-width: 40px;">+</h2>
                                     <h3 class="counter_num text-white"
-                                        style="margin: 0; font-weight: 600; font-size: 48px;">23000</h3>
+                                        style="margin: 0; font-weight: 600; font-size: 48px;">43000</h3>
                                 </div>
 
                                 <p>Bug Free Code</p>
@@ -735,7 +858,7 @@
                         <div class="counter__item four__item">
                             <div class="counter__item__text">
                                 <img src="img/icons/ci-4.png" alt="">
-                                <h2 class="counter_num">14</h2>
+                                <h2 class="counter_num">15</h2>
                                 <p>Compled Projects</p>
                             </div>
                         </div>
@@ -747,9 +870,9 @@
     <!-- Counter Section End -->
 
     <!-- Team Section Begin -->
-    <section class="team spad set-bg" id="ai" data-setbg="img/team-bg.jpg">
+    <section class="team spad set-bg"  data-setbg="img/team-bg.jpg">
         <div class="container">
-            <div class="row">
+            <div class="row" id="assistant">
                 <div class="col-lg-12">
                     <div class="section-title team__title">
                         <span>Meet my AI</span>
@@ -777,7 +900,7 @@
 
                 <div class="col-lg-12 p-0">
                     <div class="team__btn">
-                        <a class="scroll-btn primary-btn" href="" data-desktop="10173" data-mobile="11294">Let's get in
+                        <a class="scroll-btn primary-btn" href="#contact" >Let's get in
                             touch</a>
                     </div>
                 </div>
@@ -803,7 +926,7 @@
                         <div class="blog__item latest__item">
                             <h4>Back-End</h4>
                             <ul>
-                                <li>+ 1 Year</li>
+                                <li>+ 2 Year</li>
 
                             </ul>
                             <div class="tech-tags mt-4">
@@ -822,7 +945,7 @@
                         <div class="blog__item latest__item">
                             <h4>Front-End</h4>
                             <ul>
-                                <li>+ 1 Year</li>
+                                <li>+ 2 Year</li>
 
                             </ul>
 
@@ -840,7 +963,7 @@
                         <div class="blog__item latest__item">
                             <h4>Databases</h4>
                             <ul>
-                                <li>+ 1 Year</li>
+                                <li>+ 2 Year</li>
 
                             </ul>
                             <div class="tech-tags mt-4">
@@ -858,7 +981,7 @@
                         <div class="blog__item latest__item">
                             <h4>DevOps</h4>
                             <ul>
-                                <li>+ 1 Year</li>
+                                <li>+ 2 Year</li>
 
                             </ul>
                             <div class="tech-tags mt-4">
@@ -876,7 +999,7 @@
                         <div class="blog__item latest__item">
                             <h4>Artificial intelligence</h4>
                             <ul>
-                                <li>+ 1 Year</li>
+                                <li>+ 2 Year</li>
 
                             </ul>
                             <div class="tech-tags mt-4">
@@ -998,7 +1121,7 @@
                     <div class="col-lg-5 col-md-12">
                         <div class="footer__option__item">
                             <h5>About me</h5>
-                            <p>I graduated from ESPRIT University in Tunisia with a degree in Software Engineering.
+                            <p>I graduated from University in Tunisia with a degree in Software Engineering.
 
                                 I have over a year of experience as a Full-Stack Developer, specializing in designing
                                 and developing web applications. </p>
@@ -1009,11 +1132,11 @@
                         <div class="footer__option__item">
                             <h5>Who am I</h5>
                             <ul>
-                                <li><a class="scroll-btn" href="" data-desktop="1410" data-mobile="1883">Carrer</a></li>
-                                <li><a class="scroll-btn" href="" data-desktop="10173" data-mobile="11294">Contact
+                                <li><a class="scroll-btn" href="#experience">Carrer</a></li>
+                                <li><a class="scroll-btn" href="#contact">Contact
                                         Me</a>
                                 </li>
-                                <li><a class="scroll-btn" href="" data-desktop="0" data-mobile="0">Resume</a></li>
+                                <li><a class="scroll-btn" href="#home">Resume</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1021,8 +1144,8 @@
                         <div class="footer__option__item">
                             <h5>My work</h5>
                             <ul>
-                                <li><a class="scroll-btn" href="" data-desktop="677" data-mobile="657">Services</a></li>
-                                <li><a class="scroll-btn" href="" data-desktop="3868" data-mobile="5026">Portfolio</a>
+                                <li><a class="scroll-btn" href="#services">Services</a></li>
+                                <li><a class="scroll-btn" href="#portfolio" >Portfolio</a>
                                 </li>
 
                             </ul>
@@ -1038,18 +1161,18 @@
             </div>
         </div>
     </footer>
-
     <!-- Footer Section End -->
     <script src="js/contact.js"></script>
     <script src="js/ai-button.js"></script>
     <!-- Js Plugins -->
-    <script src="Source/gsap-public/minified/gsap.min.js"></script>
-    <script src="Source/gsap-public/minified/ScrollTrigger.min.js"></script>
+     <!-- Bootstrap JS deps -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> 
     <script src="Source/gsap-public/minified/SplitText.min.js"></script>
     <script src="Source/gsap-public/minified/TextPlugin.min.js"></script>
-    <script src="js/textanimation.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="Source/fontawesome-free-7.0.1-web/js/all.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/mixitup.min.js"></script>
@@ -1058,110 +1181,385 @@
     <script src="js/owl.carousel.min.js"></script>
     <script type="module" src="js/chat.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
 
-            const carousels = document.querySelectorAll("[data-carousel]");
-
-            carousels.forEach(carousel => {
-                const slides = carousel.querySelectorAll(".product-slide");
-                const dotsContainer = carousel.querySelector(".carousel-dots");
-
-                let index = 0;
-                let interval = null;
-
-                /* CREATE DOTS */
-                slides.forEach((_, i) => {
-                    const dot = document.createElement("button");
-                    if (i === 0) dot.classList.add("active");
-
-                    dot.addEventListener("click", () => {
-                        goTo(i);
-                        restart();
-                    });
-
-                    dotsContainer.appendChild(dot);
-                });
-
-                const dots = dotsContainer.querySelectorAll("button");
-
-                function goTo(i) {
-                    slides[index].classList.remove("active");
-                    dots[index].classList.remove("active");
-
-                    index = (i + slides.length) % slides.length;
-
-                    slides[index].classList.add("active");
-                    dots[index].classList.add("active");
-                }
-
-                function next() {
-                    goTo(index + 1);
-                }
-
-                function start() {
-                    if (!interval) interval = setInterval(next, 4500);
-                }
-
-                function stop() {
-                    clearInterval(interval);
-                    interval = null;
-                }
-
-                function restart() {
-                    stop();
-                    start();
-                }
-
-                /* VISIBILITY CONTROL (CRITICAL FOR PERFORMANCE) */
-                const observer = new IntersectionObserver(
-                    ([entry]) => {
-                        if (entry.isIntersecting) {
-                            start();
+    <!-- =======================================================================
+         START HERO AI SECTION JAVASCRIPT (Copy this at bottom of your page)
+         ======================================================================= -->
+         <script>
+            (function() {
+                const words = [
+                    "Full Stack Development", 
+                    "AI & ML Integrations", 
+                    "App Architectures", 
+                    "Robust REST APIs"
+                ];
+                let i = 0;
+                let timer;
+                const dynamicTextEl = document.getElementById('heroDynamicText');
+                
+                if(!dynamicTextEl) return;
+    
+                dynamicTextEl.innerHTML = ""; // Clear initial fallback text
+    
+                function typingEffect() {
+                    let word = words[i].split("");
+                    let loopTyping = function() {
+                        if (word.length > 0) {
+                            dynamicTextEl.innerHTML += word.shift();
                         } else {
-                            stop();
+                            setTimeout(deletingEffect, 2000); // Pause when word is finished
+                            return;
                         }
-                    },
-                    { threshold: 0.6 }
-                );
-
-                observer.observe(carousel);
-            });
-        });
-    </script>
-
-
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const lightbox = document.createElement("div");
-            lightbox.className = "lightbox";
-            document.body.appendChild(lightbox);
-
-            const lightboxImg = document.createElement("img");
-            lightbox.appendChild(lightboxImg);
-
-            document.querySelectorAll("[data-lightbox]").forEach(img => {
-                img.addEventListener("click", e => {
-                    e.stopPropagation(); // 🔑 IMPORTANT with carousels
-                    lightboxImg.src = img.src;
-                    lightbox.classList.add("active");
-                });
-            });
-
-            lightbox.addEventListener("click", () => {
-                lightbox.classList.remove("active");
-            });
-
-            document.addEventListener("keydown", e => {
-                if (e.key === "Escape") {
-                    lightbox.classList.remove("active");
+                        timer = setTimeout(loopTyping, 75); // Typing speed
+                    };
+                    loopTyping();
                 }
-            });
-        });
+    
+                function deletingEffect() {
+                    let word = words[i].split("");
+                    let loopDeleting = function() {
+                        if (word.length > 0) {
+                            word.pop();
+                            dynamicTextEl.innerHTML = word.join("");
+                        } else {
+                            i = (words.length > (i + 1)) ? i + 1 : 0; // Move to next word
+                            setTimeout(typingEffect, 500); // Small pause before typing next
+                            return;
+                        }
+                        timer = setTimeout(loopDeleting, 35); // Deleting speed
+                    };
+                    loopDeleting();
+                }
+    
+                // Start the sequence
+                setTimeout(typingEffect, 500);
+            })();
+        </script>
+        <!-- =======================================================================
+             END HERO AI SECTION JAVASCRIPT
+             ======================================================================= -->
+    <!-- =======================================================================
+             START Portfolio JAVASCRIPT
+             ======================================================================= -->
+             <script>
+                (function() {
+                    // 1. HORIZONTAL SCROLL LOGIC WITH CONTROLLED SNAP
+                    gsap.registerPlugin(ScrollTrigger);
+                
+                    const wrapper = document.querySelector("#sp-horizontal-wrapper");
+                    const panels = gsap.utils.toArray("#sp-portfolio-wrapper .panel");
+                
+                    if (!wrapper || panels.length === 0) return;
+                
+                    function getScrollAmount() {
+                        let wrapperWidth = wrapper.scrollWidth;
+                        return -(wrapperWidth - window.innerWidth);
+                    }
+                
+                    const tween = gsap.to(panels, {
+                        xPercent: -100 * (panels.length - 1),
+                        ease: "none",
+                    });
+                
+                    const progressBar = document.querySelector("#sp-progress-bar");
+                
+                    ScrollTrigger.create({
+                        trigger: "#sp-portfolio-container",
+                        pin: true,
+                        animation: tween,
+                        scrub: 1, // Smoother scrubbing
+                        
+                        // MODIFIED SNAP - Only snaps when you stop scrolling, more forgiving
+                        snap: {
+                            snapTo: 1 / (panels.length - 1),
+                            duration: {min: 0.3, max: 0.6}, // Slower snap
+                            delay: 0.3, // Wait longer before snapping
+                            ease: "power2.inOut", // Smoother easing
+                            directional: false, // Don't force direction
+                            inertia: false // Disable momentum-based snapping
+                        },
+                        
+                        anticipatePin: 1,
+                        end: () => `+=${getScrollAmount() * -1}`,
+                        
+                        // Only enable snap when actually in the portfolio section
+                        onEnter: () => {
+                            
+                        },
+                        onLeave: () => {
+                           
+                        },
+                        
+                        onUpdate: (self) => {
+                            if (progressBar) {
+                                progressBar.style.width = `${self.progress * 100}%`;
+                            }
+                        }
+                    });
+                
+                    let resizeTimer;
+                    window.addEventListener('resize', () => {
+                        clearTimeout(resizeTimer);
+                        resizeTimer = setTimeout(() => {
+                            ScrollTrigger.refresh();
+                        }, 250);
+                    });
+                
+                    // 2. IMAGE CAROUSEL LOGIC
+                    const carousels = document.querySelectorAll('#sp-portfolio-wrapper [data-carousel]');
+                
+                    carousels.forEach(carousel => {
+                        const slides = carousel.querySelectorAll('.product-slide');
+                        const dotsContainer = carousel.querySelector('.carousel-dots');
+                        let currentSlide = 0;
+                        let autoPlayInterval;
+                
+                        slides.forEach((slide, index) => {
+                            const dot = document.createElement('button');
+                            dot.classList.add('carousel-dot');
+                            dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                            if (index === 0) dot.classList.add('active');
+                            
+                            dot.addEventListener('click', () => {
+                                goToSlide(index);
+                                resetAutoPlay();
+                            });
+                            
+                            dotsContainer.appendChild(dot);
+                        });
+                
+                        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+                
+                        function goToSlide(index) {
+                            slides[currentSlide].classList.remove('active');
+                            dots[currentSlide].classList.remove('active');
+                            currentSlide = index;
+                            slides[currentSlide].classList.add('active');
+                            dots[currentSlide].classList.add('active');
+                        }
+                
+                        function startAutoPlay() {
+                            autoPlayInterval = setInterval(() => {
+                                let nextSlide = (currentSlide + 1) % slides.length;
+                                goToSlide(nextSlide);
+                            }, 4000);
+                        }
+                
+                        function resetAutoPlay() {
+                            clearInterval(autoPlayInterval);
+                            startAutoPlay();
+                        }
+                
+                        carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                        carousel.addEventListener('mouseleave', () => startAutoPlay());
+                
+                        startAutoPlay();
+                    });
+                
+                })();
+                </script>
+
+
+<script>
+
+
+
+    /* ==========================================================================
+       MODULE 03 JS — HERO INTRO TYPEWRITER
+       Prefix: ph-intro / phIntro
+       Remove this IIFE if you remove the intro module.
+       ========================================================================== */
+    (function () {
+        "use strict";
+
+        var el = document.getElementById("phIntroDynamic");
+        if (!el) return;
+
+        var phrases = [
+            "Full Stack Development",
+            "AI Integrations",
+            "App Architecture",
+            "Modern UI / UX"
+        ];
+
+        var phraseIndex = 0;
+        var charIndex   = 0;
+        var deleting    = false;
+        var TYPE_MS     = 70;
+        var DELETE_MS   = 40;
+        var HOLD_MS     = 1800;
+        var GAP_MS      = 400;
+
+        function tick() {
+            var current = phrases[phraseIndex];
+
+            if (!deleting) {
+                el.textContent = current.slice(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === current.length) {
+                    deleting = true;
+                    setTimeout(tick, HOLD_MS);
+                    return;
+                }
+                setTimeout(tick, TYPE_MS);
+            } else {
+                el.textContent = current.slice(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    deleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(tick, GAP_MS);
+                    return;
+                }
+                setTimeout(tick, DELETE_MS);
+            }
+        }
+
+        /* Start after a short delay so the page paints first */
+        setTimeout(tick, 600);
+    })();
     </script>
 
+<script>
+    (function() {
+      const header = document.getElementById("cyberNavHeader");
+      let prevScroll = false;
+      
+      function onScroll() {
+        const s = window.scrollY > 14;
+        if (s !== prevScroll) {
+          prevScroll = s;
+          header.classList.toggle("cyber-nav-scrolled", s);
+        }
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    
+      const burger = document.getElementById("cyberBurger");
+      const drawer = document.getElementById("cyberMobile");
+      if (burger && drawer) {
+        burger.addEventListener("click", () => {
+          const open = drawer.classList.toggle("cyber-nav-is-open");
+          burger.classList.toggle("cyber-nav-is-open", open);
+          burger.setAttribute("aria-expanded", String(open));
+        });
+        document.querySelectorAll(".cyber-nav-mobile-nav a, #cyberMobile .cyber-nav-cta").forEach(a => {
+          a.addEventListener("click", () => {
+            drawer.classList.remove("cyber-nav-is-open");
+            burger.classList.remove("cyber-nav-is-open");
+            burger.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+    
+      const copyBtn = document.getElementById("cyberCopyEmail");
+      if (copyBtn) {
+        copyBtn.addEventListener("click", e => {
+          e.preventDefault();
+          const email = copyBtn.dataset.email;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(() => {
+              const tip = copyBtn.querySelector(".cyber-nav-tip");
+              if (tip) tip.textContent = "copied!";
+              copyBtn.classList.add("cyber-nav-copied");
+              setTimeout(() => {
+                copyBtn.classList.remove("cyber-nav-copied");
+                if (tip) tip.textContent = "copy email";
+              }, 2200);
+            });
+          }
+        });
+      }
+    
+      const NAV_SECTIONS = ["home", "services", "experience", "portfolio", "assistant", "contact", "skills"];
+    
+      function setActive(id) {
+        document.querySelectorAll("#cyberDesktopNav li, #cyberMobileNav li").forEach(li => {
+          li.classList.remove("cyber-nav-active");
+        });
+        if (!id) return;
+        document.querySelectorAll(`a[href="#${id}"]`).forEach(a => {
+          const li = a.closest("li");
+          if (li) li.classList.add("cyber-nav-active");
+        });
+      }
+    
+      function getActiveSection() {
+        const scrollY = window.scrollY;
+        const navH = header ? header.offsetHeight : 0;
+        const trigger = scrollY + navH + 50;
+        let active = null;
+    
+        for (let i = 0; i < NAV_SECTIONS.length; i++) {
+          const id = NAV_SECTIONS[i];
+          const el = document.getElementById(id);
+          if (!el) continue;
+          
+          const top = el.getBoundingClientRect().top + scrollY;
+          if (top <= trigger) {
+            active = id;
+          }
+        }
+        return active;
+      }
+    
+      let ticking = false;
+      let lastActive = null;
+    
+      function onNavScroll() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const current = getActiveSection();
+            if (current !== lastActive) {
+              lastActive = current;
+              setActive(current);
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+    
+      window.addEventListener("scroll", onNavScroll, { passive: true });
+    
+      setTimeout(() => {
+        const current = getActiveSection();
+        lastActive = current;
+        setActive(current);
+      }, 100);
+    
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (!href || href === "#") return;
+          
+          const targetEl = document.getElementById(href.substring(1));
+          if (!targetEl) return;
+          
+          e.preventDefault();
+          const navH = header ? header.offsetHeight : 0;
+          const top = targetEl.getBoundingClientRect().top + window.pageYOffset - navH - 10;
+          
+          window.scrollTo({ top, behavior: "smooth" });
+          history.pushState(null, null, href);
+        });
+      });
+    
+      if (window.location.hash) {
+        const id = window.location.hash.substring(1);
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            const navH = header ? header.offsetHeight : 0;
+            const top = el.getBoundingClientRect().top + window.pageYOffset - navH - 10;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        }, 200);
+      }
+    })();
+    </script>
 
 </body>
 

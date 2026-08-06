@@ -13,40 +13,47 @@ function createParticles() {
     }
 }
 
-// Scroll smoothly to target position (desktop or mobile)
+// Scroll smoothly to assistant section
 function scrollToPosition() {
-    const isMobile = window.innerWidth <= 768; // adjust breakpoint if needed
-    const targetPos = isMobile ? 9828 : 8802;  // mobile vs. desktop value
-  
+    const assistantSection = document.getElementById('assistant');
+    if (!assistantSection) return;
+    
+    const headerHeight = document.getElementById('cyberNavHeader')?.offsetHeight || 0;
+    const targetPos = assistantSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+    
     window.scrollTo({
-      top: targetPos,
-      behavior: 'smooth'
+        top: targetPos,
+        behavior: 'smooth'
     });
-  }
-  
-  // Check if user is at target position
-  function checkPosition() {
-    const isMobile = window.innerWidth <= 768;
-    const targetPos = isMobile ? 7751 : 6209; // use mobile vs. desktop
-    const range = 10; // give some tolerance
-  
-    const currentPos = window.scrollY || window.pageYOffset;
-    return Math.abs(currentPos - targetPos) <= range;
-  }
-  
+}
+
+// Check if user is at assistant section
+function checkPosition() {
+    const assistantSection = document.getElementById('assistant');
+    if (!assistantSection) return false;
+    
+    const headerHeight = document.getElementById('cyberNavHeader')?.offsetHeight || 0;
+    const sectionTop = assistantSection.getBoundingClientRect().top + window.pageYOffset;
+    const sectionBottom = sectionTop + assistantSection.offsetHeight;
+    const currentPos = window.scrollY;
+    const range = 150; // tolerance range
+    
+    return currentPos >= (sectionTop - headerHeight - range) && 
+           currentPos <= (sectionBottom + range);
+}
 
 // Update button state based on position
 function updateButton() {
     const holographicText = document.querySelector('.holographic-text');
     
     if (checkPosition()) {
-        // At target position - show AI Active
+        // At assistant section - show AI Active
         if (!isActive) {
             isActive = true;
             holographicText.textContent = 'AI Active';
         }
     } else {
-        // Not at position - show Let's Travel
+        // Not at section - show Let's Travel
         if (isActive) {
             isActive = false;
             holographicText.textContent = "Let's Travel";
@@ -65,7 +72,7 @@ function activateAI() {
     thinkingDots.style.display = 'flex';
     holographicText.textContent = 'Processing...';
     
-    // Scroll to position
+    // Scroll to assistant section
     scrollToPosition();
     
     // After 1.5 seconds, update based on position
