@@ -841,11 +841,11 @@
 .ph-dl-btn {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  height: 42px;
-  padding: 0 26px;
+  gap: 12px;
+  height: 46px;
+  padding: 0 28px;
   font-family: 'Inter', sans-serif;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -855,10 +855,8 @@
   position: relative;
   overflow: hidden;
   clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-  background: rgba(142, 68, 173, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
-}
+  background: rgba(142, 68, 173, 0.18);
+  transition: all 0.28s ease;}
 
 .ph-dl-btn::before {
   content: "";
@@ -909,13 +907,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1px;
+  gap: 2px;
   line-height: 1;
 }
 
 .ph-dl-idx {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 7.5px;
+  font-size: 8px;
   letter-spacing: 0.5px;
   color: rgba(167, 139, 250, 0.8);
   text-transform: uppercase;
