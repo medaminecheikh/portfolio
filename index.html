@@ -29,13 +29,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/presentation-solutions.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/ai-button.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/portfolio-panel.css" type="text/css">
-    <link rel="stylesheet" href="css/hero.css" type="text/css">
+ 
 
 
 </head>
@@ -797,7 +795,7 @@
                 <article class="panel theme-pink" role="listitem">
                     <div class="container h-100">
                         <div class="row h-100 align-items-center">
-                <!-- ═══════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════
      COMPONENT ROOT
 ═══════════════════════════════════════════════════════ -->
 <section class="ssc-stage" id="ssc-stage">
@@ -830,6 +828,7 @@
                     <p class="ssc-copy ssc-rise" style="--ssc-delay:0.06s;">
                         Independent, self-healing services that deploy on their own schedule.
                         One failure never takes the system down and traffic spikes just add pods.
+                        Each service owns its data, scales independently and communicates over a hardened mesh.
                     </p>
                     <div class="ssc-chips ssc-rise" style="--ssc-delay:0.16s;">
                         <span class="ssc-chip"><span class="ssc-chip-dot"></span>Kubernetes</span>
@@ -837,12 +836,36 @@
                         <span class="ssc-chip"><span class="ssc-chip-dot"></span>Event-Driven</span>
                         <span class="ssc-chip"><span class="ssc-chip-dot"></span>CI/CD</span>
                     </div>
+                    <div class="ssc-metrics ssc-rise" style="--ssc-delay:0.26s;">
+                        <div class="ssc-metric">
+                            <span class="ssc-metric-icon">
+                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 3v5l3 3-1.4 1.4L8 11.4V5h2z" fill="currentColor"/></svg>
+                            </span>
+                            <span class="ssc-metric-val">99.98<span class="ssc-metric-unit">%</span></span>
+                            <span class="ssc-metric-lbl">Uptime SLA</span>
+                        </div>
+                        <div class="ssc-metric">
+                            <span class="ssc-metric-icon">
+                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10l7-7 7 7M5 8v8h4v-4h2v4h4V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            <span class="ssc-metric-val">120<span class="ssc-metric-unit">ms</span></span>
+                            <span class="ssc-metric-lbl">Avg Deploy</span>
+                        </div>
+                        <div class="ssc-metric">
+                            <span class="ssc-metric-icon">
+                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h12v8H4zM8 16h4M10 12v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            <span class="ssc-metric-val">40<span class="ssc-metric-unit">+</span></span>
+                            <span class="ssc-metric-lbl">Microservices</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="ssc-panel" id="ssc-panel-1">
                     <p class="ssc-copy ssc-rise" style="--ssc-delay:0.06s;">
                         Every request authenticated, authorised and audited. Token rotation,
                         rate limits and TLS 1.3 by default keep security visible without slowing you down.
+                        Zero-trust perimeter means breach impact stays contained to a single service.
                     </p>
                     <div class="ssc-chips ssc-rise" style="--ssc-delay:0.16s;">
                         <span class="ssc-chip"><span class="ssc-chip-dot"></span>OAuth 2.0</span>
@@ -850,18 +873,66 @@
                         <span class="ssc-chip"><span class="ssc-chip-dot"></span>Rate Limiting</span>
                         <span class="ssc-chip"><span class="ssc-chip-dot"></span>REST &amp; GraphQL</span>
                     </div>
+                    <div class="ssc-metrics ssc-rise" style="--ssc-delay:0.26s;">
+                        <div class="ssc-metric">
+                            <span class="ssc-metric-icon">
+                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.2l-4.8 2.6.9-5.3L2.2 7.7l5.4-.8L10 2z" fill="currentColor"/></svg>
+                            </span>
+                            <span class="ssc-metric-val">0<span class="ssc-metric-unit"> CVEs</span></span>
+                            <span class="ssc-metric-lbl">Critical in prod</span>
+                        </div>
+                        <div class="ssc-metric">
+                            <span class="ssc-metric-icon">
+                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            <span class="ssc-metric-val">100<span class="ssc-metric-unit">%</span></span>
+                            <span class="ssc-metric-lbl">Encrypted transit</span>
+                        </div>
+                        <div class="ssc-metric">
+                            <span class="ssc-metric-icon">
+                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a5 5 0 015 5v1h1a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2v-6a2 2 0 012-2h1V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v1h6V7a3 3 0 00-3-3z" fill="currentColor"/></svg>
+                            </span>
+                            <span class="ssc-metric-val">&lt;50<span class="ssc-metric-unit">ms</span></span>
+                            <span class="ssc-metric-lbl">Auth latency</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="ssc-panel" id="ssc-panel-2">
                     <p class="ssc-copy ssc-rise" style="--ssc-delay:0.06s;">
                         Relational, document, cache and search layers modelled together. Replication,
                         sharding and point-in-time recovery help your data survive anything.
+                        Automatic failover switches traffic in seconds — no manual intervention needed.
                     </p>
+
                     <div class="ssc-chips ssc-rise" style="--ssc-delay:0.16s;">
                         <span class="ssc-chip"><span class="ssc-chip-dot"></span>PostgreSQL</span>
                         <span class="ssc-chip"><span class="ssc-chip-dot"></span>MongoDB</span>
                         <span class="ssc-chip"><span class="ssc-chip-dot"></span>Redis</span>
-                        <span class="ssc-chip"><span class="ssc-chip-dot"></span>High Availability</span>
+                        <span class="ssc-chip"><span class="ssc-chip-dot"></span>SQL</span>
+                    </div>
+                    <div class="ssc-metrics ssc-rise" style="--ssc-delay:0.26s;">
+                        <div class="ssc-metric">
+                            <span class="ssc-metric-icon">
+                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="10" cy="6" rx="7" ry="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 6v4c0 1.66 3.13 3 7 3s7-1.34 7-3V6" stroke="currentColor" stroke-width="1.6"/><path d="M3 10v4c0 1.66 3.13 3 7 3s7-1.34 7-3v-4" stroke="currentColor" stroke-width="1.6"/></svg>
+                            </span>
+                            <span class="ssc-metric-val">3<span class="ssc-metric-unit">× rep</span></span>
+                            <span class="ssc-metric-lbl">Data replicated</span>
+                        </div>
+                        <div class="ssc-metric">
+                            <span class="ssc-metric-icon">
+                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10h4l3 6 4-12 3 6h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            <span class="ssc-metric-val">&lt;2<span class="ssc-metric-unit">ms</span></span>
+                            <span class="ssc-metric-lbl">Cache read p99</span>
+                        </div>
+                        <div class="ssc-metric">
+                            <span class="ssc-metric-icon">
+                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3v4l3 1.5M19 10a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            <span class="ssc-metric-val">RPO <span class="ssc-metric-unit">1 min</span></span>
+                            <span class="ssc-metric-lbl">Point-in-time</span>
+                        </div>
                     </div>
                 </div>
 
