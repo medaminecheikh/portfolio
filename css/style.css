@@ -2671,3 +2671,12 @@ ol {
 /* =======================================================================
    End of cleaned stylesheet
    ======================================================================= */
+
+   @media (max-width: 767.98px) {
+    .about .about__text > .d-flex.align-items-baseline.align-items-center {
+        flex-wrap: wrap;
+        gap: 6px 4px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
