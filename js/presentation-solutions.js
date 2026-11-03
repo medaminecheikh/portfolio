@@ -1,38 +1,39 @@
-(function () {
-    'use strict';
 
-    /* ── config ── */
-    var DURATION = 6000;
-    var TITLES   = ['Microservices', 'Security & APIs', 'Databases'];
-    var ACCENTS  = ['#818cf8', '#22d3ee', '#34d399'];
-    var GLOWS    = [
-        'radial-gradient(ellipse 65% 55% at 65% 50%, rgba(129,140,248,0.17) 0%, transparent 70%)',
-        'radial-gradient(ellipse 65% 55% at 65% 50%, rgba(34,211,238,0.15)  0%, transparent 70%)',
-        'radial-gradient(ellipse 65% 55% at 65% 50%, rgba(52,211,153,0.14)  0%, transparent 70%)'
-    ];
+    (function () {
+        'use strict';
 
-    var root = document.getElementById('ssc-stage');
-    if (!root) return;
+        /* ── config ── */
+        var DURATION = 6000;
+        var TITLES   = ['Microservices', 'Security & APIs', 'Databases'];
+        var ACCENTS  = ['#818cf8', '#22d3ee', '#34d399'];
+        var GLOWS    = [
+            'radial-gradient(ellipse 65% 55% at 65% 50%, rgba(129,140,248,0.17) 0%, transparent 70%)',
+            'radial-gradient(ellipse 65% 55% at 65% 50%, rgba(34,211,238,0.15)  0%, transparent 70%)',
+            'radial-gradient(ellipse 65% 55% at 65% 50%, rgba(52,211,153,0.14)  0%, transparent 70%)'
+        ];
 
-    function q(sel)  { return root.querySelector(sel); }
-    function qa(sel) { return [].slice.call(root.querySelectorAll(sel)); }
+        var root = document.getElementById('ssc-stage');
+        if (!root) return;
 
-    var glow        = q('#ssc-glow');
-    var panels      = qa('.ssc-panel');
-    var svgPanels   = qa('.ssc-svg-panel');
-    var dots        = qa('.ssc-dot');
-    var wheelBtns   = qa('.ssc-wheel-btn');
-    var wheelLabels = qa('.ssc-wheel-label');
-    var wheelFills  = qa('.ssc-wheel-fill');
+        function q(sel)  { return root.querySelector(sel); }
+        function qa(sel) { return [].slice.call(root.querySelectorAll(sel)); }
 
-    var current    = 0;
-    var busy       = false;
-    var rafId      = null;
-    var startTs    = 0;
-    var paused     = false;
-    var pauseStart = 0;
+        var glow        = q('#ssc-glow');
+        var panels      = qa('.ssc-panel');
+        var svgPanels   = qa('.ssc-achievement-panel');
+        var dots        = qa('.ssc-dot');
+        var wheelBtns   = qa('.ssc-wheel-btn');
+        var wheelLabels = qa('.ssc-wheel-label');
+        var wheelFills  = qa('.ssc-wheel-fill');
 
-    /* ── accent + glow update ── */
+        var current    = 0;
+        var busy       = false;
+        var rafId      = null;
+        var startTs    = 0;
+        var paused     = false;
+        var pauseStart = 0;
+
+        /* ── accent + glow update ── */
     function applyAccent(i) {
         var a = ACCENTS[i];
         root.style.setProperty('--ssc-accent', a);
@@ -171,4 +172,5 @@
         ? document.addEventListener('DOMContentLoaded', boot)
         : boot();
 
-})();
+    })();
+  

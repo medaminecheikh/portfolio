@@ -1,0 +1,599 @@
+/* ================================================================
+   PORTFOLIO BASE
+   ================================================================ */
+
+   #sp-portfolio-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+#sp-portfolio-wrapper .portfolio-pin-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#sp-portfolio-wrapper .horizontal-scroll-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 400vw;
+    height: 100%;
+    will-change: transform;
+}
+
+#sp-portfolio-wrapper .panel {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#sp-portfolio-wrapper .theme-blue,
+#sp-portfolio-wrapper .theme-purple,
+#sp-portfolio-wrapper .theme-pink {
+    background: #100028;
+}
+
+
+/* ================================================================
+   NORMAL PORTFOLIO PANELS
+   ================================================================ */
+
+#sp-portfolio-wrapper .case-content {
+    padding: 2rem 1rem;
+    z-index: 10;
+    min-width: 0;
+}
+
+#sp-portfolio-wrapper .eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    font-weight: 700;
+    display: block;
+}
+
+#sp-portfolio-wrapper .case-title {
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+#sp-portfolio-wrapper .case-desc {
+    font-size: clamp(0.9rem, 1.15vw, 1.15rem);
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    max-width: 90%;
+}
+
+#sp-portfolio-wrapper .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    max-width: 100%;
+}
+
+#sp-portfolio-wrapper .tool-pill {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.55rem 1rem;
+    border-radius: 50px;
+    font-size: clamp(0.68rem, 0.85vw, 0.85rem);
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+#sp-portfolio-wrapper .visual-col {
+    padding: 2rem 1rem;
+    position: relative;
+    min-width: 0;
+}
+
+#sp-portfolio-wrapper .product-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+    background: rgba(255,255,255,0.05);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+#sp-portfolio-wrapper .product-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.5s ease-in-out,
+        visibility 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#sp-portfolio-wrapper .product-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+#sp-portfolio-wrapper .panel-media {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+#sp-portfolio-wrapper .carousel-dots {
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 10;
+}
+
+#sp-portfolio-wrapper .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+#sp-portfolio-wrapper .carousel-dot.active {
+    background: #fff;
+}
+
+/* ================================================================
+   SOLUTIONS COMPONENT (BOOTSTRAP 4.5.0 + SCRIPT SYNCED)
+   ================================================================ */
+
+   .ssc-stage,
+   .ssc-stage *,
+   .ssc-stage *::before,
+   .ssc-stage *::after {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+   }
+   
+   .ssc-stage {
+       --ssc-accent: #818cf8;
+       --ssc-bg: #100028;
+       --ssc-text: #ffffff;
+       --ssc-muted: rgba(255,255,255,0.7);
+       --ssc-muted-2: rgba(255,255,255,0.45);
+       --ssc-chip-bg: rgba(255,255,255,0.06);
+       --ssc-chip-border: rgba(255,255,255,0.12);
+       --ssc-track-bg: rgba(255,255,255,0.15);
+       --ssc-dot-idle: rgba(255,255,255,0.25);
+   
+       position: relative;
+       width: 100%;
+       height: 100%;
+       z-index: 2;
+       background: transparent;
+       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+       color: #fff;
+       outline: none;
+   }
+   
+   /* Glow */
+   .ssc-glow {
+       position: absolute;
+       inset: 0;
+       pointer-events: none;
+       z-index: 0;
+   }
+   
+   /* Wheel / Title */
+   .ssc-wheel {
+       display: flex;
+       align-items: flex-end;
+       justify-content: center;
+       gap: 1.5rem;
+       margin-bottom: 2rem;
+       width: 100%;
+   }
+   
+   .ssc-wheel-btn {
+       appearance: none;
+       -webkit-appearance: none;
+       border: 0;
+       background: transparent;
+       color: #fff;
+       display: inline-flex;
+       flex-direction: column;
+       gap: 6px;
+       padding: 0;
+       cursor: pointer;
+   }
+   
+   .ssc-wheel-label {
+       text-transform: uppercase;
+       white-space: nowrap;
+       line-height: 1;
+       transition: all 0.3s ease;
+   }
+   
+   .ssc-wheel-btn.ssc-wh-prev,
+   .ssc-wheel-btn.ssc-wh-next {
+       opacity: 0.35;
+       transform: translateY(-20%) scale(0.85);
+   }
+   
+   .ssc-wheel-btn.ssc-wh-prev .ssc-wheel-label,
+   .ssc-wheel-btn.ssc-wh-next .ssc-wheel-label {
+       font-size: 0.75rem;
+       letter-spacing: 0.14em;
+       color: rgba(255, 255, 255, 0.6);
+   }
+   
+   .ssc-wheel-btn.ssc-wh-active .ssc-wheel-label {
+       font-size: clamp(1.8rem, 3vw, 2.8rem);
+       letter-spacing: -0.03em;
+       font-weight: 800;
+       color: #fff;
+   }
+   
+   .ssc-wheel-track {
+       width: 100%;
+       height: 2px;
+       background: var(--ssc-track-bg);
+       border-radius: 99px;
+       overflow: hidden;
+   }
+   
+   .ssc-wheel-fill {
+       display: block;
+       height: 100%;
+       background: var(--ssc-accent);
+       box-shadow: 0 0 10px var(--ssc-accent);
+       transition: width 0.05s linear;
+   }
+   
+   /* Panels & Achievements wrappers */
+   .ssc-panels-wrap,
+   .ssc-achievement-wrap {
+       position: relative;
+       min-height: 260px;
+       width: 100%;
+   }
+   
+   .ssc-panel,
+   .ssc-achievement-panel {
+       position: absolute;
+       inset: 0;
+       opacity: 0;
+       visibility: hidden;
+       pointer-events: none;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       gap: 1.2rem;
+       transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+   }
+   
+   .ssc-panel.ssc-active,
+   .ssc-achievement-panel.ssc-active {
+       opacity: 1;
+       visibility: visible;
+       pointer-events: auto;
+       transition-delay: 0s;
+   }
+   
+   .ssc-copy {
+       font-size: 1rem;
+       line-height: 1.7;
+       color: var(--ssc-muted);
+       margin: 0;
+       max-width: 48ch;
+   }
+   
+   .ssc-chips {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 8px;
+   }
+   
+   .ssc-chip {
+       display: inline-flex;
+       align-items: center;
+       gap: 6px;
+       padding: 6px 12px;
+       border-radius: 999px;
+       font-size: 0.75rem;
+       font-weight: 600;
+       color: rgba(255, 255, 255, 0.8);
+       background: var(--ssc-chip-bg);
+       border: 1px solid var(--ssc-chip-border);
+       white-space: nowrap;
+   }
+   
+   .ssc-chip-dot {
+       width: 6px;
+       height: 6px;
+       border-radius: 50%;
+       background: var(--ssc-accent);
+   }
+   
+   .ssc-metrics,
+   .ssc-achievement-meta {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 1.5rem;
+   }
+   
+   .ssc-metric,
+   .ssc-meta-item {
+       display: flex;
+       flex-direction: column;
+       gap: 3px;
+   }
+   
+   .ssc-metric-icon,
+   .ssc-meta-item i {
+       color: var(--ssc-accent);
+       font-size: 1rem;
+       margin-bottom: 2px;
+   }
+   
+   .ssc-metric-val,
+   .ssc-meta-item strong {
+       font-size: 1.1rem;
+       font-weight: 700;
+       line-height: 1;
+   }
+   
+   .ssc-metric-unit {
+       font-size: 0.7em;
+       opacity: 0.8;
+       margin-left: 1px;
+   }
+   
+   .ssc-metric-lbl,
+   .ssc-meta-item span {
+       font-size: 0.72rem;
+       color: var(--ssc-muted-2);
+       letter-spacing: 0.03em;
+       white-space: nowrap;
+   }
+   
+   .ssc-meta-item {
+       flex-direction: row;
+       align-items: center;
+       gap: 10px;
+   }
+   
+   .ssc-meta-item div {
+       display: flex;
+       flex-direction: column;
+       gap: 2px;
+   }
+   
+   /* Achievement Right Column Styling */
+   .ssc-achievement-main {
+       display: flex;
+       align-items: baseline;
+       gap: 14px;
+   }
+   
+   .ssc-achievement-number {
+       font-size: clamp(3rem, 5vw, 4.5rem);
+       font-weight: 800;
+       line-height: 1;
+       background: linear-gradient(135deg, #fff 10%, #a5b4fc 60%, #67e8f9 100%);
+       -webkit-background-clip: text;
+       background-clip: text;
+       -webkit-text-fill-color: transparent;
+   }
+   
+   .ssc-achievement-number span {
+       font-size: 0.5em;
+   }
+   
+   .ssc-achievement-name {
+       font-size: 1.25rem;
+       font-weight: 700;
+       color: rgba(255, 255, 255, 0.9);
+   }
+   
+   .ssc-achievement-subtitle {
+       font-size: 1rem;
+       color: var(--ssc-muted);
+       line-height: 1.6;
+       max-width: 44ch;
+   }
+   
+   /* Dots */
+   .ssc-dots {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 10px;
+       margin-top: 3rem;
+   }
+   
+   .ssc-dot {
+       appearance: none;
+       -webkit-appearance: none;
+       width: 8px;
+       height: 8px;
+       border: 0;
+       border-radius: 999px;
+       background: var(--ssc-dot-idle);
+       cursor: pointer;
+       padding: 0;
+       transition: all 0.3s ease;
+   }
+   
+   .ssc-dot.ssc-active {
+       width: 28px;
+       background: var(--ssc-accent);
+       box-shadow: 0 0 10px var(--ssc-accent);
+   }
+   
+   /* Grid Background Pattern */
+   .panel::before {
+       content: '';
+       position: absolute;
+       inset: 0;
+       background-image: 
+           linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+           linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+       background-size: 60px 60px;
+       pointer-events: none;
+       z-index: 1;
+   }
+   
+   /* Reduced Motion */
+   @media (prefers-reduced-motion: reduce) {
+       .ssc-stage *,
+       .ssc-stage *::before,
+       .ssc-stage *::after {
+           animation-duration: 0.01ms !important;
+           animation-iteration-count: 1 !important;
+           transition-duration: 0.01ms !important;
+       }
+   }
+   
+   @media (max-width: 991.98px) {
+       .ssc-wheel-btn.ssc-wh-prev,
+       .ssc-wheel-btn.ssc-wh-next {
+           display: none;
+       }
+       .ssc-wheel-btn.ssc-wh-active .ssc-wheel-track {
+           width: 60px;
+           margin: 0 auto;
+       }
+       .ssc-panel,
+       .ssc-achievement-panel {
+           text-align: center;
+           align-items: center;
+           position: relative;
+           inset: auto;
+       }
+       .ssc-panels-wrap,
+       .ssc-achievement-wrap {
+           position: relative;
+           min-height: auto;
+       }
+       .ssc-panel,
+       .ssc-achievement-panel {
+           display: none;
+       }
+       .ssc-panel.ssc-active,
+       .ssc-achievement-panel.ssc-active {
+           display: flex;
+       }
+       .ssc-chips, .ssc-metrics, .ssc-achievement-meta, .ssc-achievement-main {
+           justify-content: center;
+       }
+   }
+   
+   @media (max-width: 767.98px) {
+       .ssc-copy,
+       .ssc-achievement-subtitle,
+       .ssc-achievement-name {
+           display: none !important;
+       }
+   
+       .ssc-achievement-main {
+           justify-content: center;
+           align-items: center;
+           margin-bottom: 0.5rem;
+       }
+   
+       .ssc-achievement-number {
+           font-size: 3rem !important;
+       }
+   
+       .ssc-achievement-meta {
+           justify-content: center;
+           gap: 1rem;
+       }
+   
+       .ssc-meta-item {
+           flex-direction: column;
+           align-items: center;
+           text-align: center;
+       }
+   
+       .ssc-meta-item i {
+           font-size: 1.25rem;
+           margin-bottom: 2px;
+       }
+   
+       .ssc-meta-item strong {
+           font-size: 0.85rem;
+       }
+   
+       .ssc-meta-item span {
+           font-size: 0.65rem;
+       }
+   }
+/* ================================================================
+   PROGRESS BAR
+   ================================================================ */
+
+   #sp-portfolio-wrapper .progress-wrap {
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 18px;
+    height: 4px;
+    opacity: 0.6;
+    z-index: 50;
+    pointer-events: none;
+}
+
+#sp-portfolio-wrapper .progress-bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.12);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+#sp-portfolio-wrapper .progress-fg {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+    border-radius: 999px;
+    transition: none;
+    will-change: width;
+}
+
+
+/* ================================================================
+   GRID BACKGROUND PATTERN
+   ================================================================ */
+
+   
