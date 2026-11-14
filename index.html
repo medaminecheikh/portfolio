@@ -1007,24 +1007,26 @@
     <section aria-label="Project showcase">
       <div id="sp-portfolio-wrapper">
         <section class="portfolio-pin-container" id="sp-portfolio-container">
-          <div class="horizontal-scroll-wrapper" id="sp-horizontal-wrapper">
+          <div
+            class="horizontal-scroll-wrapper"
+            id="sp-horizontal-wrapper"
+            role="list"
+          >
             <!-- ────────────────────────────────────
-                     PANEL 1 · E-Commerce Platform (BLUE)
-                ──────────────────────────────────── -->
+             PANEL 1 · E-Commerce Platform (BLUE)
+        ──────────────────────────────────── -->
             <article class="panel theme-blue" role="listitem">
               <div class="container h-100">
                 <div class="row h-100 align-items-center">
-                  <!-- Left: text -->
+                  <!-- Caption -->
                   <div
                     class="col-md-6 d-flex flex-column justify-content-center case-content text-white"
                   >
                     <span class="eyebrow">E-Commerce Platform</span>
                     <h2 class="case-title">Shopping Experience</h2>
                     <p class="case-desc">
-                      Highly customizable e-commerce platform designed for
-                      performance and usability. Includes product catalog
-                      management, dynamic product pages, and customer support
-                      workflows.
+                      A fast, customizable store with a product catalog, dynamic
+                      product pages and built-in customer support.
                     </p>
                     <div class="tools">
                       <span class="tool-pill">React</span>
@@ -1034,11 +1036,15 @@
                     </div>
                   </div>
 
-                  <!-- Right: carousel -->
+                  <!-- Window with screenshots -->
                   <div
                     class="col-md-6 d-flex align-items-center justify-content-center visual-col"
                   >
-                    <div class="product-carousel" data-carousel>
+                    <div
+                      class="product-carousel"
+                      data-carousel
+                      aria-label="E-commerce platform screenshots"
+                    >
                       <div class="product-slide active">
                         <img
                           src="img/screenshots/products.png"
@@ -1097,13 +1103,12 @@
             </article>
 
             <!-- ────────────────────────────────────
-                     PANEL 2 · Customer Service System (PURPLE)
-                ──────────────────────────────────── -->
+             PANEL 2 · Customer Service System (PURPLE)
+        ──────────────────────────────────── -->
             <article class="panel theme-purple" role="listitem">
               <div class="container h-100">
-                <!-- Adding flex-md-row-reverse for an alternating look on desktop -->
                 <div class="row h-100 align-items-center flex-md-row-reverse">
-                  <!-- Left: text (Right visually) -->
+                  <!-- Caption -->
                   <div
                     class="col-md-6 d-flex flex-column justify-content-center case-content text-white"
                   >
@@ -1112,10 +1117,9 @@
                       Complaint &amp; Ticket Management
                     </h2>
                     <p class="case-desc">
-                      Internal customer service platform built to centralize
-                      complaints, track resolution status, and improve response
-                      time. Designed for teams handling high request volume with
-                      clear workflows and accountability.
+                      One place to log complaints, follow their status and
+                      answer faster, with clear workflows for high-volume
+                      support teams.
                     </p>
                     <div class="tools">
                       <span class="tool-pill">React</span>
@@ -1125,11 +1129,15 @@
                     </div>
                   </div>
 
-                  <!-- Right: carousel (Left visually) -->
+                  <!-- Window with screenshots -->
                   <div
                     class="col-md-6 d-flex align-items-center justify-content-center visual-col"
                   >
-                    <div class="product-carousel" data-carousel>
+                    <div
+                      class="product-carousel"
+                      data-carousel
+                      aria-label="Complaint management screenshots"
+                    >
                       <div class="product-slide active">
                         <img
                           src="img/EspritRec/esprit2.png"
@@ -1168,21 +1176,20 @@
             </article>
 
             <!-- ────────────────────────────────────
-                     PANEL 3 · Financial Tech (PINK)
-                ──────────────────────────────────── -->
+             PANEL 3 · Financial Tech (PINK)
+        ──────────────────────────────────── -->
             <article class="panel theme-pink" role="listitem">
               <div class="container h-100">
                 <div class="row h-100 align-items-center">
-                  <!-- Left: text -->
+                  <!-- Caption -->
                   <div
                     class="col-md-6 d-flex flex-column justify-content-center case-content text-white"
                   >
                     <span class="eyebrow">Financial Tech</span>
                     <h2 class="case-title">Billing &amp; Invoicing System</h2>
                     <p class="case-desc">
-                      Financial management system for generating invoices,
-                      tracking payments, and handling transaction history. Built
-                      with accuracy and auditability.
+                      Create invoices, track payments and review every
+                      transaction, built for accuracy and a clear audit trail.
                     </p>
                     <div class="tools">
                       <span class="tool-pill">Angular</span>
@@ -1192,11 +1199,15 @@
                     </div>
                   </div>
 
-                  <!-- Right: carousel -->
+                  <!-- Window with screenshots -->
                   <div
                     class="col-md-6 d-flex align-items-center justify-content-center visual-col"
                   >
-                    <div class="product-carousel" data-carousel>
+                    <div
+                      class="product-carousel"
+                      data-carousel
+                      aria-label="Billing system screenshots"
+                    >
                       <div class="product-slide active">
                         <img
                           src="img/tt/tt.png"
@@ -1235,14 +1246,13 @@
             </article>
 
             <!-- ────────────────────────────────────
-                     PANEL 3 · tools Tech 
-                ──────────────────────────────────── -->
+             PANEL 4 · How I build (rewritten content)
+             IDs, classes and data attributes are unchanged so
+             js/presentation-solutions.js keeps working.
+        ──────────────────────────────────── -->
             <article class="panel theme-pink" role="listitem">
               <div class="container h-100">
                 <div class="row h-100 align-items-center">
-                  <!-- ═══════════════════════════════════════════════════════
-                             COMPONENT solution working on it .....
-                        ═══════════════════════════════════════════════════════ -->
                   <section class="ssc-stage" id="ssc-stage" tabindex="0">
                     <div class="ssc-glow" id="ssc-glow"></div>
 
@@ -1252,7 +1262,7 @@
                         <div
                           class="ssc-wheel"
                           id="ssc-wheel"
-                          aria-label="Service navigation"
+                          aria-label="How I build: sections"
                         >
                           <button
                             class="ssc-wheel-btn ssc-wh-prev"
@@ -1285,150 +1295,131 @@
                       </div>
                     </div>
 
-                    <!-- ROW 2: TEXT & ACHIEVEMENTS EVEN SPLIT -->
+                    <!-- ROW 2: TEXT & ACHIEVEMENTS -->
                     <div
                       class="row align-items-center justify-content-between g-4"
                     >
-                      <!-- LEFT COLUMN: TEXT & METRICS -->
+                      <!-- LEFT COLUMN: TEXT & TOOLS -->
                       <div class="col-lg-6 col-md-12">
                         <div class="ssc-panels-wrap px-lg-3">
+                          <!-- 0 · Architecture -->
                           <div class="ssc-panel" id="ssc-panel-0">
                             <p class="ssc-copy">
-                              Designed scalable microservice systems where each
-                              service can deploy, scale, and recover
-                              independently. This keeps failures isolated and
-                              makes the platform easier to grow.
+                              I split systems into small services that deploy,
+                              scale and fail on their own. Kafka connects them,
+                              Docker ships them and Jenkins automates every
+                              release.
                             </p>
                             <div class="ssc-chips">
                               <span class="ssc-chip"
-                                ><span class="ssc-chip-dot"></span
-                                >Kubernetes</span
-                              >
-                              <span class="ssc-chip"
-                                ><span class="ssc-chip-dot"></span>Service
-                                Mesh</span
+                                ><span class="ssc-chip-dot"></span>Spring
+                                Boot</span
                               >
                               <span class="ssc-chip"
                                 ><span class="ssc-chip-dot"></span
-                                >Event-Driven</span
+                                >Microservices</span
                               >
                               <span class="ssc-chip"
-                                ><span class="ssc-chip-dot"></span>CI/CD</span
+                                ><span class="ssc-chip-dot"></span>REST
+                                API</span
+                              >
+                              <span class="ssc-chip"
+                                ><span class="ssc-chip-dot"></span>Kafka</span
                               >
                             </div>
                             <div class="ssc-metrics">
-                              <div class="ssc-metric">
-                                <span class="ssc-metric-icon"
-                                  ><i class="fa-solid fa-server"></i
-                                ></span>
-                                <span class="ssc-metric-val"
-                                  >99.98<span class="ssc-metric-unit"
-                                    >%</span
-                                  ></span
-                                >
-                                <span class="ssc-metric-lbl">Uptime SLA</span>
-                              </div>
                               <div class="ssc-metric">
                                 <span class="ssc-metric-icon"
                                   ><i class="fa-solid fa-bolt"></i
                                 ></span>
-                                <span class="ssc-metric-val"
-                                  >120<span class="ssc-metric-unit"
-                                    >ms</span
-                                  ></span
+                                <span class="ssc-metric-val">Kafka</span>
+                                <span class="ssc-metric-lbl"
+                                  >Event messaging</span
                                 >
-                                <span class="ssc-metric-lbl">Avg Deploy</span>
                               </div>
                               <div class="ssc-metric">
                                 <span class="ssc-metric-icon"
-                                  ><i class="fa-solid fa-cubes"></i
+                                  ><i class="fa-solid fa-box"></i
                                 ></span>
-                                <span class="ssc-metric-val"
-                                  >40<span class="ssc-metric-unit"
-                                    >+</span
-                                  ></span
-                                >
+                                <span class="ssc-metric-val">Docker</span>
                                 <span class="ssc-metric-lbl"
-                                  >Microservices</span
+                                  >Containerized services</span
+                                >
+                              </div>
+                              <div class="ssc-metric">
+                                <span class="ssc-metric-icon"
+                                  ><i class="fa-solid fa-code-branch"></i
+                                ></span>
+                                <span class="ssc-metric-val">GitHub</span>
+                                <span class="ssc-metric-lbl"
+                                  >Automated CI/CD</span
                                 >
                               </div>
                             </div>
                           </div>
 
+                          <!-- 1 · Security -->
                           <div class="ssc-panel" id="ssc-panel-1">
                             <p class="ssc-copy">
-                              Every request authenticated, authorised and
-                              audited. Token rotation, rate limits and TLS 1.3
-                              by default keep security visible without slowing
-                              you down. Zero-trust perimeter means breach impact
-                              stays contained to a single service.
+                              Every request is authenticated and authorized.
+                              Spring Security, JWT and role-based access protect
+                              the data, and SonarQube checks catch problems
+                              before release.
                             </p>
                             <div class="ssc-chips">
                               <span class="ssc-chip"
-                                ><span class="ssc-chip-dot"></span>OAuth
-                                2.0</span
+                                ><span class="ssc-chip-dot"></span>Spring
+                                Security</span
                               >
                               <span class="ssc-chip"
-                                ><span class="ssc-chip-dot"></span>JWT /
-                                OIDC</span
+                                ><span class="ssc-chip-dot"></span>JWT</span
                               >
                               <span class="ssc-chip"
-                                ><span class="ssc-chip-dot"></span>Rate
-                                Limiting</span
+                                ><span class="ssc-chip-dot"></span>Role-based
+                                access</span
                               >
                               <span class="ssc-chip"
-                                ><span class="ssc-chip-dot"></span>REST &amp;
-                                GraphQL</span
+                                ><span class="ssc-chip-dot"></span
+                                >SonarQube</span
                               >
                             </div>
                             <div class="ssc-metrics">
                               <div class="ssc-metric">
                                 <span class="ssc-metric-icon"
-                                  ><i class="fa-solid fa-shield-halved"></i
+                                  ><i class="fa-solid fa-key"></i
                                 ></span>
-                                <span class="ssc-metric-val"
-                                  >0<span class="ssc-metric-unit">
-                                    CVEs</span
-                                  ></span
-                                >
+                                <span class="ssc-metric-val">JWT</span>
                                 <span class="ssc-metric-lbl"
-                                  >Critical in prod</span
+                                  >Token authentication</span
                                 >
                               </div>
                               <div class="ssc-metric">
                                 <span class="ssc-metric-icon"
-                                  ><i class="fa-solid fa-lock"></i
+                                  ><i class="fa-solid fa-user-lock"></i
                                 ></span>
-                                <span class="ssc-metric-val"
-                                  >100<span class="ssc-metric-unit"
-                                    >%</span
-                                  ></span
-                                >
+                                <span class="ssc-metric-val">Roles</span>
                                 <span class="ssc-metric-lbl"
-                                  >Encrypted transit</span
+                                  >Per-user permissions</span
                                 >
                               </div>
                               <div class="ssc-metric">
                                 <span class="ssc-metric-icon"
-                                  ><i class="fa-solid fa-clock"></i
+                                  ><i class="fa-solid fa-clipboard-check"></i
                                 ></span>
-                                <span class="ssc-metric-val"
-                                  >&lt;50<span class="ssc-metric-unit"
-                                    >ms</span
-                                  ></span
+                                <span class="ssc-metric-val">Quality gate</span>
+                                <span class="ssc-metric-lbl"
+                                  >Static analysis</span
                                 >
-                                <span class="ssc-metric-lbl">Auth latency</span>
                               </div>
                             </div>
                           </div>
 
+                          <!-- 2 · Data & AI -->
                           <div class="ssc-panel" id="ssc-panel-2">
                             <p class="ssc-copy">
-                              Relational, document, cache and search layers
-                              modelled together. Replication, sharding and
-                              point-in-time recovery help your data survive
-                              anything. Automatic failover switches traffic in
-                              seconds — no manual intervention needed.
+                              I pick the right database for each job, then build
+                              on top of it: dashboards, data analysis and AI
+                              features like chatbots and recommendations.
                             </p>
                             <div class="ssc-chips">
                               <span class="ssc-chip"
@@ -1439,51 +1430,39 @@
                                 ><span class="ssc-chip-dot"></span>MongoDB</span
                               >
                               <span class="ssc-chip"
-                                ><span class="ssc-chip-dot"></span>Redis</span
+                                ><span class="ssc-chip-dot"></span>SQL
+                                Server</span
                               >
                               <span class="ssc-chip"
-                                ><span class="ssc-chip-dot"></span>SQL</span
+                                ><span class="ssc-chip-dot"></span>LLM</span
                               >
                             </div>
                             <div class="ssc-metrics">
                               <div class="ssc-metric">
                                 <span class="ssc-metric-icon"
-                                  ><i class="fa-solid fa-database"></i
+                                  ><i class="fa-solid fa-chart-line"></i
                                 ></span>
-                                <span class="ssc-metric-val"
-                                  >3<span class="ssc-metric-unit"
-                                    >× rep</span
-                                  ></span
-                                >
+                                <span class="ssc-metric-val">Dashboards</span>
                                 <span class="ssc-metric-lbl"
-                                  >Data replicated</span
+                                  >Interactive data views</span
                                 >
                               </div>
                               <div class="ssc-metric">
                                 <span class="ssc-metric-icon"
-                                  ><i class="fa-solid fa-gauge-high"></i
+                                  ><i class="fa-solid fa-robot"></i
                                 ></span>
-                                <span class="ssc-metric-val"
-                                  >&lt;2<span class="ssc-metric-unit"
-                                    >ms</span
-                                  ></span
-                                >
+                                <span class="ssc-metric-val">Chatbot</span>
                                 <span class="ssc-metric-lbl"
-                                  >Cache read p99</span
+                                  >LLM assistant</span
                                 >
                               </div>
                               <div class="ssc-metric">
                                 <span class="ssc-metric-icon"
-                                  ><i class="fa-solid fa-rotate-left"></i
+                                  ><i class="fa-solid fa-layer-group"></i
                                 ></span>
-                                <span class="ssc-metric-val"
-                                  >RPO
-                                  <span class="ssc-metric-unit"
-                                    >1 min</span
-                                  ></span
-                                >
+                                <span class="ssc-metric-val">ML</span>
                                 <span class="ssc-metric-lbl"
-                                  >Point-in-time</span
+                                  >Feature engineering</span
                                 >
                               </div>
                             </div>
@@ -1491,40 +1470,41 @@
                         </div>
                       </div>
 
-                      <!-- RIGHT COLUMN: ACHIEVEMENTS -->
+                      <!-- RIGHT COLUMN: PROOF -->
                       <div class="col-lg-6 col-md-12">
                         <div class="ssc-achievement-wrap px-lg-3">
                           <div class="ssc-achievement-panel" id="ssc-svg-0">
                             <div class="ssc-achievement-main">
                               <div class="ssc-achievement-number">
-                                40<span>+</span>
+                                15<span>+</span>
                               </div>
                               <div class="ssc-achievement-name">
-                                Microservices
+                                Projects completed
                               </div>
                             </div>
                             <div class="ssc-achievement-subtitle">
-                              Built for scale. Designed for independent
-                              deployment.
+                              Built end to end, from design to deployment.
                             </div>
                             <div class="ssc-achievement-meta">
                               <div class="ssc-meta-item">
-                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                <i class="fa-solid fa-file-invoice"></i>
                                 <div>
-                                  <strong>99.98%</strong><span>Uptime SLA</span>
+                                  <strong>Tunisie Telecom</strong
+                                  ><span>Invoice and payment platform</span>
                                 </div>
                               </div>
                               <div class="ssc-meta-item">
-                                <i class="fa-solid fa-bolt"></i>
+                                <i class="fa-solid fa-ticket"></i>
                                 <div>
-                                  <strong>120ms</strong><span>Avg Deploy</span>
+                                  <strong>ESPRIT</strong
+                                  ><span>Complaint management</span>
                                 </div>
                               </div>
                               <div class="ssc-meta-item">
-                                <i class="fa-solid fa-code-branch"></i>
+                                <i class="fa-solid fa-users"></i>
                                 <div>
-                                  <strong>Independent</strong
-                                  ><span>Service Scaling</span>
+                                  <strong>Groupe RIF</strong
+                                  ><span>HR application</span>
                                 </div>
                               </div>
                             </div>
@@ -1532,35 +1512,37 @@
 
                           <div class="ssc-achievement-panel" id="ssc-svg-1">
                             <div class="ssc-achievement-main">
-                              <div class="ssc-achievement-number">0</div>
+                              <div class="ssc-achievement-number">
+                                A<span>+</span>
+                              </div>
                               <div class="ssc-achievement-name">
-                                Critical CVEs
+                                SonarQube rating
                               </div>
                             </div>
                             <div class="ssc-achievement-subtitle">
-                              Security built into every request, service, and
-                              API.
+                              Secure, maintainable code backed by static
+                              analysis.
                             </div>
                             <div class="ssc-achievement-meta">
                               <div class="ssc-meta-item">
-                                <i class="fa-solid fa-lock"></i>
+                                <i class="fa-solid fa-code"></i>
                                 <div>
-                                  <strong>100%</strong
-                                  ><span>Encrypted Transit</span>
+                                  <strong>63,000+</strong
+                                  ><span>Lines of bug-free code</span>
+                                </div>
+                              </div>
+                              <div class="ssc-meta-item">
+                                <i class="fa-solid fa-key"></i>
+                                <div>
+                                  <strong>JWT</strong
+                                  ><span>Stateless sign-in</span>
                                 </div>
                               </div>
                               <div class="ssc-meta-item">
                                 <i class="fa-solid fa-shield-halved"></i>
                                 <div>
-                                  <strong>&lt;50ms</strong
-                                  ><span>Auth Latency</span>
-                                </div>
-                              </div>
-                              <div class="ssc-meta-item">
-                                <i class="fa-solid fa-fingerprint"></i>
-                                <div>
-                                  <strong>OAuth 2.0</strong
-                                  ><span>Identity &amp; Access</span>
+                                  <strong>Spring Security</strong
+                                  ><span>Access control</span>
                                 </div>
                               </div>
                             </div>
@@ -1568,37 +1550,35 @@
 
                           <div class="ssc-achievement-panel" id="ssc-svg-2">
                             <div class="ssc-achievement-main">
-                              <div class="ssc-achievement-number">
-                                3<span>×</span>
-                              </div>
+                              <div class="ssc-achievement-number">3</div>
                               <div class="ssc-achievement-name">
-                                Data Replication
+                                Database engines
                               </div>
                             </div>
                             <div class="ssc-achievement-subtitle">
-                              Reliable data layers engineered for performance
-                              and recovery.
+                              Data and AI features that turn raw records into
+                              answers.
                             </div>
                             <div class="ssc-achievement-meta">
                               <div class="ssc-meta-item">
-                                <i class="fa-solid fa-gauge-high"></i>
-                                <div>
-                                  <strong>&lt;2ms</strong
-                                  ><span>Cache Read p99</span>
-                                </div>
-                              </div>
-                              <div class="ssc-meta-item">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
-                                <div>
-                                  <strong>1 min</strong
-                                  ><span>Point-in-Time RPO</span>
-                                </div>
-                              </div>
-                              <div class="ssc-meta-item">
                                 <i class="fa-solid fa-database"></i>
                                 <div>
-                                  <strong>3 Layers</strong
-                                  ><span>Data Architecture</span>
+                                  <strong>PostgreSQL</strong
+                                  ><span>Relational data</span>
+                                </div>
+                              </div>
+                              <div class="ssc-meta-item">
+                                <i class="fa-solid fa-leaf"></i>
+                                <div>
+                                  <strong>MongoDB</strong
+                                  ><span>Document data</span>
+                                </div>
+                              </div>
+                              <div class="ssc-meta-item">
+                                <i class="fa-solid fa-robot"></i>
+                                <div>
+                                  <strong>AI chatbot</strong
+                                  ><span>Built at Groupe RIF</span>
                                 </div>
                               </div>
                             </div>
@@ -1610,30 +1590,29 @@
                     <!-- ROW 3: DOTS -->
                     <div class="row justify-content-center">
                       <div class="col-12 text-center">
-                        <div class="ssc-dots" aria-label="Panel indicators">
+                        <div class="ssc-dots" aria-label="Section indicators">
                           <button
                             class="ssc-dot"
                             type="button"
                             data-ssc-i="0"
-                            aria-label="Microservices"
+                            aria-label="Architecture"
                           ></button>
                           <button
                             class="ssc-dot"
                             type="button"
                             data-ssc-i="1"
-                            aria-label="Security and APIs"
+                            aria-label="Security"
                           ></button>
                           <button
                             class="ssc-dot"
                             type="button"
                             data-ssc-i="2"
-                            aria-label="Databases"
+                            aria-label="Data and AI"
                           ></button>
                         </div>
                       </div>
                     </div>
                   </section>
-                  <!-- END COMPONENT -->
                 </div>
               </div>
             </article>

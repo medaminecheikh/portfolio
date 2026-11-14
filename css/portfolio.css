@@ -2,598 +2,1101 @@
    PORTFOLIO BASE
    ================================================================ */
 
-   #sp-portfolio-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    background: #000;
+#sp-portfolio-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
 }
 
 #sp-portfolio-wrapper .portfolio-pin-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #sp-portfolio-wrapper .horizontal-scroll-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 400vw;
-    height: 100%;
-    will-change: transform;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 400vw;
+  height: 100%;
+  will-change: transform;
+  counter-reset: sp-project; /* "Project 01 / 03" label */
 }
 
 #sp-portfolio-wrapper .panel {
-    width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
-    flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
+  /* ---- layout variables ----
+       desktop (992px+) : picture and text SIDE BY SIDE, picture ~65-70%
+       tablet / mobile  : picture on top, text under it                  */
+  --sp-pad-t: 84px; /* clears the fixed navbar                       */
+  --sp-pad-b: 52px; /* clears the progress bar                       */
+  --sp-ratio: 1.778; /* picture aspect ratio 16 / 9                   */
+  --sp-colgap: 2rem; /* space between picture and text                */
+  --sp-text-min: clamp(15rem, 24vw, 26rem); /* room kept for the text   */
+  --sp-maxh: min(62vh, calc(100vh - var(--sp-pad-t) - var(--sp-pad-b)));
+  --sp-stage-w: min(
+    calc(100vw - 4rem - var(--sp-text-min) - var(--sp-colgap)),
+    calc(var(--sp-maxh) * var(--sp-ratio))
+  );
+  --sp-accent: 96, 165, 250;
+
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 #sp-portfolio-wrapper .theme-blue,
 #sp-portfolio-wrapper .theme-purple,
 #sp-portfolio-wrapper .theme-pink {
-    background: #100028;
+  background: #100028;
 }
 
+#sp-portfolio-wrapper .theme-blue {
+  --sp-accent: 96, 165, 250;
+}
+#sp-portfolio-wrapper .theme-purple {
+  --sp-accent: 167, 139, 250;
+}
+#sp-portfolio-wrapper .theme-pink {
+  --sp-accent: 244, 114, 182;
+}
+
+/* project panels only: counter + soft light behind the window */
+#sp-portfolio-wrapper .panel:has(.visual-col) {
+  counter-increment: sp-project;
+  background:
+    radial-gradient(
+      58% 52% at 50% 40%,
+      rgba(var(--sp-accent), 0.24),
+      transparent 72%
+    ),
+    #100028;
+}
 
 /* ================================================================
-   NORMAL PORTFOLIO PANELS
+   PROJECT PANELS  (picture and text side by side)
+   Desktop: a 16:9 picture (~65-70% of the width, never taller than 62%
+   of the screen) next to a text column: outlined number, project type,
+   bold slanted title, short line, tags. Panels alternate sides.
+   Tablet / mobile: picture on top, text under it.
+   No overlap, no icons on the picture, no hover or zoom effects.
    ================================================================ */
 
+/* full-bleed: the 1170px container would shrink the picture */
+#sp-portfolio-wrapper .panel .container:has(.visual-col) {
+  max-width: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#sp-portfolio-wrapper .panel .row:has(> .visual-col) {
+  margin: 0;
+}
+
+#sp-portfolio-wrapper .visual-col,
 #sp-portfolio-wrapper .case-content {
-    padding: 2rem 1rem;
-    z-index: 10;
-    min-width: 0;
-}
-
-#sp-portfolio-wrapper .eyebrow {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-    opacity: 0.9;
-    font-weight: 700;
-    display: block;
-}
-
-#sp-portfolio-wrapper .case-title {
-    font-size: clamp(2rem, 3.5vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-    letter-spacing: -1px;
-}
-
-#sp-portfolio-wrapper .case-desc {
-    font-size: clamp(0.9rem, 1.15vw, 1.15rem);
-    line-height: 1.65;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-    max-width: 90%;
-}
-
-#sp-portfolio-wrapper .tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    max-width: 100%;
-}
-
-#sp-portfolio-wrapper .tool-pill {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 0.55rem 1rem;
-    border-radius: 50px;
-    font-size: clamp(0.68rem, 0.85vw, 0.85rem);
-    font-weight: 600;
-    border: 1px solid rgba(255,255,255,0.25);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-    white-space: nowrap;
+  position: static;
+  flex: none;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  padding: 0;
 }
 
 #sp-portfolio-wrapper .visual-col {
-    padding: 2rem 1rem;
-    position: relative;
-    min-width: 0;
+  position: relative;
+  z-index: 2;
 }
+
+/* ---------- THE PICTURE ---------- */
 
 #sp-portfolio-wrapper .product-carousel {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 10;
-    background: rgba(255,255,255,0.05);
-    border-radius: 1.5rem;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: var(--sp-ratio);
+  overflow: hidden;
+  background: #0a0414;
+  border: 0;
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 50px 110px -40px rgba(var(--sp-accent), 0.6),
+    0 24px 50px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* plain crossfade between slides: no scale, no zoom, no loop effect */
 #sp-portfolio-wrapper .product-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition:
-        opacity 0.5s ease-in-out,
-        visibility 0.5s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 #sp-portfolio-wrapper .product-slide.active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 2;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
 }
 
 #sp-portfolio-wrapper .panel-media {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 0;
 }
 
+/* the pictures never move, scale or animate, hovered or not */
+#sp-portfolio-wrapper .product-carousel,
+#sp-portfolio-wrapper .product-slide,
+#sp-portfolio-wrapper .panel-media {
+  animation: none !important;
+}
+#sp-portfolio-wrapper .product-carousel:hover,
+#sp-portfolio-wrapper .product-carousel:hover .product-slide,
+#sp-portfolio-wrapper .product-carousel:hover .panel-media,
+#sp-portfolio-wrapper .panel-media:hover {
+  transform: none !important;
+  scale: none !important;
+  filter: none !important;
+}
+
+/* slide dots: small pill, bottom centre of the picture */
 #sp-portfolio-wrapper .carousel-dots {
-    position: absolute;
-    bottom: -35px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    z-index: 10;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(10, 4, 20, 0.55);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  z-index: 7;
 }
 
 #sp-portfolio-wrapper .carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-    cursor: pointer;
-    border: none;
-    padding: 0;
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+
+/* bigger tap area without changing the look */
+#sp-portfolio-wrapper .carousel-dot::after {
+  content: "";
+  position: absolute;
+  inset: -12px -5px;
 }
 
 #sp-portfolio-wrapper .carousel-dot.active {
-    background: #fff;
+  width: 24px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(var(--sp-accent), 0.9);
+}
+
+#sp-portfolio-wrapper .carousel-dot:focus-visible {
+  outline: 2px solid rgb(var(--sp-accent));
+  outline-offset: 4px;
+}
+
+/* ---------- THE TEXT ---------- */
+
+#sp-portfolio-wrapper .case-content {
+  z-index: 3;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  transform: none;
+}
+
+/* big outlined project number (desktop only, see below) */
+#sp-portfolio-wrapper .case-content::before {
+  content: counter(sp-project, decimal-leading-zero);
+  display: none;
+  margin-bottom: 0.7rem;
+  font-family: "Play", sans-serif;
+  font-size: clamp(3.4rem, 5.6vw, 6.4rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -2px;
+  color: rgba(var(--sp-accent), 0.08);
+  -webkit-text-stroke: 1.5px rgba(var(--sp-accent), 0.8);
+  transform: skewX(-12deg);
+  transform-origin: left bottom;
+}
+
+#sp-portfolio-wrapper .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin: 0 0 0.6rem;
+  opacity: 1;
+  font-weight: 700;
+  color: rgb(var(--sp-accent));
+}
+
+#sp-portfolio-wrapper .eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: rgb(var(--sp-accent));
+  flex: none;
+}
+
+/* bold slanted title, same slant as the navbar */
+#sp-portfolio-wrapper .case-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.1vw, 3.7rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  transform: skewX(-12deg);
+  transform-origin: left center;
+  background: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #ffffff 60%,
+    rgb(var(--sp-accent)) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 28px rgba(var(--sp-accent), 0.35));
+  overflow-wrap: anywhere;
+}
+
+#sp-portfolio-wrapper .case-title::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+}
+
+#sp-portfolio-wrapper .case-desc {
+  font-size: clamp(0.9rem, 1vw, 1.02rem);
+  line-height: 1.6;
+  margin: 1.1rem 0 1.2rem;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 36ch;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+}
+
+#sp-portfolio-wrapper .tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.35rem;
+  max-width: 100%;
+}
+
+/* tags use the navbar's slanted shape */
+#sp-portfolio-wrapper .tool-pill {
+  background: rgba(var(--sp-accent), 0.24);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  padding: 0.55rem 1.25rem;
+  border: 0;
+  border-radius: 0;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  font-size: clamp(0.7rem, 0.82vw, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  box-shadow: none;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+#sp-portfolio-wrapper .tool-pill:hover {
+  background: rgba(var(--sp-accent), 0.38);
+}
+
+/* ================================================================
+   DESKTOP (992px and up): SIDE BY SIDE
+   ================================================================ */
+@media (min-width: 992px) {
+  /* picture | text, the pair is centred and vertically centred */
+  #sp-portfolio-wrapper .panel .row:has(> .visual-col) {
+    display: grid;
+    grid-template-columns: var(--sp-stage-w) minmax(0, 30rem);
+    grid-template-rows: auto;
+    column-gap: var(--sp-colgap);
+    justify-content: center;
+    align-content: center;
+    padding: var(--sp-pad-t) 0 var(--sp-pad-b);
+  }
+
+  #sp-portfolio-wrapper .visual-col {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #sp-portfolio-wrapper .case-content {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    align-self: center;
+  }
+
+  #sp-portfolio-wrapper .case-content::before {
+    display: block;
+  }
+
+  /* panel 2 flips: text left, picture right */
+  #sp-portfolio-wrapper .theme-purple .row:has(> .visual-col) {
+    grid-template-columns: minmax(0, 30rem) var(--sp-stage-w);
+  }
+  #sp-portfolio-wrapper .theme-purple .visual-col {
+    grid-column: 2;
+  }
+  #sp-portfolio-wrapper .theme-purple .case-content {
+    grid-column: 1;
+  }
+}
+
+/* Short laptop screens: more height for the picture, no number, no line */
+@media (min-width: 992px) and (max-height: 640px) {
+  #sp-portfolio-wrapper .panel {
+    --sp-pad-t: 66px;
+    --sp-pad-b: 44px;
+    --sp-maxh: min(72vh, calc(100vh - var(--sp-pad-t) - var(--sp-pad-b)));
+  }
+  #sp-portfolio-wrapper .case-content::before,
+  #sp-portfolio-wrapper .case-desc {
+    display: none;
+  }
+}
+
+/* ================================================================
+   TABLET + MOBILE (up to 991px): picture on top, text under it
+   ================================================================ */
+@media (max-width: 991.98px) {
+  #sp-portfolio-wrapper .panel {
+    --sp-text-min: 0px;
+    --sp-colgap: 0px;
+    --sp-maxh: min(
+      58vh,
+      calc(100vh - var(--sp-pad-t) - var(--sp-pad-b) - 150px)
+    );
+  }
+
+  #sp-portfolio-wrapper .panel .row:has(> .visual-col) {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: var(--sp-pad-t) 0 var(--sp-pad-b);
+  }
+
+  #sp-portfolio-wrapper .visual-col,
+  #sp-portfolio-wrapper .case-content {
+    width: var(--sp-stage-w);
+  }
+
+  #sp-portfolio-wrapper .case-content {
+    display: block !important;
+    padding: 1.2rem 0.25rem 0;
+  }
+
+  #sp-portfolio-wrapper .case-desc {
+    display: none;
+  }
+
+  #sp-portfolio-wrapper .case-title {
+    font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+    margin-bottom: 0.9rem;
+  }
+
+  #sp-portfolio-wrapper .case-title::after {
+    display: none;
+  }
+}
+
+/* ================================================================
+   MOBILE (up to 767px): ONE slanted title and ONE line of tags
+   ================================================================ */
+@media (max-width: 767.98px) {
+  #sp-portfolio-wrapper .panel {
+    --sp-pad-t: 64px;
+    --sp-pad-b: 32px;
+  }
+
+  #sp-portfolio-wrapper .panel .container:has(.visual-col) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  #sp-portfolio-wrapper .panel .row:has(> .visual-col) {
+    align-items: stretch;
+  }
+
+  #sp-portfolio-wrapper .visual-col,
+  #sp-portfolio-wrapper .case-content {
+    width: 100%;
+  }
+
+  #sp-portfolio-wrapper .product-carousel {
+    border-radius: 12px;
+  }
+
+  #sp-portfolio-wrapper .carousel-dots {
+    bottom: 8px;
+    padding: 7px 11px;
+    gap: 8px;
+  }
+
+  #sp-portfolio-wrapper .case-content {
+    padding: 1.2rem 0.5rem 0;
+  }
+
+  #sp-portfolio-wrapper .eyebrow {
+    display: none;
+  }
+
+  #sp-portfolio-wrapper .case-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+  }
+
+  /* one line of tags, fades out instead of wrapping */
+  #sp-portfolio-wrapper .tools {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    max-width: 100%;
+    overflow: hidden;
+    gap: 0.35rem;
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, #000 85%, transparent);
+  }
+
+  #sp-portfolio-wrapper .tool-pill {
+    padding: 0.4rem 0.95rem;
+    font-size: 0.68rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sp-portfolio-wrapper .product-slide,
+  #sp-portfolio-wrapper .carousel-dot,
+  #sp-portfolio-wrapper .tool-pill {
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ================================================================
    SOLUTIONS COMPONENT (BOOTSTRAP 4.5.0 + SCRIPT SYNCED)
+   Same structure and class names. Changes: theme fonts, better
+   text contrast, visible keyboard focus.
    ================================================================ */
 
-   .ssc-stage,
-   .ssc-stage *,
-   .ssc-stage *::before,
-   .ssc-stage *::after {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-   }
-   
-   .ssc-stage {
-       --ssc-accent: #818cf8;
-       --ssc-bg: #100028;
-       --ssc-text: #ffffff;
-       --ssc-muted: rgba(255,255,255,0.7);
-       --ssc-muted-2: rgba(255,255,255,0.45);
-       --ssc-chip-bg: rgba(255,255,255,0.06);
-       --ssc-chip-border: rgba(255,255,255,0.12);
-       --ssc-track-bg: rgba(255,255,255,0.15);
-       --ssc-dot-idle: rgba(255,255,255,0.25);
-   
-       position: relative;
-       width: 100%;
-       height: 100%;
-       z-index: 2;
-       background: transparent;
-       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-       color: #fff;
-       outline: none;
-   }
-   
-   /* Glow */
-   .ssc-glow {
-       position: absolute;
-       inset: 0;
-       pointer-events: none;
-       z-index: 0;
-   }
-   
-   /* Wheel / Title */
-   .ssc-wheel {
-       display: flex;
-       align-items: flex-end;
-       justify-content: center;
-       gap: 1.5rem;
-       margin-bottom: 2rem;
-       width: 100%;
-   }
-   
-   .ssc-wheel-btn {
-       appearance: none;
-       -webkit-appearance: none;
-       border: 0;
-       background: transparent;
-       color: #fff;
-       display: inline-flex;
-       flex-direction: column;
-       gap: 6px;
-       padding: 0;
-       cursor: pointer;
-   }
-   
-   .ssc-wheel-label {
-       text-transform: uppercase;
-       white-space: nowrap;
-       line-height: 1;
-       transition: all 0.3s ease;
-   }
-   
-   .ssc-wheel-btn.ssc-wh-prev,
-   .ssc-wheel-btn.ssc-wh-next {
-       opacity: 0.35;
-       transform: translateY(-20%) scale(0.85);
-   }
-   
-   .ssc-wheel-btn.ssc-wh-prev .ssc-wheel-label,
-   .ssc-wheel-btn.ssc-wh-next .ssc-wheel-label {
-       font-size: 0.75rem;
-       letter-spacing: 0.14em;
-       color: rgba(255, 255, 255, 0.6);
-   }
-   
-   .ssc-wheel-btn.ssc-wh-active .ssc-wheel-label {
-       font-size: clamp(1.8rem, 3vw, 2.8rem);
-       letter-spacing: -0.03em;
-       font-weight: 800;
-       color: #fff;
-   }
-   
-   .ssc-wheel-track {
-       width: 100%;
-       height: 2px;
-       background: var(--ssc-track-bg);
-       border-radius: 99px;
-       overflow: hidden;
-   }
-   
-   .ssc-wheel-fill {
-       display: block;
-       height: 100%;
-       background: var(--ssc-accent);
-       box-shadow: 0 0 10px var(--ssc-accent);
-       transition: width 0.05s linear;
-   }
-   
-   /* Panels & Achievements wrappers */
-   .ssc-panels-wrap,
-   .ssc-achievement-wrap {
-       position: relative;
-       min-height: 260px;
-       width: 100%;
-   }
-   
-   .ssc-panel,
-   .ssc-achievement-panel {
-       position: absolute;
-       inset: 0;
-       opacity: 0;
-       visibility: hidden;
-       pointer-events: none;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       gap: 1.2rem;
-       transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
-   }
-   
-   .ssc-panel.ssc-active,
-   .ssc-achievement-panel.ssc-active {
-       opacity: 1;
-       visibility: visible;
-       pointer-events: auto;
-       transition-delay: 0s;
-   }
-   
-   .ssc-copy {
-       font-size: 1rem;
-       line-height: 1.7;
-       color: var(--ssc-muted);
-       margin: 0;
-       max-width: 48ch;
-   }
-   
-   .ssc-chips {
-       display: flex;
-       flex-wrap: wrap;
-       gap: 8px;
-   }
-   
-   .ssc-chip {
-       display: inline-flex;
-       align-items: center;
-       gap: 6px;
-       padding: 6px 12px;
-       border-radius: 999px;
-       font-size: 0.75rem;
-       font-weight: 600;
-       color: rgba(255, 255, 255, 0.8);
-       background: var(--ssc-chip-bg);
-       border: 1px solid var(--ssc-chip-border);
-       white-space: nowrap;
-   }
-   
-   .ssc-chip-dot {
-       width: 6px;
-       height: 6px;
-       border-radius: 50%;
-       background: var(--ssc-accent);
-   }
-   
-   .ssc-metrics,
-   .ssc-achievement-meta {
-       display: flex;
-       flex-wrap: wrap;
-       gap: 1.5rem;
-   }
-   
-   .ssc-metric,
-   .ssc-meta-item {
-       display: flex;
-       flex-direction: column;
-       gap: 3px;
-   }
-   
-   .ssc-metric-icon,
-   .ssc-meta-item i {
-       color: var(--ssc-accent);
-       font-size: 1rem;
-       margin-bottom: 2px;
-   }
-   
-   .ssc-metric-val,
-   .ssc-meta-item strong {
-       font-size: 1.1rem;
-       font-weight: 700;
-       line-height: 1;
-   }
-   
-   .ssc-metric-unit {
-       font-size: 0.7em;
-       opacity: 0.8;
-       margin-left: 1px;
-   }
-   
-   .ssc-metric-lbl,
-   .ssc-meta-item span {
-       font-size: 0.72rem;
-       color: var(--ssc-muted-2);
-       letter-spacing: 0.03em;
-       white-space: nowrap;
-   }
-   
-   .ssc-meta-item {
-       flex-direction: row;
-       align-items: center;
-       gap: 10px;
-   }
-   
-   .ssc-meta-item div {
-       display: flex;
-       flex-direction: column;
-       gap: 2px;
-   }
-   
-   /* Achievement Right Column Styling */
-   .ssc-achievement-main {
-       display: flex;
-       align-items: baseline;
-       gap: 14px;
-   }
-   
-   .ssc-achievement-number {
-       font-size: clamp(3rem, 5vw, 4.5rem);
-       font-weight: 800;
-       line-height: 1;
-       background: linear-gradient(135deg, #fff 10%, #a5b4fc 60%, #67e8f9 100%);
-       -webkit-background-clip: text;
-       background-clip: text;
-       -webkit-text-fill-color: transparent;
-   }
-   
-   .ssc-achievement-number span {
-       font-size: 0.5em;
-   }
-   
-   .ssc-achievement-name {
-       font-size: 1.25rem;
-       font-weight: 700;
-       color: rgba(255, 255, 255, 0.9);
-   }
-   
-   .ssc-achievement-subtitle {
-       font-size: 1rem;
-       color: var(--ssc-muted);
-       line-height: 1.6;
-       max-width: 44ch;
-   }
-   
-   /* Dots */
-   .ssc-dots {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       gap: 10px;
-       margin-top: 3rem;
-   }
-   
-   .ssc-dot {
-       appearance: none;
-       -webkit-appearance: none;
-       width: 8px;
-       height: 8px;
-       border: 0;
-       border-radius: 999px;
-       background: var(--ssc-dot-idle);
-       cursor: pointer;
-       padding: 0;
-       transition: all 0.3s ease;
-   }
-   
-   .ssc-dot.ssc-active {
-       width: 28px;
-       background: var(--ssc-accent);
-       box-shadow: 0 0 10px var(--ssc-accent);
-   }
-   
-   /* Grid Background Pattern */
-   .panel::before {
-       content: '';
-       position: absolute;
-       inset: 0;
-       background-image: 
-           linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-           linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-       background-size: 60px 60px;
-       pointer-events: none;
-       z-index: 1;
-   }
-   
-   /* Reduced Motion */
-   @media (prefers-reduced-motion: reduce) {
-       .ssc-stage *,
-       .ssc-stage *::before,
-       .ssc-stage *::after {
-           animation-duration: 0.01ms !important;
-           animation-iteration-count: 1 !important;
-           transition-duration: 0.01ms !important;
-       }
-   }
-   
-   @media (max-width: 991.98px) {
-       .ssc-wheel-btn.ssc-wh-prev,
-       .ssc-wheel-btn.ssc-wh-next {
-           display: none;
-       }
-       .ssc-wheel-btn.ssc-wh-active .ssc-wheel-track {
-           width: 60px;
-           margin: 0 auto;
-       }
-       .ssc-panel,
-       .ssc-achievement-panel {
-           text-align: center;
-           align-items: center;
-           position: relative;
-           inset: auto;
-       }
-       .ssc-panels-wrap,
-       .ssc-achievement-wrap {
-           position: relative;
-           min-height: auto;
-       }
-       .ssc-panel,
-       .ssc-achievement-panel {
-           display: none;
-       }
-       .ssc-panel.ssc-active,
-       .ssc-achievement-panel.ssc-active {
-           display: flex;
-       }
-       .ssc-chips, .ssc-metrics, .ssc-achievement-meta, .ssc-achievement-main {
-           justify-content: center;
-       }
-   }
-   
-   @media (max-width: 767.98px) {
-       .ssc-copy,
-       .ssc-achievement-subtitle,
-       .ssc-achievement-name {
-           display: none !important;
-       }
-   
-       .ssc-achievement-main {
-           justify-content: center;
-           align-items: center;
-           margin-bottom: 0.5rem;
-       }
-   
-       .ssc-achievement-number {
-           font-size: 3rem !important;
-       }
-   
-       .ssc-achievement-meta {
-           justify-content: center;
-           gap: 1rem;
-       }
-   
-       .ssc-meta-item {
-           flex-direction: column;
-           align-items: center;
-           text-align: center;
-       }
-   
-       .ssc-meta-item i {
-           font-size: 1.25rem;
-           margin-bottom: 2px;
-       }
-   
-       .ssc-meta-item strong {
-           font-size: 0.85rem;
-       }
-   
-       .ssc-meta-item span {
-           font-size: 0.65rem;
-       }
-   }
+.ssc-stage,
+.ssc-stage *,
+.ssc-stage *::before,
+.ssc-stage *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ssc-stage {
+  --ssc-accent: #818cf8;
+  --ssc-bg: #100028;
+  --ssc-text: #ffffff;
+  --ssc-muted: rgba(255, 255, 255, 0.8);
+  --ssc-muted-2: rgba(255, 255, 255, 0.66);
+  --ssc-chip-bg: rgba(255, 255, 255, 0.07);
+  --ssc-chip-border: rgba(255, 255, 255, 0.16);
+  --ssc-track-bg: rgba(255, 255, 255, 0.15);
+  --ssc-dot-idle: rgba(255, 255, 255, 0.35);
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: transparent;
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+  outline: none;
+
+  /* centre the content vertically and keep it clear of the
+          fixed navbar (top) and the progress bar (bottom) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 88px 0 64px;
+}
+
+/* Glow */
+.ssc-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Wheel / Title */
+.ssc-wheel {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.ssc-wheel-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ssc-wheel-btn:focus-visible,
+.ssc-dot:focus-visible {
+  outline: 2px solid var(--ssc-accent);
+  outline-offset: 4px;
+}
+
+.ssc-wheel-label {
+  font-family: "Play", sans-serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.ssc-wheel-btn.ssc-wh-prev,
+.ssc-wheel-btn.ssc-wh-next {
+  opacity: 0.5;
+  transform: translateY(-20%) scale(0.85);
+}
+
+.ssc-wheel-btn.ssc-wh-prev .ssc-wheel-label,
+.ssc-wheel-btn.ssc-wh-next .ssc-wheel-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ssc-wheel-btn.ssc-wh-active .ssc-wheel-label {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: #fff;
+}
+
+.ssc-wheel-track {
+  width: 100%;
+  height: 2px;
+  background: var(--ssc-track-bg);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.ssc-wheel-fill {
+  display: block;
+  height: 100%;
+  background: var(--ssc-accent);
+  box-shadow: 0 0 10px var(--ssc-accent);
+  transition: width 0.05s linear;
+}
+
+/* Panels & Achievements wrappers */
+.ssc-panels-wrap,
+.ssc-achievement-wrap {
+  position: relative;
+  min-height: 260px;
+  width: 100%;
+}
+
+.ssc-panel,
+.ssc-achievement-panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0s linear 0.4s;
+}
+
+.ssc-panel.ssc-active,
+.ssc-achievement-panel.ssc-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.ssc-copy {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ssc-muted);
+  margin: 0;
+  max-width: 48ch;
+}
+
+.ssc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ssc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: var(--ssc-chip-bg);
+  border: 1px solid var(--ssc-chip-border);
+  white-space: nowrap;
+}
+
+.ssc-chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ssc-accent);
+}
+
+.ssc-metrics,
+.ssc-achievement-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.ssc-metric,
+.ssc-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ssc-metric-icon,
+.ssc-meta-item i {
+  color: var(--ssc-accent);
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.ssc-metric-val,
+.ssc-meta-item strong {
+  font-family: "Play", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.ssc-metric-unit {
+  font-size: 0.7em;
+  opacity: 0.8;
+  margin-left: 1px;
+}
+
+.ssc-metric-lbl,
+.ssc-meta-item span {
+  font-size: 0.78rem;
+  color: var(--ssc-muted-2);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.ssc-meta-item {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.ssc-meta-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Achievement Right Column Styling */
+.ssc-achievement-main {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.ssc-achievement-number {
+  font-family: "Play", sans-serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, #fff 10%, #a5b4fc 60%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ssc-achievement-number span {
+  font-size: 0.5em;
+}
+
+.ssc-achievement-name {
+  font-family: "Play", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.ssc-achievement-subtitle {
+  font-size: 1.05rem;
+  color: var(--ssc-muted);
+  line-height: 1.6;
+  max-width: 44ch;
+}
+
+/* Dots */
+.ssc-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 3rem;
+}
+
+.ssc-dot {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ssc-dot-idle);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.ssc-dot.ssc-active {
+  width: 28px;
+  background: var(--ssc-accent);
+  box-shadow: 0 0 10px var(--ssc-accent);
+}
+
+/* Grid Background Pattern */
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .ssc-stage *,
+  .ssc-stage *::before,
+  .ssc-stage *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* bigger tap area for the dots, same look */
+.ssc-dot {
+  position: relative;
+}
+.ssc-dot::after {
+  content: "";
+  position: absolute;
+  inset: -14px -4px;
+}
+
+/* ---------- DESKTOP ONLY (992px and up) ----------
+      Tune these two values to move things:
+      --ssc-wheel-gap : space between the title wheel and the content
+      --ssc-right-lift: how far the right column is raised (negative = up) */
+@media (min-width: 992px) {
+  .ssc-stage {
+    --ssc-wheel-gap: 3.75rem;
+    --ssc-right-lift: -1.5rem;
+  }
+
+  /* title wheel: lifted and given more air above the content */
+  .ssc-wheel {
+    margin-bottom: var(--ssc-wheel-gap);
+    position: relative;
+    top: -0.75rem;
+  }
+
+  /* both columns share the same box, so they centre on the same line */
+  .ssc-panels-wrap,
+  .ssc-achievement-wrap {
+    min-height: 280px;
+  }
+
+  /* right column raised to sit centred in its space */
+  .ssc-achievement-wrap {
+    position: relative;
+    top: var(--ssc-right-lift);
+  }
+
+  .ssc-dots {
+    margin-top: 2.5rem;
+  }
+}
+
+/* short laptop screens */
+@media (min-width: 992px) and (max-height: 700px) {
+  .ssc-stage {
+    padding: 76px 0 44px;
+  }
+  .ssc-stage {
+    --ssc-wheel-gap: 2rem;
+    --ssc-right-lift: -1rem;
+  }
+  .ssc-panels-wrap,
+  .ssc-achievement-wrap {
+    min-height: 250px;
+  }
+  .ssc-dots {
+    margin-top: 1.5rem;
+  }
+}
+
+/* ---------- TABLET + MOBILE: right column only ---------- */
+@media (max-width: 991.98px) {
+  .ssc-stage {
+    padding: 80px 0 56px;
+  }
+
+  /* left column (copy, chips, tools) is hidden */
+  .ssc-stage .col-lg-6:has(> .ssc-panels-wrap),
+  .ssc-panels-wrap {
+    display: none;
+  }
+
+  .ssc-wheel {
+    margin-bottom: 1.25rem;
+  }
+  .ssc-wheel-btn.ssc-wh-prev,
+  .ssc-wheel-btn.ssc-wh-next {
+    display: none;
+  }
+  .ssc-wheel-btn.ssc-wh-active .ssc-wheel-track {
+    width: 60px;
+    margin: 0 auto;
+  }
+
+  .ssc-achievement-wrap {
+    position: relative;
+    min-height: auto;
+  }
+  .ssc-achievement-panel {
+    position: relative;
+    inset: auto;
+    display: none;
+    text-align: center;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .ssc-achievement-panel.ssc-active {
+    display: flex;
+  }
+
+  /* big number, then its name */
+  .ssc-achievement-main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+  .ssc-achievement-number {
+    font-size: clamp(3.2rem, 14vw, 4.5rem);
+  }
+  .ssc-achievement-name {
+    font-size: 1.05rem;
+  }
+  .ssc-achievement-subtitle {
+    font-size: 0.95rem;
+    max-width: 32ch;
+    margin: 0 auto;
+  }
+
+  /* three proof points as a tidy list */
+  .ssc-achievement-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 380px;
+    margin: 0.4rem auto 0;
+  }
+  .ssc-stage .ssc-meta-item {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 0.85rem;
+    padding: 0.65rem 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+  }
+  .ssc-stage .ssc-meta-item i {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    border-radius: 50%;
+    background: rgba(129, 140, 248, 0.16);
+    font-size: 0.95rem;
+  }
+  .ssc-meta-item strong {
+    font-size: 0.95rem;
+  }
+  .ssc-meta-item span {
+    font-size: 0.78rem;
+    white-space: normal;
+  }
+
+  .ssc-dots {
+    margin-top: 1.5rem;
+  }
+}
+
+/* landscape phones: everything on very little height */
+@media (max-width: 991.98px) and (max-height: 520px) {
+  .ssc-stage {
+    padding: 62px 0 40px;
+  }
+  .ssc-wheel {
+    margin-bottom: 0.5rem;
+  }
+  .ssc-wheel-btn.ssc-wh-active .ssc-wheel-label {
+    font-size: 1.3rem;
+  }
+  .ssc-achievement-panel {
+    gap: 0.5rem;
+  }
+  .ssc-achievement-main {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  .ssc-achievement-number {
+    font-size: 2.4rem;
+  }
+  .ssc-achievement-subtitle {
+    display: none;
+  }
+  .ssc-achievement-meta {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 640px;
+  }
+  .ssc-stage .ssc-meta-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.5rem;
+    gap: 0.35rem;
+  }
+  .ssc-dots {
+    margin-top: 0.75rem;
+  }
+}
+
 /* ================================================================
-   PROGRESS BAR
+   PROGRESS BAR  (unchanged)
    ================================================================ */
 
-   #sp-portfolio-wrapper .progress-wrap {
-    position: absolute;
-    left: 2rem;
-    right: 2rem;
-    bottom: 18px;
-    height: 4px;
-    opacity: 0.6;
-    z-index: 50;
-    pointer-events: none;
+#sp-portfolio-wrapper .progress-wrap {
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 18px;
+  height: 4px;
+  opacity: 0.6;
+  z-index: 50;
+  pointer-events: none;
 }
 
 #sp-portfolio-wrapper .progress-bg {
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.12);
-    border-radius: 999px;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
 }
 
 #sp-portfolio-wrapper .progress-fg {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
-    border-radius: 999px;
-    transition: none;
-    will-change: width;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+  border-radius: 999px;
+  transition: none;
+  will-change: width;
 }
-
 
 /* ================================================================
    GRID BACKGROUND PATTERN
    ================================================================ */
-
-   
